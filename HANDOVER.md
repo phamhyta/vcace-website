@@ -2,7 +2,7 @@
 
 Status as of 20 November 2026.
 
-**Live:** https://vcace.netlify.app (temporary address) · **Editor:** https://vcace.sanity.studio · **Code:** github.com/ducnd-dev/vcace-website (private)
+**Live:** https://vcace.netlify.app (temporary address) · **Editor:** https://vcace.sanity.studio · **Code:** github.com/phamhyta/vcace-website (private; transfer from ducnd-dev pending acceptance)
  Items marked ☐ need an account, an approval or real content from VCACE.
 
 ## What is in this folder
@@ -46,6 +46,26 @@ Create every account under the agreed legal owner, then invite the developer as 
 - ✅ Netlify project `vcace`, deploys from `main`; build hook "Sanity publish" is called by the Sanity webhook "Rebuild website (Netlify)". "Powered by Netlify" badge switched off (Project configuration → General). ☐ Transfer to a VCACE-owned Netlify team; ☐ add the custom domain vcace.org.au (Domain management) and point DNS
 - ☐ Form service and contact inbox
 - ☐ 2FA switched on for all of the above
+
+### Transfer to the new owner `phamhyta` (started 20 November 2026)
+
+| Service | Status | What the new owner does |
+|---|---|---|
+| Sanity | ✅ phamhyta@gmail.com is **Administrator** of project `hd1rue71` | Sign in at https://vcace.sanity.studio. The account was added with **Google** login; Sanity treats Google and GitHub logins as different users, so always use Google, or invite your GitHub login from Members and use that from then on. Switch the plan to Free before the trial ends (Plan). |
+| GitHub | ⏳ Transfer of `ducnd-dev/vcace-website` to `phamhyta` sent | Accept it from the GitHub email (or github.com/notifications) within 1 day. Then, if the developer still maintains the site: repo **Settings → Collaborators → Add people → `ducnd-dev`** |
+| Netlify | ☐ Rebuild in the new owner's account (Free-plan teams have one member, so the project cannot be moved in-app) | Steps below |
+
+**Netlify, after the GitHub transfer is accepted** (all build settings are in `netlify.toml`, nothing to type):
+1. Sign up / log in at https://app.netlify.com **with GitHub** as `phamhyta`.
+2. **Add new project → Import an existing project → GitHub →** allow Netlify on the `phamhyta` account → choose `vcace-website` → **Deploy**.
+3. **Forms → Enable form detection**, then **Trigger deploy → Clear cache and deploy** once.
+4. **Project configuration → General → Powered by Netlify badge →** untick → Save.
+5. **Project configuration → Build & deploy → Build hooks → Add build hook** named `Sanity publish`, branch `main`. Copy the URL.
+6. In Sanity (https://www.sanity.io/manage/project/hd1rue71 → **API → Webhooks → Rebuild website (Netlify)**), paste the new build hook URL and save.
+7. Tell the developer: they delete or rename the old project so the address **vcace.netlify.app** becomes free, then in the new project **Domain management → Options → Edit project name → `vcace`**.
+8. Test: change one word in the Studio and Publish; the site should update in about a minute. Send one test enquiry and check **Forms → contact**. Add the VCACE inbox under **Forms → Form notifications**.
+
+Until step 7 the old site at vcace.netlify.app stays online; once the GitHub transfer is accepted it can no longer rebuild, so do steps 1–7 the same day.
 
 ## Acceptance checklist (brief §12)
 
