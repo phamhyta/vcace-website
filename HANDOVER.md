@@ -62,7 +62,7 @@ Create every account under the agreed legal owner, then invite the developer as 
 4. **Project configuration → General → Powered by Netlify badge →** untick → Save.
 5. **Project configuration → Build & deploy → Build hooks → Add build hook** named `Sanity publish`, branch `main`. Copy the URL.
 6. In Sanity (https://www.sanity.io/manage/project/hd1rue71 → **API → Webhooks → Rebuild website (Netlify)**), paste the new build hook URL and save.
-7. Tell the developer: they delete or rename the old project so the address **vcace.netlify.app** becomes free, then in the new project **Domain management → Options → Edit project name → `vcace`**.
+7. The old project was renamed to `vcace-old` (still online at https://vcace-old.netlify.app; delete it once the new site works), so **vcace.netlify.app** is free: in the new project go to **Domain management → Options → Edit project name → `vcace`**.
 8. Test: change one word in the Studio and Publish; the site should update in about a minute. Send one test enquiry and check **Forms → contact**. Add the VCACE inbox under **Forms → Form notifications**.
 
 Until step 7 the old site at vcace.netlify.app stays online; once the GitHub transfer is accepted it can no longer rebuild, so do steps 1–7 the same day.
