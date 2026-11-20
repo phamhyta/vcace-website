@@ -58,7 +58,8 @@ Create every account under the agreed legal owner, then invite the developer as 
 **Netlify, after the GitHub transfer is accepted** (all build settings are in `netlify.toml`, nothing to type):
 1. Sign up / log in at https://app.netlify.com **with GitHub** as `phamhyta`.
 2. **Add new project → Import an existing project → GitHub →** allow Netlify on the `phamhyta` account → choose `vcace-website` → **Deploy**.
-3. **Forms → Enable form detection**, then **Trigger deploy → Clear cache and deploy** once.
+3. **Project configuration → General → Visitor access →** set to **Public** (new Netlify projects can start private and show a Netlify login page to visitors).
+3b. **Forms → Enable form detection**, then **Trigger deploy → Clear cache and deploy** once.
 4. **Project configuration → General → Powered by Netlify badge →** untick → Save.
 5. **Project configuration → Build & deploy → Build hooks → Add build hook** named `Sanity publish`, branch `main`. Copy the URL.
 6. In Sanity (https://www.sanity.io/manage/project/hd1rue71 → **API → Webhooks → Rebuild website (Netlify)**), paste the new build hook URL and save.
