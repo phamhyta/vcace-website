@@ -42,7 +42,7 @@ export const home = defineType({
         str('headline'), str('intro', 'Introduction'), str('featuredLabel', 'Label of the featured-project line'),
         defineField({
           name: 'items', title: 'Program panels', type: 'array',
-          of: [defineArrayMember({type: 'object', fields: [str('title'), txt('text', 'Short copy'), txt('examples', 'Example formats'), str('linkText'), str('link', 'Link (anchor or page)'), img(), alt()], preview: {select: {title: 'title'}}})],
+          of: [defineArrayMember({type: 'object', fields: [str('title'), txt('text', 'Short copy'), txt('examples', 'Example formats'), str('linkText'), str('link', 'Link (anchor or page)'), img(), alt(), credit()], preview: {select: {title: 'title'}}})],
         }),
       ],
     }),

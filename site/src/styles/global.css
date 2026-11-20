@@ -78,7 +78,8 @@ section{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
 .programs .intro{color:var(--grey);font-size:clamp(18px,1.5vw,22px);margin:14px 0 56px}
 .programs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .panel{display:flex;flex-direction:column;text-decoration:none}
-.panel .img{aspect-ratio:16/11;overflow:hidden}
+.panel .img{aspect-ratio:16/11;overflow:hidden;position:relative}
+.panel .caption{left:10px;bottom:10px;font-size:10px;letter-spacing:.04em}
 .panel .img svg,.panel .img img{width:100%;height:100%;display:block;object-fit:cover}
 .panel .num{font-size:15px;color:var(--grey);margin:40px 0 10px}
 .panel h3{font-size:24px;font-weight:700;letter-spacing:0;margin-bottom:12px}

@@ -69,6 +69,7 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
             {p.image
               ? <img src={p.image} alt={p.imageAlt} loading="lazy" />
               : <Art variant={`p${i}`} />}
+            {p.image && p.imageCredit && <span class="caption">{p.imageCredit}</span>}
           </div>
           <span class="num" aria-hidden="true">{pad(i)}</span>
           <h3>{p.title}</h3>

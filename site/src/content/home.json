@@ -57,7 +57,8 @@
         "linkText": "See the first project",
         "link": "#first-project",
         "image": "",
-        "imageAlt": ""
+        "imageAlt": "",
+        "imageCredit": ""
       },
       {
         "title": "Cultural Dialogues",
@@ -66,7 +67,8 @@
         "linkText": "Start a conversation",
         "link": "#collaborate",
         "image": "",
-        "imageAlt": ""
+        "imageAlt": "",
+        "imageCredit": ""
       },
       {
         "title": "Cultural Exchange",
@@ -75,7 +77,8 @@
         "linkText": "Propose an exchange",
         "link": "#collaborate",
         "image": "",
-        "imageAlt": ""
+        "imageAlt": "",
+        "imageCredit": ""
       },
       {
         "title": "Cultural Education",
@@ -84,7 +87,8 @@
         "linkText": "Talk to us about learning",
         "link": "#collaborate",
         "image": "",
-        "imageAlt": ""
+        "imageAlt": "",
+        "imageCredit": ""
       }
     ],
     "featuredLabel": "Featured project"

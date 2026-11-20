@@ -55,7 +55,7 @@ Create every account under the agreed legal owner, then invite the developer as 
 | Headline, typography, logo and yellow/black/off-white match references | ✅ Matches the two prototypes. Text yellow darkened for contrast (see style guide) |
 | Working enquiry form and confirmed email routing | ✅ Netlify Forms (form `contact`): honeypot + Netlify spam filter, consent checkbox, submissions in Netlify → Forms. ☐ Add the confirmed VCACE inbox under Forms → Submission notifications. Free tier: 100 submissions/month |
 | Mobile navigation and buttons | ✅ Checked at 375 px and 1440 px; menu closes with Escape |
-| Images, licences, credits recorded; placeholders removed | ☐ All images are placeholders labelled as such. Need 6–10 licensed photos |
+| Images, licences, credits recorded; placeholders removed | ✅ Placeholders replaced by 6 Unsplash photos, each captioned “Concept image” with credit (see Image record). ☐ Replace with VCACE’s own licensed photos, with written consent from identifiable people, as they become available |
 | Legal host statement, copyright and privacy approved | ☐ Footer line is empty until SEA Effect approves. Policy pages are drafts with [placeholders] |
 | Domain, hosting, design files and admin controlled by legal owner | ☐ See Ownership above |
 
@@ -87,6 +87,21 @@ Create every account under the agreed legal owner, then invite the developer as 
 | Future-proofing | Projects, stories, team and pages are already CMS lists; can become their own pages without redesign | Vietnamese version (not in MVP) |
 | Legal / footer | Privacy, Terms, Accessibility drafts; credits line | ☐ Approved wording, legal entity, ABN, contact email, state |
 | Handover | Logo SVGs, style guide page, this document, training outline, backup steps | ☐ Image licences; final logo outlines by a designer |
+
+## Image record (brief §10–11)
+
+All current photographs are **concept images**, not documentation of VCACE events. They are used under the [Unsplash License](https://unsplash.com/license) (free commercial use, no permission needed; credit given voluntarily). Brief §11 asks for VCACE's own ethically sourced photos with written consent from identifiable participants, so replace these as real photos arrive. When you replace one, update its *alt text* and *credit*, and once no concept images remain, change the footer credits line (Home page → Footer → Credits).
+
+| Where | Photo | Photographer | Source |
+|---|---|---|---|
+| Hero | Woodcut scrolls being hung in a timber hall | Bernd Dittrich | https://unsplash.com/photos/4m7qJjtYxHA |
+| Program 01 Cultural Experiences | Live musicians at a water puppet theatre | Bernd Dittrich | https://unsplash.com/photos/Y1Nno7hBhRQ |
+| Program 02 Cultural Dialogues | Informal talk in a gallery | Antenna | https://unsplash.com/photos/cw-cj_nFa14 |
+| Program 03 Cultural Exchange | Street artists in Hội An | Alisa Kreydina | https://unsplash.com/photos/-s94FsX2J4Q |
+| Program 04 Cultural Education | Hands shaping a bowl on a pottery wheel | Monika Bienert | https://unsplash.com/photos/EETgT0lmAiQ |
+| First Project | Dimly lit exhibition hall | buian_photos | https://unsplash.com/photos/eVlcG42Ukkw |
+
+Note: Unsplash photos come without model releases. The people shown are not endorsing VCACE; do not use these images in advertising that implies they do.
 
 ## Connecting Sanity and going live
 See `site/README.md` for the exact commands.
