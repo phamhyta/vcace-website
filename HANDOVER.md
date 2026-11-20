@@ -43,7 +43,7 @@ Create every account under the agreed legal owner, then invite the developer as 
 - ☐ Domain registrar (vcace.org.au): owner keeps login
 - ✅ GitHub repository `ducnd-dev/vcace-website` (private). ☐ Transfer to a VCACE-owned GitHub organisation when it exists
 - ✅ Sanity project `hd1rue71`, Studio at https://vcace.sanity.studio. ☐ Move it into a VCACE-owned organisation if needed; owner as Administrator, editors as Editor. Project is on a Growth Trial: switch to Free before it ends
-- ✅ Netlify project `vcace`, deploys from `main`; build hook "Sanity publish" is called by the Sanity webhook "Rebuild website (Netlify)". ☐ Transfer to a VCACE-owned Netlify team; ☐ add the custom domain vcace.org.au (Domain management) and point DNS
+- ✅ Netlify project `vcace`, deploys from `main`; build hook "Sanity publish" is called by the Sanity webhook "Rebuild website (Netlify)". "Powered by Netlify" badge switched off (Project configuration → General). ☐ Transfer to a VCACE-owned Netlify team; ☐ add the custom domain vcace.org.au (Domain management) and point DNS
 - ☐ Form service and contact inbox
 - ☐ 2FA switched on for all of the above
 
