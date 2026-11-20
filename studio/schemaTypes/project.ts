@@ -21,7 +21,7 @@ export const project = defineType({
     defineField({name: 'note', title: 'Status note', type: 'text', rows: 2}),
     defineField({name: 'image', type: 'image', options: {hotspot: true}}),
     defineField({name: 'imageAlt', title: 'Image description (alt text)', type: 'string'}),
-    defineField({name: 'imageCredit', title: 'Image credit', type: 'string'}),
+    defineField({name: 'imageCredit', title: 'Image credit', type: 'string', description: 'Kept on record for licensing; not printed on the image'}),
   ],
   orderings: [{title: 'Order', name: 'order', by: [{field: 'order', direction: 'asc'}]}],
   preview: {

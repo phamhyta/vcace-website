@@ -4,7 +4,7 @@ const str = (name: string, title?: string) => defineField({name, title, type: 's
 const txt = (name: string, title?: string) => defineField({name, title, type: 'text', rows: 3})
 const img = (name = 'image') => defineField({name, title: 'Image', type: 'image', options: {hotspot: true}})
 const alt = () => defineField({name: 'imageAlt', title: 'Image description (alt text)', type: 'string'})
-const credit = () => defineField({name: 'imageCredit', title: 'Image credit', type: 'string'})
+const credit = () => defineField({name: 'imageCredit', title: 'Image credit', type: 'string', description: 'Kept on record for licensing; not printed on the image'})
 const textList = (name: string, title: string) =>
   defineField({name, title, type: 'array', of: [defineArrayMember({type: 'text', rows: 3})]})
 

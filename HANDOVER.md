@@ -55,7 +55,7 @@ Create every account under the agreed legal owner, then invite the developer as 
 | Headline, typography, logo and yellow/black/off-white match references | ✅ Matches the two prototypes. Text yellow darkened for contrast (see style guide) |
 | Working enquiry form and confirmed email routing | ✅ Netlify Forms (form `contact`): honeypot + Netlify spam filter, consent checkbox, submissions in Netlify → Forms. ☐ Add the confirmed VCACE inbox under Forms → Submission notifications. Free tier: 100 submissions/month |
 | Mobile navigation and buttons | ✅ Checked at 375 px and 1440 px; menu closes with Escape |
-| Images, licences, credits recorded; placeholders removed | ✅ Placeholders replaced by 6 Unsplash photos, each captioned “Concept image” with credit (see Image record). ☐ Replace with VCACE’s own licensed photos, with written consent from identifiable people, as they become available |
+| Images, licences, credits recorded; placeholders removed | ✅ Placeholders replaced by 6 Unsplash photos, marked in the footer as concept images; credits kept on record (see Image record), not printed on the photos. ☐ Replace with VCACE’s own licensed photos, with written consent from identifiable people, as they become available |
 | Legal host statement, copyright and privacy approved | ☐ Footer line is empty until SEA Effect approves. Policy pages are drafts with [placeholders] |
 | Domain, hosting, design files and admin controlled by legal owner | ☐ See Ownership above |
 

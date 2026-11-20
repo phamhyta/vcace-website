@@ -78,8 +78,7 @@ section{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
 .programs .intro{color:var(--grey);font-size:clamp(18px,1.5vw,22px);margin:14px 0 56px}
 .programs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .panel{display:flex;flex-direction:column;text-decoration:none}
-.panel .img{aspect-ratio:16/11;overflow:hidden;position:relative}
-.panel .caption{left:10px;bottom:10px;font-size:10px;letter-spacing:.04em}
+.panel .img{aspect-ratio:16/11;overflow:hidden}
 .panel .img svg,.panel .img img{width:100%;height:100%;display:block;object-fit:cover}
 .panel .num{font-size:15px;color:var(--grey);margin:40px 0 10px}
 .panel h3{font-size:24px;font-weight:700;letter-spacing:0;margin-bottom:12px}
@@ -147,7 +146,8 @@ footer .top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;p
 footer .vbox{border-color:var(--bg)}
 footer .lockup small{color:#bdbab2}
 footer .lockup small span{color:var(--yellow)}
-footer ul{list-style:none;padding:0;display:flex;gap:24px;flex-wrap:wrap}
+footer ul{list-style:none;padding:0;display:flex;gap:4px 24px;flex-wrap:wrap}
+footer ul a{display:inline-block;padding:8px 0}
 footer .fine{padding-top:22px;font-size:13px;color:#bdbab2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 @media (max-width:1100px){

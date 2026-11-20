@@ -15,7 +15,7 @@ export const story = defineType({
     defineField({name: 'date', type: 'date'}),
     defineField({name: 'image', type: 'image', options: {hotspot: true}}),
     defineField({name: 'imageAlt', title: 'Image description (alt text)', type: 'string'}),
-    defineField({name: 'imageCredit', title: 'Image credit', type: 'string'}),
+    defineField({name: 'imageCredit', title: 'Image credit', type: 'string', description: 'Kept on record for licensing; not printed on the image'}),
   ],
   preview: {select: {title: 'title', subtitle: 'person'}},
 })
