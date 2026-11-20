@@ -12,7 +12,12 @@ cd studio && npm install && npm run dev      # editor, http://localhost:3333
 ## Without Sanity (default)
 If `SANITY_PROJECT_ID` is empty, the site builds from `site/src/content/*.json`.
 
-## Connect Sanity (one time)
+## Current setup
+- Sanity project `hd1rue71`, Studio at https://vcace.sanity.studio (sign in with GitHub)
+- Netlify project `vcace` builds from GitHub `main` using ../netlify.toml
+- Publishing in Sanity calls a Netlify build hook; the live site updates in about 20 seconds
+
+## Connect Sanity (one time, already done)
 1. In `studio/`: `npx sanity login`, then `npx sanity init --env` to create a project (or create one at sanity.io/manage). Use the **VCACE-owned** account.
 2. Put the project ID in `site/.env` (`SANITY_PROJECT_ID`) and `studio/.env` (`SANITY_STUDIO_PROJECT_ID`).
 3. Load the current copy: `cd site && node scripts/make-seed.mjs && cd ../studio && npx sanity dataset import ../site/seed.ndjson production --replace`

@@ -1,6 +1,9 @@
 # VCACE website: handover and launch checklist
 
-Status as of 20 November 2026. Items marked ☐ need an account, an approval or real content from VCACE.
+Status as of 20 November 2026.
+
+**Live:** https://vcace.netlify.app (temporary address) · **Editor:** https://vcace.sanity.studio · **Code:** github.com/ducnd-dev/vcace-website (private)
+ Items marked ☐ need an account, an approval or real content from VCACE.
 
 ## What is in this folder
 
@@ -38,9 +41,9 @@ Pages: home (one-page, five anchors), `/privacy`, `/terms`, `/accessibility`, `/
 ## Ownership (brief §10, §12, §13)
 Create every account under the agreed legal owner, then invite the developer as a member. Nothing needs transferring later.
 - ☐ Domain registrar (vcace.org.au): owner keeps login
-- ☐ GitHub organisation and repository
+- ✅ GitHub repository `ducnd-dev/vcace-website` (private). ☐ Transfer to a VCACE-owned GitHub organisation when it exists
 - ✅ Sanity project `hd1rue71`, Studio at https://vcace.sanity.studio. ☐ Move it into a VCACE-owned organisation if needed; owner as Administrator, editors as Editor. Project is on a Growth Trial: switch to Free before it ends
-- ☐ Hosting (Cloudflare Pages or Netlify; both allow commercial use on free tiers, Vercel needs Pro)
+- ✅ Netlify project `vcace`, deploys from `main`; build hook "Sanity publish" is called by the Sanity webhook "Rebuild website (Netlify)". ☐ Transfer to a VCACE-owned Netlify team; ☐ add the custom domain vcace.org.au (Domain management) and point DNS
 - ☐ Form service and contact inbox
 - ☐ 2FA switched on for all of the above
 
