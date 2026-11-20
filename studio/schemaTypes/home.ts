@@ -56,7 +56,7 @@ export const home = defineType({
         str('headline'), textList('paragraphs', 'Paragraphs'),
         defineField({name: 'topics', title: 'Enquiry topics', type: 'array', of: [defineArrayMember({type: 'string'})]}),
         str('buttonText'),
-        str('formEndpoint', 'Form endpoint URL (leave empty until the form service is set up)'),
+        str('formEndpoint', 'External form endpoint (leave empty to use Netlify Forms)'),
       ],
     }),
     defineField({name: 'footer', type: 'object', group: 'footer', fields: [str('legalHostLine', 'Legal host line (publish only after approval)'), str('credits')]}),

@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 // Pages not meant for search engines (internal or still in draft review)
-const hidden = ['/style-guide/'];
+const hidden = ['/style-guide/', '/thanks/'];
 
 export default defineConfig({
   site: 'https://vcace.org.au',

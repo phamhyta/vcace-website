@@ -163,7 +163,11 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
         <h2>{collaborate.headline}</h2>
         {collaborate.paragraphs.map((p) => <p>{p}</p>)}
       </div>
-      <form id="enquiry" action={collaborate.formEndpoint || '#'} method="post" data-live={collaborate.formEndpoint ? 'true' : 'false'} novalidate>
+      <!-- Netlify Forms: detected at deploy time, submissions in Netlify > Forms > contact.
+           If "Form endpoint URL" is set in the CMS, that external service is used instead. -->
+      <form id="enquiry" name="contact" method="POST" action={collaborate.formEndpoint || '/thanks/'}
+        data-netlify="true" netlify-honeypot="website" data-external={collaborate.formEndpoint ? 'true' : 'false'} novalidate>
+        <input type="hidden" name="form-name" value="contact" />
         <label>Your name<input name="name" autocomplete="name" required /></label>
         <label>Email<input name="email" type="email" autocomplete="email" required /></label>
         <label>What is your enquiry about?
@@ -174,7 +178,7 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
         </label>
         <label>Message<textarea name="message" required></textarea></label>
         <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <label class="consent"><input type="checkbox" name="consent" required /> I agree VCACE may use these details to reply to my enquiry. See the Privacy page.</label>
+        <label class="consent"><input type="checkbox" name="consent" value="yes" required /> I agree VCACE may use these details to reply to my enquiry. See the Privacy page.</label>
         <div><button class="btn primary" type="submit">{collaborate.buttonText}</button></div>
         <p id="status" role="status"></p>
       </form>
@@ -193,17 +197,30 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
       form.reportValidity();
       return;
     }
-    if (form.dataset.live !== 'true') {
-      status.textContent = 'Preview only: this form is not connected to an inbox yet, so nothing was sent.';
+    const external = form.dataset.external === 'true';
+    if (!external && ['localhost', '127.0.0.1'].includes(location.hostname)) {
+      status.textContent = 'Preview only: the form sends on the live site, so nothing was sent from here.';
       return;
     }
+    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    button.disabled = true;
+    status.textContent = 'Sending…';
     try {
-      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-      if (!res.ok) throw new Error();
+      const data = new FormData(form);
+      const res = external
+        ? await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+        : await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
+          });
+      if (!res.ok) throw new Error(String(res.status));
       form.reset();
-      status.textContent = 'Thank you. VCACE will reply to your enquiry soon.';
+      status.textContent = 'Thank you. Your message was sent and VCACE will reply soon.';
     } catch {
       status.textContent = 'Your message was not sent. Please try again in a moment.';
+    } finally {
+      button.disabled = false;
     }
   });
 </script>
