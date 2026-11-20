@@ -51,7 +51,7 @@ Create every account under the agreed legal owner, then invite the developer as 
 
 | Service | Status | What the new owner does |
 |---|---|---|
-| Sanity | ✅ phamhyta@gmail.com is **Administrator** of project `hd1rue71` | Sign in at https://vcace.sanity.studio. The account was added with **Google** login; Sanity treats Google and GitHub logins as different users, so always use Google, or invite your GitHub login from Members and use that from then on. Switch the plan to Free before the trial ends (Plan). |
+| Sanity | ✅ phamhyta@gmail.com is **Administrator of the organisation "VCACE"** (`o7dt0ci36`, holds only this project: plan, billing, members, ownership) and Administrator of project `hd1rue71` | Sign in at https://vcace.sanity.studio. The account was added with **Google** login; Sanity treats Google and GitHub logins as different users, so always use Google, or invite your GitHub login from Members and use that from then on. Switch the plan to Free before the trial ends (Plan). |
 | GitHub | ✅ Transferred to `phamhyta/vcace-website` (20 Nov 2026); `ducnd-dev` kept as collaborator | Accept it from the GitHub email (or github.com/notifications) within 1 day. Then, if the developer still maintains the site: repo **Settings → Collaborators → Add people → `ducnd-dev`** |
 | Netlify | ☐ Rebuild in the new owner's account (Free-plan teams have one member, so the project cannot be moved in-app) | Steps below |
 
