@@ -53,7 +53,7 @@ Create every account under the agreed legal owner, then invite the developer as 
 |---|---|
 | Vision and four program pillars, no false claims of partners or advisers | ✅ Built. Advisory group not built; Lan Anh and Phuc Chen hidden; SEA Effect and Mai Galleria not named |
 | Headline, typography, logo and yellow/black/off-white match references | ✅ Matches the two prototypes. Text yellow darkened for contrast (see style guide) |
-| Working enquiry form and confirmed email routing | ☐ Form built with honeypot spam trap. Needs a form service endpoint (paste it into Home page → Collaborate) and the confirmed inbox. Consider adding Cloudflare Turnstile |
+| Working enquiry form and confirmed email routing | ✅ Netlify Forms (form `contact`): honeypot + Netlify spam filter, consent checkbox, submissions in Netlify → Forms. ☐ Add the confirmed VCACE inbox under Forms → Submission notifications. Free tier: 100 submissions/month |
 | Mobile navigation and buttons | ✅ Checked at 375 px and 1440 px; menu closes with Escape |
 | Images, licences, credits recorded; placeholders removed | ☐ All images are placeholders labelled as such. Need 6–10 licensed photos |
 | Legal host statement, copyright and privacy approved | ☐ Footer line is empty until SEA Effect approves. Policy pages are drafts with [placeholders] |
@@ -80,7 +80,7 @@ Create every account under the agreed legal owner, then invite the developer as 
 | Performance | Static HTML, ~no JavaScript, lazy-loaded images, Sanity serves WebP/AVIF automatically | Run Lighthouse on the live site |
 | Accessibility | Skip link, focus states, labels, alt text, heading order, colour contrast checked | Automated audit (axe/Lighthouse) and a screen-reader pass before launch |
 | Search | Titles, meta description, Open Graph image, sitemap, robots.txt, organisation schema | Submit sitemap in Google Search Console |
-| Forms | Consent statement, honeypot, no unnecessary fields | ☐ Endpoint + inbox; optional Turnstile |
+| Forms | Netlify Forms live; consent statement, honeypot, spam filter, no unnecessary fields | ☐ Email notification to the VCACE inbox |
 | Email | Not created (brief: no fictitious address) | ☐ SPF/DKIM/DMARC by the domain administrator |
 | Events / payments | Phase 2 | Link to Humanitix etc. from a project when approved |
 | Security | HTTPS via host, security headers (`site/public/_headers`), no admin on the public site | ☐ 2FA, least-privilege roles |
