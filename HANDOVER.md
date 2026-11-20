@@ -67,6 +67,15 @@ Create every account under the agreed legal owner, then invite the developer as 
 
 Until step 7 the old site at vcace.netlify.app stays online; once the GitHub transfer is accepted it can no longer rebuild, so do steps 1–7 the same day.
 
+**Redeploy the Studio under the new owner** (changes "Deployed by" in Sanity → Studios; needs Node 20+):
+```bash
+git clone https://github.com/phamhyta/vcace-website.git
+cd vcace-website/studio
+npm install
+npx sanity login          # choose the same login used in Sanity (Google)
+npx sanity deploy         # keeps the address vcace.sanity.studio
+```
+
 ## Acceptance checklist (brief §12)
 
 | Item | Status |

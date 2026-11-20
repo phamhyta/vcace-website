@@ -16,7 +16,7 @@ const pages = [
 export default defineConfig({
   name: 'vcace',
   title: 'VCACE website',
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'YOUR_PROJECT_ID',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'hd1rue71',
   dataset: process.env.SANITY_STUDIO_DATASET || 'production',
   plugins: [
     structureTool({
