@@ -13,7 +13,7 @@
     "secondaryButton": "Collaborate with us",
     "image": "",
     "imageAlt": "",
-    "imageCredit": "Artwork / approved program photograph",
+    "imageCredit": "",
     "headlineAccent": "Inspiring exchange.",
     "featuredLabel": "Featured:"
   },
@@ -115,7 +115,7 @@
   },
   "footer": {
     "legalHostLine": "",
-    "credits": "Photo and artwork credits to be added"
+    "credits": ""
   },
   "firstProject": {
     "buttonText": "Discuss this project with us"

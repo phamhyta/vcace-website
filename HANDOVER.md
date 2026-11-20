@@ -75,7 +75,7 @@ Until step 7 the old site at vcace.netlify.app stays online; once the GitHub tra
 | Headline, typography, logo and yellow/black/off-white match references | ✅ Matches the two prototypes. Text yellow darkened for contrast (see style guide) |
 | Working enquiry form and confirmed email routing | ✅ Netlify Forms (form `contact`): honeypot + Netlify spam filter, consent checkbox, submissions in Netlify → Forms. ☐ Add the confirmed VCACE inbox under Forms → Submission notifications. Free tier: 100 submissions/month |
 | Mobile navigation and buttons | ✅ Checked at 375 px and 1440 px; menu closes with Escape |
-| Images, licences, credits recorded; placeholders removed | ✅ Placeholders replaced by 6 Unsplash photos, marked in the footer as concept images; credits kept on record (see Image record), not printed on the photos. ☐ Replace with VCACE’s own licensed photos, with written consent from identifiable people, as they become available |
+| Images, licences, credits recorded; placeholders removed | ✅ Placeholders replaced by 6 Unsplash photos; credits kept on record (see Image record), not printed on the site. ☐ Replace with VCACE’s own licensed photos, with written consent from identifiable people, as they become available |
 | Legal host statement, copyright and privacy approved | ☐ Footer line is empty until SEA Effect approves. Policy pages are drafts with [placeholders] |
 | Domain, hosting, design files and admin controlled by legal owner | ☐ See Ownership above |
 
@@ -110,7 +110,7 @@ Until step 7 the old site at vcace.netlify.app stays online; once the GitHub tra
 
 ## Image record (brief §10–11)
 
-All current photographs are **concept images**, not documentation of VCACE events. They are used under the [Unsplash License](https://unsplash.com/license) (free commercial use, no permission needed; credit given voluntarily). Brief §11 asks for VCACE's own ethically sourced photos with written consent from identifiable participants, so replace these as real photos arrive. When you replace one, update its *alt text* and *credit*, and once no concept images remain, change the footer credits line (Home page → Footer → Credits).
+All current photographs are **concept images**, not documentation of VCACE events. They are used under the [Unsplash License](https://unsplash.com/license) (free commercial use, no permission needed; credit given voluntarily). Brief §11 asks for VCACE's own ethically sourced photos with written consent from identifiable participants, so replace these as real photos arrive. When you replace one, update its *alt text* and *credit*.
 
 | Where | Photo | Photographer | Source |
 |---|---|---|---|
