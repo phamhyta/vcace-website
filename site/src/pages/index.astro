@@ -1,0 +1,210 @@
+---
+import Base from '../layouts/Base.astro';
+import Art from '../components/Art.astro';
+import { getContent } from '../lib/content';
+
+const { home, members, featuredProject: fp, exploring, story } = await getContent();
+const { meta, hero, vision, programs, firstProject, exploring: exploringCopy, people, collaborate, footer } = home;
+
+// Featured strip under the hero: only links to sections that are actually on the page.
+const featured = [
+  fp && { label: fp.shortTitle || fp.title, href: '#first-project' },
+  ...exploring.slice(0, 2).map((p) => ({ label: p.shortTitle || p.title, href: '#exploring' })),
+  story && { label: story.title || home.story.headline, href: '#story' },
+].filter(Boolean) as { label: string; href: string }[];
+
+const pad = (n: number) => String(n + 1).padStart(2, '0');
+---
+<Base meta={meta} isHome nav={{ project: !!fp, people: members.length > 0 }} footer={footer}>
+<div id="top" class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="accent-bar" aria-hidden="true"></span>
+        <p class="micro">{hero.eyebrow}</p>
+        <h1><span>{hero.headline}</span>{hero.headlineAccent && <span class="gold">{hero.headlineAccent}</span>}</h1>
+        <p class="sub">{hero.subheadline}</p>
+        <p class="intro">{hero.intro}</p>
+        <div class="btns">
+          <a class="btn primary" href="#programs">{hero.primaryButton}</a>
+          <a class="btn" href="#collaborate">{hero.secondaryButton}</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        {hero.image
+          ? <img src={hero.image} alt={hero.imageAlt} fetchpriority="high" />
+          : <Art variant="hero" />}
+        {hero.imageCredit && <span class="caption">{hero.imageCredit}</span>}
+      </div>
+    </div>
+    {featured.length > 0 && (
+      <p class="featured">
+        <span class="k">{hero.featuredLabel}</span>
+        {featured.map((f, i) => <>{i > 0 && <span class="sep" aria-hidden="true">/</span>}<a href={f.href}>{f.label}</a></>)}
+      </p>
+    )}
+  </div>
+</div>
+
+<section id="vision" class="vision">
+  <div class="wrap">
+    <div class="grid">
+      <h2>{vision.headline}</h2>
+      <div>{vision.paragraphs.map((p) => <p>{p}</p>)}</div>
+    </div>
+    <div class="values">
+      {vision.values.map((v) => <div><h3>{v.title}</h3><p>{v.text}</p></div>)}
+    </div>
+  </div>
+</section>
+
+<section id="programs" class="programs">
+  <div class="wrap">
+    <h2>{programs.headline}</h2>
+    <p class="intro">{programs.intro}</p>
+    <div class="programs-grid">
+      {programs.items.map((p, i) => (
+        <a class="panel" href={p.link}>
+          <div class="img">
+            {p.image
+              ? <img src={p.image} alt={p.imageAlt} loading="lazy" />
+              : <Art variant={`p${i}`} />}
+          </div>
+          <span class="num" aria-hidden="true">{pad(i)}</span>
+          <h3>{p.title}</h3>
+          <p>{p.text}</p>
+          <p class="eg">{p.examples}</p>
+          <span class="more">{p.linkText}</span>
+        </a>
+      ))}
+    </div>
+    {fp && (
+      <p class="strip"><span class="k">{programs.featuredLabel}</span><a href="#first-project">{fp.shortTitle}{fp.summary && `: ${fp.summary}`}</a></p>
+    )}
+  </div>
+</section>
+
+{fp && (
+<section id="first-project" class="project">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="tag micro">{[fp.status, fp.date || fp.period].filter(Boolean).join(' · ')}</span>
+        <h2>{fp.title}</h2>
+        <p class="lead">{fp.lead}</p>
+        {fp.description && <p>{fp.description}</p>}
+        {fp.note && <p class="note">{fp.note}</p>}
+        <div class="btns"><a class="btn primary" href="#collaborate">{firstProject.buttonText}</a></div>
+      </div>
+      <div class="art">
+        {fp.image
+          ? <img src={fp.image} alt={fp.imageAlt} loading="lazy" />
+          : <Art variant="project" />}
+        {fp.imageCredit && <span class="caption">{fp.imageCredit}</span>}
+      </div>
+    </div>
+  </div>
+</section>
+)}
+
+{exploring.length > 0 && (
+<section id="exploring" class="exploring">
+  <div class="wrap">
+    <h2>{exploringCopy.headline}</h2>
+    {exploringCopy.intro && <p class="muted" style="margin-top:16px">{exploringCopy.intro}</p>}
+    <ul>
+      {exploring.map((p) => (
+        <li>
+          <span class="when">{[p.status, p.date || p.period].filter(Boolean).join(', ')}</span>
+          <div><h3>{p.title}</h3><p>{p.lead}</p></div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+)}
+
+{story && (
+<section id="story" class="story">
+  <div class="wrap">
+    <div class="grid">
+      <div class="img">
+        {story.image && <img src={story.image} alt={story.imageAlt} loading="lazy" />}
+        {story.imageCredit && <span class="caption">{story.imageCredit}</span>}
+      </div>
+      <div>
+        <p class="micro">{home.story.headline}</p>
+        {story.quote ? <blockquote>{story.quote}</blockquote> : <h2 style="margin:20px 0 24px">{story.title}</h2>}
+        {story.person && <p class="who">{story.person}{story.role && <span class="muted">, {story.role}</span>}</p>}
+        <div class="body" style="margin-top:20px">{story.body.filter(Boolean).map((p) => <p>{p}</p>)}</div>
+      </div>
+    </div>
+  </div>
+</section>
+)}
+
+{members.length > 0 && (
+<section id="people">
+  <div class="wrap">
+    <h2>{people.headline}</h2>
+    <div class="team">
+      {members.map((m) => (
+        <article><h3>{m.name}</h3><p class="role">{m.role}</p><p>{m.bio}</p></article>
+      ))}
+    </div>
+  </div>
+</section>
+)}
+
+<section id="collaborate" class="collab">
+  <div class="wrap">
+    <div class="grid">
+      <div class="copy">
+        <h2>{collaborate.headline}</h2>
+        {collaborate.paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+      <form id="enquiry" action={collaborate.formEndpoint || '#'} method="post" data-live={collaborate.formEndpoint ? 'true' : 'false'} novalidate>
+        <label>Your name<input name="name" autocomplete="name" required /></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+        <label>What is your enquiry about?
+          <select name="topic" required>
+            <option value="">Choose one</option>
+            {collaborate.topics.map((t) => <option>{t}</option>)}
+          </select>
+        </label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <label class="consent"><input type="checkbox" name="consent" required /> I agree VCACE may use these details to reply to my enquiry. See the Privacy page.</label>
+        <div><button class="btn primary" type="submit">{collaborate.buttonText}</button></div>
+        <p id="status" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('enquiry') as HTMLFormElement;
+  const status = document.getElementById('status')!;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if ((form.elements.namedItem('website') as HTMLInputElement).value) return;
+    if (!form.checkValidity()) {
+      status.textContent = 'Please complete every field and tick the consent box.';
+      form.reportValidity();
+      return;
+    }
+    if (form.dataset.live !== 'true') {
+      status.textContent = 'Preview only: this form is not connected to an inbox yet, so nothing was sent.';
+      return;
+    }
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error();
+      form.reset();
+      status.textContent = 'Thank you. VCACE will reply to your enquiry soon.';
+    } catch {
+      status.textContent = 'Your message was not sent. Please try again in a moment.';
+    }
+  });
+</script>
+</Base>

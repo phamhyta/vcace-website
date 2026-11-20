@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.DS_Store
+.sanity/
+.astro/
+site/seed.ndjson
+# Internal brief contains unpublished names; keep out of the repo
+*.docx
+# Local Claude/agent tooling
+.claude/
+.agents/
+skills-lock.json

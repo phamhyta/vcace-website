@@ -1,0 +1,11 @@
+# Security headers (read by Cloudflare Pages and Netlify)
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; img-src 'self' https://cdn.sanity.io data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; form-action 'self' https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

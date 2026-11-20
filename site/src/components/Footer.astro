@@ -1,0 +1,24 @@
+---
+import home from '../content/home.json';
+const { isHome = false, footer = home.footer } = Astro.props;
+---
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <a class="logo" href={isHome ? '#top' : '/'} aria-label="VCACE home">
+        <span class="vbox"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 4h6M15.5 4h6M5 4l7 17 7-17" fill="none" stroke="#F7F6F2" stroke-width="1.6"/></svg></span>
+        <span class="lockup"><b>VCACE</b><small>Vietnam Centre for Arts, Culture &amp; Education · <span>Australia</span></small></span>
+      </a>
+      <ul aria-label="Footer">
+        <li><a href={isHome ? '#collaborate' : '/#collaborate'}>Contact</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+      </ul>
+    </div>
+    <div class="fine">
+      <span>Connecting cultures. Inspiring exchange.</span>
+      <span>{footer.legalHostLine && <>{footer.legalHostLine} · </>}© <span id="yr">2026</span> VCACE{footer.credits && <> · {footer.credits}</>}</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,86 @@
+---
+import Base from '../layouts/Base.astro';
+
+const colours = [
+  { name: 'Warm off-white', hex: '#F7F6F2', role: 'Main page background', dark: false },
+  { name: 'Near-black', hex: '#202020', role: 'Main text, buttons, thin frames', dark: true },
+  { name: 'Yellow', hex: '#F4C430', role: 'Accent for lines, blocks and the CTA on dark. Never for text on light backgrounds.', dark: false },
+  { name: 'Gold text', hex: '#A07810', role: 'Yellow for large text on off-white (3.7:1). Headline accent.', dark: true },
+  { name: 'Gold small', hex: '#8F6B0E', role: 'Yellow for small text on off-white (4.5:1).', dark: true },
+  { name: 'Medium grey', hex: '#686868', role: 'Supporting copy (5.2:1)', dark: true },
+  { name: 'Warm light grey', hex: '#D7D4CD', role: 'Borders, separators', dark: false },
+];
+const logos = [
+  ['vcace-logo-primary.svg', 'Primary lock-up', '#F7F6F2'],
+  ['vcace-logo-inverse-white.svg', 'Inverse (white)', '#202020'],
+  ['vcace-logo-on-yellow.svg', 'On yellow', '#F4C430'],
+  ['vcace-logo-compact.svg', 'Compact', '#F7F6F2'],
+  ['vcace-icon.svg', 'Icon / favicon', '#F7F6F2'],
+];
+---
+<Base meta={{ title: 'Style guide | VCACE', description: 'VCACE visual identity reference.' }} noindex>
+  <article class="doc sg">
+    <div class="wrap">
+      <h1>Style guide</h1>
+      <p class="lead">Reference for anyone producing VCACE materials. Source files are in the brand folder of the project.</p>
+
+      <section>
+        <h2>Logo</h2>
+        <p>Use the boxed serif V with “VCACE”. Do not use a lotus or other traditional motif, and do not substitute “VA”. Keep clear space around the logo equal to the height of the V box ÷ 4 on every side. Minimum width of the full lock-up: 180 px on screen, 40 mm in print; below that, use the compact version or the icon.</p>
+        <div class="sg-logos">
+          {logos.map(([file, label, bg]) => (
+            <figure style={`background:${bg}`}>
+              <img src={`/brand/${file}`} alt={`VCACE ${label} logo`} loading="lazy" />
+              <figcaption>{label} · <a href={`/brand/${file}`} download>SVG</a></figcaption>
+            </figure>
+          ))}
+        </div>
+        <p class="muted">Text in these files uses Helvetica Neue / Arial. A designer should convert text to outlines for final print artwork.</p>
+      </section>
+
+      <section>
+        <h2>Colour</h2>
+        <p>Yellow, near-black and warm off-white. No blue. Yellow is a single confident accent, not a background for long text.</p>
+        <ul class="sg-colours">
+          {colours.map((c) => (
+            <li><span class="chip" style={`background:${c.hex}`}></span><div><b>{c.name}</b> <code>{c.hex}</code><p class="muted">{c.role}</p></div></li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Typography</h2>
+        <p>Helvetica Neue (Light 300, Regular 400), falling back to Helvetica, Arial and system sans-serif. Use a licensed webfont only if legally available.</p>
+        <p class="sg-hero">Connecting cultures.</p>
+        <p class="muted">Hero: 38–48 px mobile, 58–74 px desktop, weight 300–400, line-height 1.04–1.12.</p>
+        <p style="font-size:18px">Body: 16–17 px mobile, 17–19 px desktop, line-height 1.5–1.65.</p>
+        <p class="micro" style="margin-top:12px">Microcopy 11–13 px uppercase, wider spacing</p>
+        <p class="muted">Avoid all caps in body text.</p>
+      </section>
+
+      <section>
+        <h2>Photography</h2>
+        <p>Real contemporary cultural activity in both countries: exhibitions, rehearsals, intimate dialogue, workshops, food and craft, heritage places. Vary the setting and discipline; keep light warm and neutral. Get written consent from identifiable people, with extra safeguards for children. Label concept or generated imagery as such, and record every licence and credit.</p>
+      </section>
+
+      <section>
+        <h2>Buttons and links</h2>
+        <div class="btns" style="margin-top:8px"><a class="btn primary" href="#">Primary action</a><a class="btn" href="#">Secondary action</a></div>
+        <p class="muted" style="margin-top:16px">Button text says exactly what happens: “Start a conversation”, not “Submit”.</p>
+      </section>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .sg-logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin:24px 0 16px}
+  .sg-logos figure{margin:0;padding:24px;border:1px solid var(--line);display:grid;gap:16px}
+  .sg-logos img{height:64px;width:auto;max-width:100%;object-fit:contain;justify-self:start}
+  .sg-logos figcaption{font-size:13px;font-weight:400;background:var(--bg);padding:4px 8px;justify-self:start}
+  .sg-colours{list-style:none;padding:0;margin-top:20px;display:grid;gap:14px}
+  .sg-colours li{display:flex;gap:16px;align-items:flex-start}
+  .chip{width:56px;height:56px;flex:none;border:1px solid var(--line)}
+  .sg-colours code{font-size:14px;color:var(--grey)}
+  .sg-colours p{font-size:15px}
+  .sg-hero{font-size:clamp(38px,5vw,64px);line-height:1.08;margin:20px 0 8px}
+</style>

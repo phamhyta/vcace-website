@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#F7F6F2"/>
+  <rect x="80" y="80" width="44" height="8" fill="#F4C430"/>
+  <rect x="83" y="133" width="74" height="74" fill="none" stroke="#202020" stroke-width="4"/>
+  <path transform="translate(100 150) scale(1.666)" d="M2.5 4h6M15.5 4h6M5 4l7 17 7-17" fill="none" stroke="#202020" stroke-width="1.6"/>
+  <text x="182" y="192" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-weight="700" font-size="52" fill="#202020">VCACE</text>
+  <text x="80" y="340" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="76" fill="#202020">Connecting cultures.</text>
+  <text x="80" y="430" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="76" fill="#A07810">Inspiring exchange.</text>
+  <text x="80" y="540" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="28" fill="#686868">Bringing Australia and Vietnam together through culture.</text>
+  <rect x="900" y="0" width="300" height="630" fill="#E3DFD6"/>
+  <rect x="960" y="0" width="240" height="22" fill="#F4C430"/>
+  <circle cx="1040" cy="330" r="120" fill="none" stroke="#B9AA94" stroke-width="6"/>
+  <circle cx="1130" cy="290" r="120" fill="none" stroke="#ADA597" stroke-width="6"/>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "members": [
+    { "published": true, "name": "Celine Dang", "role": "Executive Lead", "bio": "Leads VCACE’s strategy, institutional relationships, bilateral partnerships and organisational development." },
+    { "published": true, "name": "Mai Trinh", "role": "Artistic Lead", "bio": "Guides artistic direction, cultural programming and engagement with creative practitioners." },
+    { "published": false, "name": "Lan Anh", "role": "Coordinator", "bio": "Supports program planning, communications and delivery." },
+    { "published": false, "name": "Phuc Chen", "role": "Coordinator", "bio": "Supports coordination and delivery across VCACE activities." }
+  ]
+}

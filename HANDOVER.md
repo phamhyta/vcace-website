@@ -1,0 +1,89 @@
+# VCACE website: handover and launch checklist
+
+Status as of 20 November 2026. Items marked ☐ need an account, an approval or real content from VCACE.
+
+## What is in this folder
+
+| Folder | What it is |
+|---|---|
+| `site/` | The website (Astro). Builds to static files in `site/dist/`. |
+| `studio/` | The editing tool (Sanity Studio). Editors sign in with email or Google. |
+| `brand/` | Logo kit (SVG + PNG), social share image, and the script that makes them. |
+| `index.html` | First single-file prototype. Reference only, not used by the site. |
+
+Pages: home (one-page, five anchors), `/privacy`, `/terms`, `/accessibility`, `/style-guide` (hidden from search), 404.
+
+## Editing content (for VCACE staff)
+
+1. Open the Studio at https://vcace.sanity.studio and sign in, always with the same method (the project owner uses GitHub).
+2. **Home page**: hero, vision and values, the four programs, section headings, contact form topics, footer.
+3. **People (team)**: each person has *Published*. Switch it on only with that person's written consent to their name, title and bio.
+4. **Projects**: one project marked *Featured* appears as the First Project. Other published projects appear under “What we are exploring”. Use *Exact date* only when the date is confirmed; until then use *Timing*.
+5. **Stories**: the newest published story appears on the home page. Needs written consent from the person featured and from identifiable people in photos.
+6. **Privacy / Terms / Accessibility**: switch off *Draft* only after the wording is approved.
+7. Upload images inside any image field. Always fill in *alt text* and *credit*.
+8. Press **Publish**. The site rebuilds and the change is live in about a minute.
+
+### One-hour training outline
+- 10 min: tour of the Studio, publishing and drafts
+- 15 min: change hero text and a program image, add alt text and credit
+- 15 min: add a project, keep it hidden, then feature it
+- 10 min: team consent rules, policy pages, the legal host line
+- 10 min: questions; who to contact for problems
+
+## Backups
+- Content: `cd studio && npx sanity dataset export production backup-YYYY-MM-DD.tar.gz` (includes images). Do this monthly and before big changes. Sanity also keeps document history.
+- Code: the Git repository is the backup. Keep it owned by the VCACE/legal-host GitHub organisation.
+
+## Ownership (brief §10, §12, §13)
+Create every account under the agreed legal owner, then invite the developer as a member. Nothing needs transferring later.
+- ☐ Domain registrar (vcace.org.au): owner keeps login
+- ☐ GitHub organisation and repository
+- ✅ Sanity project `hd1rue71`, Studio at https://vcace.sanity.studio. ☐ Move it into a VCACE-owned organisation if needed; owner as Administrator, editors as Editor. Project is on a Growth Trial: switch to Free before it ends
+- ☐ Hosting (Cloudflare Pages or Netlify; both allow commercial use on free tiers, Vercel needs Pro)
+- ☐ Form service and contact inbox
+- ☐ 2FA switched on for all of the above
+
+## Acceptance checklist (brief §12)
+
+| Item | Status |
+|---|---|
+| Vision and four program pillars, no false claims of partners or advisers | ✅ Built. Advisory group not built; Lan Anh and Phuc Chen hidden; SEA Effect and Mai Galleria not named |
+| Headline, typography, logo and yellow/black/off-white match references | ✅ Matches the two prototypes. Text yellow darkened for contrast (see style guide) |
+| Working enquiry form and confirmed email routing | ☐ Form built with honeypot spam trap. Needs a form service endpoint (paste it into Home page → Collaborate) and the confirmed inbox. Consider adding Cloudflare Turnstile |
+| Mobile navigation and buttons | ✅ Checked at 375 px and 1440 px; menu closes with Escape |
+| Images, licences, credits recorded; placeholders removed | ☐ All images are placeholders labelled as such. Need 6–10 licensed photos |
+| Legal host statement, copyright and privacy approved | ☐ Footer line is empty until SEA Effect approves. Policy pages are drafts with [placeholders] |
+| Domain, hosting, design files and admin controlled by legal owner | ☐ See Ownership above |
+
+## Release checklist (brief §13)
+
+| Item | Where to switch it on once approved |
+|---|---|
+| SEA Effect legal-host wording | Home page → Footer → Legal host line |
+| Mai Galleria as partner | Not built. Add to a project description or ask for a partners section |
+| Team names and roles | People → Published |
+| Advisory group | Not built on purpose. Ask the developer to add it when acceptances arrive |
+| Inaugural event details | Projects → Cultural Encounters → Status, Exact date |
+| Donation / sponsorship language | Not built (phase 2) |
+| IP, domain, website transfer | See Ownership above |
+
+## Requirements by area (brief §10)
+
+| Area | Done | Still to do |
+|---|---|---|
+| CMS | Sanity project hd1rue71 with content loaded; Studio deployed | Invite editors |
+| Responsive | 375 / 768 / 1440 layouts | Review on real devices |
+| Performance | Static HTML, ~no JavaScript, lazy-loaded images, Sanity serves WebP/AVIF automatically | Run Lighthouse on the live site |
+| Accessibility | Skip link, focus states, labels, alt text, heading order, colour contrast checked | Automated audit (axe/Lighthouse) and a screen-reader pass before launch |
+| Search | Titles, meta description, Open Graph image, sitemap, robots.txt, organisation schema | Submit sitemap in Google Search Console |
+| Forms | Consent statement, honeypot, no unnecessary fields | ☐ Endpoint + inbox; optional Turnstile |
+| Email | Not created (brief: no fictitious address) | ☐ SPF/DKIM/DMARC by the domain administrator |
+| Events / payments | Phase 2 | Link to Humanitix etc. from a project when approved |
+| Security | HTTPS via host, security headers (`site/public/_headers`), no admin on the public site | ☐ 2FA, least-privilege roles |
+| Future-proofing | Projects, stories, team and pages are already CMS lists; can become their own pages without redesign | Vietnamese version (not in MVP) |
+| Legal / footer | Privacy, Terms, Accessibility drafts; credits line | ☐ Approved wording, legal entity, ABN, contact email, state |
+| Handover | Logo SVGs, style guide page, this document, training outline, backup steps | ☐ Image licences; final logo outlines by a designer |
+
+## Connecting Sanity and going live
+See `site/README.md` for the exact commands.

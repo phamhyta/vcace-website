@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VCACE | Australia–Vietnam Cultural Experiences &amp; Exchange</title>
+<meta name="description" content="VCACE connects Australia and Vietnam through culture—bringing people together through experiences, dialogue, creative learning and bilateral exchange.">
+<meta property="og:title" content="Connecting cultures. Inspiring exchange. | VCACE">
+<meta property="og:description" content="VCACE connects Australia and Vietnam through culture—bringing people together through experiences, dialogue, creative learning and bilateral exchange.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' fill='%23F7F6F2' stroke='%23202020' stroke-width='2'/%3E%3Cpath d='M8 9l8 15 8-15' fill='none' stroke='%23202020' stroke-width='2.4'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#F7F6F2; --ink:#202020; --yellow:#F4C430; --grey:#686868; --line:#D7D4CD;
+  --pad:clamp(20px,5vw,72px);
+  --font:"Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font:300 clamp(16px,1.2vw + 10px,18px)/1.6 var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--bg);padding:8px 14px;z-index:20}
+.skip:focus{left:8px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.micro{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+h1,h2,h3{font-weight:300;line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(30px,4vw,52px);max-width:18ch}
+p{max-width:62ch}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:.02em}
+.vbox{width:30px;height:30px;border:1.5px solid var(--ink);display:grid;place-items:center}
+.vbox svg{width:16px;height:16px}
+nav ul{display:flex;gap:28px;list-style:none;padding:0}
+nav a{text-decoration:none;font-size:15px;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--yellow)}
+.menu-btn{display:none;background:none;border:1.5px solid var(--ink);padding:8px 12px;font:400 13px var(--font);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+
+/* buttons */
+.btn{display:inline-block;padding:15px 26px;border:1.5px solid var(--ink);text-decoration:none;font-weight:400;font-size:16px;cursor:pointer;background:none;font-family:inherit;color:var(--ink)}
+.btn.primary{background:var(--yellow)}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+
+/* hero */
+.hero{padding:clamp(40px,7vw,96px) 0 clamp(48px,7vw,96px)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,80px);align-items:end}
+.hero h1{font-size:clamp(40px,6vw,74px);line-height:1.05;margin:22px 0 22px;max-width:11ch}
+.hero .sub{font-size:1.15em;margin-bottom:14px;color:var(--ink)}
+.hero .intro{color:var(--grey)}
+.hero-art{position:relative;aspect-ratio:4/5;border:1.5px solid var(--ink);background:var(--bg);overflow:hidden}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero-art .bar{position:absolute;left:14%;top:0;bottom:0;width:6px;background:var(--yellow)}
+.concept{position:absolute;right:10px;bottom:8px;font-size:11px;color:var(--grey);background:var(--bg);padding:2px 6px}
+
+/* sections */
+section{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
+.vision .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,96px)}
+.vision p+p{margin-top:1em}
+.values{margin-top:56px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1.5px solid var(--ink)}
+.values div{padding:22px 20px 0 0}
+.values h3{font-size:19px;font-weight:400;letter-spacing:0;margin-bottom:8px}
+.values p{font-size:15px;color:var(--grey)}
+
+/* programs */
+.programs-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.programs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.panel{display:flex;flex-direction:column;text-decoration:none}
+.panel .img{aspect-ratio:3/4;border:1.5px solid var(--ink);overflow:hidden;position:relative}
+.panel .img svg{width:100%;height:100%;display:block}
+.panel h3{font-size:24px;margin:18px 0 8px}
+.panel p{font-size:15px;color:var(--grey)}
+.panel .eg{font-size:14px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.panel:hover h3{text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:6px}
+.panel .more{margin-top:auto;padding-top:14px;font-size:15px;font-weight:400}
+
+/* first project */
+.project{background:var(--ink);color:var(--bg);border-top:0}
+.project .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,6vw,96px);align-items:center}
+.tag{display:inline-block;background:var(--yellow);color:var(--ink);padding:5px 12px}
+.project h2{margin:24px 0 20px;max-width:14ch}
+.project .lead{font-size:1.15em;margin-bottom:18px}
+.project p{color:#d9d6ce}
+.project .note{margin-top:22px;padding-left:16px;border-left:3px solid var(--yellow);font-size:15px}
+.project .btn{border-color:var(--bg);color:var(--bg)}
+.project .btn.primary{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.project .btn:hover{background:var(--bg);color:var(--ink)}
+.project .art{aspect-ratio:4/3;border:1.5px solid var(--bg);position:relative}
+.project .art svg{width:100%;height:100%;display:block}
+.project .concept{background:var(--ink);color:#bdbab2}
+
+/* people */
+.team{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.team article{border-top:1.5px solid var(--ink);padding-top:16px}
+.team h3{font-size:21px;font-weight:400;letter-spacing:0}
+.team .role{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin:6px 0 12px;font-weight:400}
+.team p{font-size:15px;color:var(--grey)}
+
+/* collaborate */
+.collab .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,96px)}
+form{display:grid;gap:18px}
+label{display:grid;gap:6px;font-size:14px;font-weight:400}
+input,select,textarea{font:300 17px var(--font);padding:13px 14px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);border-radius:0;width:100%}
+textarea{min-height:130px;resize:vertical}
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:300;color:var(--grey);font-size:14px}
+.consent input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--ink)}
+.hp{position:absolute;left:-9999px}
+#status{font-size:15px;min-height:1.4em}
+
+/* footer */
+footer{background:var(--ink);color:var(--bg);padding:56px 0 36px}
+footer .top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid #444}
+footer .vbox{border-color:var(--bg)}
+footer .au{color:var(--yellow);font-size:12px;letter-spacing:.2em;font-weight:400}
+footer ul{list-style:none;padding:0;display:flex;gap:24px;flex-wrap:wrap}
+footer .fine{padding-top:22px;font-size:13px;color:#bdbab2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:1000px){
+  .programs-grid,.team{grid-template-columns:repeat(2,1fr)}
+  .values{grid-template-columns:repeat(2,1fr)}
+  .values div{padding-bottom:20px}
+}
+@media (max-width:760px){
+  .hero .wrap,.vision .grid,.project .grid,.collab .grid{grid-template-columns:1fr}
+  .hero-art{aspect-ratio:4/3}
+  .programs-grid,.team,.values{grid-template-columns:1fr}
+  .panel .img{aspect-ratio:4/3}
+  .menu-btn{display:block}
+  nav{position:absolute;left:0;right:0;top:64px;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:8px var(--pad) 16px}
+  nav a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="VCACE home">
+      <span class="vbox"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2l6 12 6-12" fill="none" stroke="#202020" stroke-width="2"/></svg></span>
+      VCACE
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Primary">
+      <ul>
+        <li><a href="#vision">Our Vision</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#first-project">First Project</a></li>
+        <li><a href="#people">People</a></li>
+        <li><a href="#collaborate">Collaborate</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div id="top" class="hero">
+  <div class="wrap">
+    <div>
+      <p class="micro">Australia · Vietnam · Cultural exchange</p>
+      <h1>Connecting cultures. Inspiring exchange.</h1>
+      <p class="sub">Bringing Australia and Vietnam together through culture.</p>
+      <p class="intro">VCACE is an emerging Australia-based bilateral cultural initiative connecting people, ideas and institutions through cultural experiences, dialogue, education and exchange.</p>
+      <div class="btns">
+        <a class="btn primary" href="#programs">Explore our programs</a>
+        <a class="btn" href="#collaborate">Collaborate with us</a>
+      </div>
+    </div>
+    <!-- PLACEHOLDER ART: replace with an approved, licensed photograph before launch -->
+    <div class="hero-art" role="img" aria-label="Abstract placeholder artwork of two overlapping frames">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="400" height="500" fill="#EDEBE4"/>
+        <rect x="90" y="70" width="190" height="260" fill="#202020"/>
+        <rect x="150" y="150" width="190" height="260" fill="none" stroke="#202020" stroke-width="2"/>
+        <circle cx="245" cy="250" r="62" fill="#F4C430"/>
+        <path d="M150 410h190" stroke="#202020" stroke-width="2"/>
+        <rect x="90" y="360" width="60" height="6" fill="#686868"/>
+      </svg>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="concept">Concept artwork, placeholder</span>
+    </div>
+  </div>
+</div>
+
+<section id="vision" class="vision">
+  <div class="wrap">
+    <div class="grid">
+      <h2>Culture connects people, and creates new possibilities.</h2>
+      <div>
+        <p>We envision a stronger Australia–Vietnam relationship enriched by shared cultural understanding, creative collaboration and lasting people-to-people connections. VCACE works across contemporary arts, music, film, performing arts, food, heritage, cultural education and living traditions.</p>
+        <p>Through partnerships, we create spaces to experience culture, exchange perspectives and develop work that crosses borders. We bring together artists, educators, communities and institutions to curate public experiences, facilitate dialogue, develop learning opportunities and connect collaborators across both countries.</p>
+      </div>
+    </div>
+    <div class="values">
+      <div><h3>Mutual understanding</h3><p>We make room for Australian and Vietnamese perspectives and genuine two-way learning.</p></div>
+      <div><h3>Collaboration</h3><p>We create with practitioners and partners, not simply for audiences.</p></div>
+      <div><h3>Contemporary relevance</h3><p>We connect living traditions with today’s ideas, identities and creative practices.</p></div>
+      <div><h3>Inclusion</h3><p>We welcome diverse communities and make culture accessible across generations.</p></div>
+      <div><h3>Integrity</h3><p>We communicate clearly about our work, partnerships and impact.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="wrap">
+    <div class="programs-head">
+      <h2>Four ways we work</h2>
+      <p style="color:var(--grey)">Each program is a different way into the same conversation between Australia and Vietnam.</p>
+    </div>
+    <!-- All four images are PLACEHOLDERS. Replace with varied, licensed photography (different cultural forms). -->
+    <div class="programs-grid">
+      <a class="panel" href="#first-project">
+        <div class="img" role="img" aria-label="Placeholder artwork: framed works on a wall">
+          <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="400" fill="#E6E2D8"/><rect x="40" y="60" width="110" height="150" fill="#202020"/><rect x="170" y="100" width="90" height="90" fill="#F4C430"/><rect x="170" y="210" width="90" height="60" fill="none" stroke="#202020" stroke-width="2"/><path d="M0 330h300" stroke="#202020" stroke-width="2"/></svg>
+        </div>
+        <h3>Cultural Experiences</h3>
+        <p>Immersive experiences that bring culture to life.</p>
+        <p class="eg">Exhibitions, music, dance, film, food, craft, movement and heritage encounters.</p>
+        <span class="more">See the first project</span>
+      </a>
+      <a class="panel" href="#collaborate">
+        <div class="img" role="img" aria-label="Placeholder artwork: two speech shapes facing each other">
+          <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="400" fill="#202020"/><rect x="30" y="80" width="150" height="90" fill="#F7F6F2"/><rect x="120" y="200" width="150" height="90" fill="#F4C430"/><path d="M60 170l-14 28 40-28zM240 290l14 28-40-28z" fill="#F7F6F2"/></svg>
+        </div>
+        <h3>Cultural Dialogues</h3>
+        <p>Conversations that deepen understanding between Australia and Vietnam.</p>
+        <p class="eg">Public talks, artist conversations, panels, and dialogue with academics and cultural institutions.</p>
+        <span class="more">Start a conversation</span>
+      </a>
+      <a class="panel" href="#collaborate">
+        <div class="img" role="img" aria-label="Placeholder artwork: a path linking two points">
+          <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="400" fill="#F4C430"/><circle cx="70" cy="300" r="34" fill="#202020"/><circle cx="230" cy="100" r="34" fill="none" stroke="#202020" stroke-width="3"/><path d="M70 266C70 150 230 230 230 134" fill="none" stroke="#202020" stroke-width="3"/></svg>
+        </div>
+        <h3>Cultural Exchange</h3>
+        <p>Connecting people and organisations across borders to create and learn together.</p>
+        <p class="eg">Visiting practitioners, residencies, collaborative productions, studio visits, study and professional exchange.</p>
+        <span class="more">Propose an exchange</span>
+      </a>
+      <a class="panel" href="#collaborate">
+        <div class="img" role="img" aria-label="Placeholder artwork: stacked pages and a pencil line">
+          <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="400" fill="#D7D4CD"/><rect x="60" y="70" width="170" height="220" fill="#F7F6F2" stroke="#202020" stroke-width="2"/><rect x="80" y="90" width="170" height="220" fill="none" stroke="#202020" stroke-width="2"/><path d="M90 140h110M90 170h110M90 200h70" stroke="#686868" stroke-width="3"/><rect x="90" y="240" width="46" height="8" fill="#F4C430"/></svg>
+        </div>
+        <h3>Cultural Education</h3>
+        <p>Sharing knowledge, skills and perspectives through creative learning.</p>
+        <p class="eg">Workshops, masterclasses, cultural literacy, school programs, digital stories and research-informed resources.</p>
+        <span class="more">Talk to us about learning</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="first-project" class="project">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="tag micro">In development · 2027</span>
+        <h2>Cultural Encounters — Australia × Vietnam</h2>
+        <p class="lead">A proposed inaugural gathering weaving contemporary visual arts, live performance and cultural dialogue into one shared experience.</p>
+        <p>VCACE is developing its first cultural showcase in Brisbane, bringing together Australia- and Vietnam-connected practitioners for a curated exhibition, an artist-led conversation and an intimate performance. The project aims to create new connections and the foundations for future bilateral collaboration.</p>
+        <p class="note">Proposed project. Artists, venue, dates, funding and partners are still to be confirmed.</p>
+        <div class="btns"><a class="btn primary" href="#collaborate">Discuss this project with us</a></div>
+      </div>
+      <!-- PLACEHOLDER ART: not a real venue or event -->
+      <div class="art" role="img" aria-label="Abstract placeholder artwork of a gallery wall and a stage">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#2c2c2c"/><rect x="40" y="50" width="90" height="120" fill="none" stroke="#F7F6F2" stroke-width="2"/><rect x="150" y="70" width="60" height="80" fill="#F4C430"/><path d="M0 230h400" stroke="#F7F6F2" stroke-width="2"/><ellipse cx="310" cy="230" rx="70" ry="14" fill="none" stroke="#F7F6F2" stroke-width="2"/><rect x="302" y="120" width="16" height="104" fill="#F7F6F2"/></svg>
+        <span class="concept">Concept artwork, placeholder</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="people">
+  <div class="wrap">
+    <h2>The people behind VCACE</h2>
+    <!-- GOVERNANCE: publish each card only after that person's written consent, preferred title and approved bio.
+         Cards marked hidden stay off the live site until confirmed. The Advisory Group section is intentionally NOT built here. -->
+    <div class="team">
+      <article>
+        <h3>Celine Dang</h3><p class="role">Executive Lead</p>
+        <p>Leads VCACE’s strategy, institutional relationships, bilateral partnerships and organisational development.</p>
+      </article>
+      <article>
+        <h3>Mai Trinh</h3><p class="role">Artistic Lead</p>
+        <p>Guides artistic direction, cultural programming and engagement with creative practitioners.</p>
+      </article>
+      <article hidden>
+        <h3>Lan Anh</h3><p class="role">Coordinator</p>
+        <p>Supports program planning, communications and delivery.</p>
+      </article>
+      <article hidden>
+        <h3>Phuc Chen</h3><p class="role">Coordinator</p>
+        <p>Supports coordination and delivery across VCACE activities.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="collaborate" class="collab">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <h2>Cultural exchange is built together.</h2>
+        <p style="margin-top:24px">VCACE welcomes conversations with artists, educators, curators, institutions, community organisations and supporters interested in meaningful Australia–Vietnam collaboration.</p>
+        <p style="margin-top:1em">You might co-create a program, host an experience, contribute expertise, facilitate an exchange or support an emerging project.</p>
+      </div>
+      <!-- FORM: not yet connected. Wire to the confirmed VCACE contact inbox (form service/CMS) with spam protection before launch. -->
+      <form id="enquiry" action="#" method="post" novalidate>
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>What is your enquiry about?
+          <select name="topic" required>
+            <option value="">Choose one</option>
+            <option>Propose a collaboration</option>
+            <option>Artist or practitioner</option>
+            <option>Institutional partnership</option>
+            <option>Program or event enquiry</option>
+            <option>Sponsorship</option>
+            <option>General contact</option>
+          </select>
+        </label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="consent"><input type="checkbox" name="consent" required> I agree VCACE may use these details to reply to my enquiry. See the Privacy page.</label>
+        <div><button class="btn primary" type="submit">Start a conversation</button></div>
+        <p id="status" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a class="logo" href="#top" style="color:var(--bg)"><span class="vbox"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2l6 12 6-12" fill="none" stroke="#F7F6F2" stroke-width="2"/></svg></span>VCACE</a>
+        <p style="margin-top:14px;font-size:14px;max-width:34ch">Vietnam Centre for<br>Arts, Culture &amp; Education</p>
+        <p class="au" style="margin-top:6px">AUSTRALIA</p>
+      </div>
+      <ul>
+        <li><a href="#collaborate">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+      </ul>
+    </div>
+    <div class="fine">
+      <span>Connecting cultures. Inspiring exchange.</span>
+      <!-- LEGAL HOST LINE: publish only after SEA Effect board approval:
+           "A proposed initiative hosted by SEA Effect AUS Ltd during its establishment phase." -->
+      <span>© <span id="yr">2026</span> VCACE · Photo and artwork credits to be added</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+  btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded',false)}});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  document.getElementById('enquiry').addEventListener('submit',e=>{
+    e.preventDefault();
+    const f=e.target,s=document.getElementById('status');
+    if(f.website.value)return;
+    if(!f.checkValidity()){s.textContent='Please complete every field and tick the consent box.';f.reportValidity();return}
+    s.textContent='Preview only: this form is not connected to an inbox yet, so nothing was sent.';
+  });
+</script>
+</body>
+</html>

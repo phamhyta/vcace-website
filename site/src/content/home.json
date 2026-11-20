@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "title": "VCACE | Australia–Vietnam Cultural Experiences & Exchange",
+    "description": "VCACE connects Australia and Vietnam through culture—bringing people together through experiences, dialogue, creative learning and bilateral exchange.",
+    "shareTitle": "Connecting cultures. Inspiring exchange. | VCACE"
+  },
+  "hero": {
+    "eyebrow": "Australia · Vietnam · Cultural exchange",
+    "headline": "Connecting cultures.",
+    "subheadline": "Bringing Australia and Vietnam together through culture.",
+    "intro": "VCACE is an emerging Australia-based bilateral cultural initiative connecting people, ideas and institutions through cultural experiences, dialogue, education and exchange.",
+    "primaryButton": "Explore our programs",
+    "secondaryButton": "Collaborate with us",
+    "image": "",
+    "imageAlt": "",
+    "imageCredit": "Artwork / approved program photograph",
+    "headlineAccent": "Inspiring exchange.",
+    "featuredLabel": "Featured:"
+  },
+  "vision": {
+    "headline": "Culture connects people, and creates new possibilities.",
+    "paragraphs": [
+      "We envision a stronger Australia–Vietnam relationship enriched by shared cultural understanding, creative collaboration and lasting people-to-people connections. VCACE works across contemporary arts, music, film, performing arts, food, heritage, cultural education and living traditions.",
+      "Through partnerships, we create spaces to experience culture, exchange perspectives and develop work that crosses borders. We bring together artists, educators, communities and institutions to curate public experiences, facilitate dialogue, develop learning opportunities and connect collaborators across both countries."
+    ],
+    "values": [
+      {
+        "title": "Mutual understanding",
+        "text": "We make room for Australian and Vietnamese perspectives and genuine two-way learning."
+      },
+      {
+        "title": "Collaboration",
+        "text": "We create with practitioners and partners, not simply for audiences."
+      },
+      {
+        "title": "Contemporary relevance",
+        "text": "We connect living traditions with today’s ideas, identities and creative practices."
+      },
+      {
+        "title": "Inclusion",
+        "text": "We welcome diverse communities and make culture accessible across generations."
+      },
+      {
+        "title": "Integrity",
+        "text": "We communicate clearly about our work, partnerships and impact."
+      }
+    ]
+  },
+  "programs": {
+    "headline": "Programs",
+    "intro": "Explore shared culture through four complementary pathways.",
+    "items": [
+      {
+        "title": "Cultural Experiences",
+        "text": "Immersive experiences that bring culture to life.",
+        "examples": "Exhibitions, music, dance, film, food, craft, movement and heritage encounters.",
+        "linkText": "See the first project",
+        "link": "#first-project",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "title": "Cultural Dialogues",
+        "text": "Conversations that deepen understanding between Australia and Vietnam.",
+        "examples": "Public talks, artist conversations, panels, and dialogue with academics and cultural institutions.",
+        "linkText": "Start a conversation",
+        "link": "#collaborate",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "title": "Cultural Exchange",
+        "text": "Connecting people and organisations across borders to create and learn together.",
+        "examples": "Visiting practitioners, residencies, collaborative productions, studio visits, study and professional exchange.",
+        "linkText": "Propose an exchange",
+        "link": "#collaborate",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "title": "Cultural Education",
+        "text": "Sharing knowledge, skills and perspectives through creative learning.",
+        "examples": "Workshops, masterclasses, cultural literacy, school programs, digital stories and research-informed resources.",
+        "linkText": "Talk to us about learning",
+        "link": "#collaborate",
+        "image": "",
+        "imageAlt": ""
+      }
+    ],
+    "featuredLabel": "Featured project"
+  },
+  "people": {
+    "headline": "The people behind VCACE"
+  },
+  "collaborate": {
+    "headline": "Cultural exchange is built together.",
+    "paragraphs": [
+      "VCACE welcomes conversations with artists, educators, curators, institutions, community organisations and supporters interested in meaningful Australia–Vietnam collaboration.",
+      "You might co-create a program, host an experience, contribute expertise, facilitate an exchange or support an emerging project."
+    ],
+    "topics": [
+      "Propose a collaboration",
+      "Artist or practitioner",
+      "Institutional partnership",
+      "Program or event enquiry",
+      "Sponsorship",
+      "General contact"
+    ],
+    "buttonText": "Start a conversation",
+    "formEndpoint": ""
+  },
+  "footer": {
+    "legalHostLine": "",
+    "credits": "Photo and artwork credits to be added"
+  },
+  "firstProject": {
+    "buttonText": "Discuss this project with us"
+  },
+  "exploring": {
+    "headline": "What we are exploring",
+    "intro": "Ideas in development for future seasons. Formats and timing will be confirmed as partners join."
+  },
+  "story": {
+    "headline": "Stories"
+  }
+}

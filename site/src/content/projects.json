@@ -1,0 +1,68 @@
+{
+  "projects": [
+    {
+      "published": true,
+      "featured": true,
+      "title": "Cultural Encounters — Australia × Vietnam",
+      "shortTitle": "Inaugural Cultural Encounters",
+      "summary": "exhibition + dialogue + performance",
+      "status": "In development",
+      "period": "2027",
+      "date": "",
+      "lead": "A proposed inaugural gathering weaving contemporary visual arts, live performance and cultural dialogue into one shared experience.",
+      "description": "VCACE is developing its first cultural showcase in Brisbane, bringing together Australia- and Vietnam-connected practitioners for a curated exhibition, an artist-led conversation and an intimate performance. The project aims to create new connections and the foundations for future bilateral collaboration.",
+      "note": "Proposed project. Artists, venue, dates, funding and partners are still to be confirmed.",
+      "image": "",
+      "imageAlt": "",
+      "imageCredit": "Concept artwork, placeholder"
+    },
+    {
+      "published": false,
+      "featured": false,
+      "title": "Culture Through the Five Senses",
+      "shortTitle": "Culture Through the Five Senses",
+      "summary": "",
+      "status": "Concept",
+      "period": "Jul–Oct 2027",
+      "date": "",
+      "lead": "A pilot exploring Australian and Vietnamese culture through taste, sound, touch, scent and sight.",
+      "description": "",
+      "note": "",
+      "image": "",
+      "imageAlt": "",
+      "imageCredit": ""
+    },
+    {
+      "published": false,
+      "featured": false,
+      "title": "Music & Creative Collaboration",
+      "shortTitle": "Music & Creative Collaboration",
+      "summary": "",
+      "status": "Potential project",
+      "period": "2028",
+      "date": "",
+      "lead": "Bringing musicians and creative practitioners from both countries together to make new work.",
+      "description": "",
+      "note": "",
+      "image": "",
+      "imageAlt": "",
+      "imageCredit": ""
+    },
+    {
+      "published": false,
+      "featured": false,
+      "title": "Living Heritage Lab",
+      "shortTitle": "Living Heritage Lab",
+      "summary": "",
+      "status": "Potential project",
+      "period": "2028",
+      "date": "",
+      "lead": "Working with heritage practitioners on living traditions, with a possible cultural visit component.",
+      "description": "",
+      "note": "",
+      "image": "",
+      "imageAlt": "",
+      "imageCredit": ""
+    }
+  ]
+}

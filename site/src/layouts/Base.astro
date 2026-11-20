@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  meta: { title: string; description: string; shareTitle?: string };
+  noindex?: boolean;
+  isHome?: boolean;
+  nav?: { project: boolean; people: boolean };
+  footer?: { legalHostLine?: string; credits?: string };
+}
+const { meta, noindex = false, isHome = false, nav, footer } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og-image.png', Astro.site);
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'VCACE — Vietnam Centre for Arts, Culture & Education',
+  alternateName: 'VCACE',
+  url: Astro.site?.toString(),
+  logo: new URL('/apple-touch-icon.png', Astro.site).toString(),
+  slogan: 'Connecting cultures. Inspiring exchange.',
+  areaServed: ['Australia', 'Vietnam'],
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{meta.title}</title>
+<meta name="description" content={meta.description}>
+{noindex && <meta name="robots" content="noindex">}
+<link rel="canonical" href={canonical}>
+<meta property="og:site_name" content="VCACE">
+<meta property="og:title" content={meta.shareTitle || meta.title}>
+<meta property="og:description" content={meta.description}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={canonical}>
+<meta property="og:image" content={ogImage}>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VCACE. Connecting cultures. Inspiring exchange.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="sitemap" href="/sitemap-index.xml">
+<meta name="theme-color" content="#F7F6F2">
+{isHome && <script type="application/ld+json" set:html={JSON.stringify(org)} />}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<Header isHome={isHome} nav={nav} />
+<main id="main">
+<slot />
+</main>
+<Footer isHome={isHome} footer={footer} />
+<script>
+  const btn = document.querySelector('.menu-btn');
+  const navEl = document.getElementById('nav');
+  btn?.addEventListener('click', () => {
+    const o = navEl!.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(o));
+  });
+  navEl?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).tagName === 'A') {
+      navEl.classList.remove('open');
+      btn?.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navEl?.classList.contains('open')) {
+      navEl.classList.remove('open');
+      btn?.setAttribute('aria-expanded', 'false');
+      (btn as HTMLElement)?.focus();
+    }
+  });
+  const yr = document.getElementById('yr');
+  if (yr) yr.textContent = String(new Date().getFullYear());
+</script>
+</body>
+</html>
