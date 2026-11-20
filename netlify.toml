@@ -1,0 +1,12 @@
+# Netlify builds the Astro site in /site. Sanity content is read at build time,
+# so a Sanity webhook calls a Netlify build hook to rebuild after each publish.
+# The editing Studio is hosted by Sanity at https://vcace.sanity.studio.
+[build]
+  base = "site"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+  SANITY_PROJECT_ID = "hd1rue71"
+  SANITY_DATASET = "production"
