@@ -1,0 +1,26 @@
+---
+// VCACE lock-up, same geometry as brand/make-logos.py.
+// short: [V] VCACE with AUSTRALIA (yellow) underneath, a rectangle as tall as the box.
+// full: the short lock-up plus the tagline underneath, from the box edge to the end of the E.
+interface Props { variant?: 'full' | 'short'; tone?: 'dark' | 'light'; class?: string }
+const { variant = 'full', tone = 'dark', class: cls } = Astro.props;
+const fg = tone === 'dark' ? '#202020' : '#FFFFFF';
+const au = '#F4C430';
+const tag = tone === 'dark' ? '#686868' : '#BDBAB2';
+const font = "'Helvetica Neue', Helvetica, Arial, sans-serif";
+const S = 120, TX = 148, W = 334;
+const sw = S * 0.045, k = (S * 0.6) / 24;
+const w = TX + W;
+const h = variant === 'full' ? S + 38 : S;
+// A little breathing room so the top of VCACE (which sits on the box's top edge) is never clipped.
+const pad = 4;
+---
+<svg class={cls} viewBox={`${-pad} ${-pad} ${w + pad * 2} ${h + pad * 2}`} role="img" aria-label="VCACE, Vietnam Centre for Arts, Culture and Education, Australia">
+  <rect x={sw / 2} y={sw / 2} width={S - sw} height={S - sw} fill="none" stroke={fg} stroke-width={sw} />
+  <path transform={`translate(${S * 0.2} ${S * 0.2}) scale(${k})`} d="M2.5 4h6M15.5 4h6M5 4l7 17 7-17" fill="none" stroke={fg} stroke-width={(S * 0.04) / k} stroke-linecap="square" />
+  <text x={TX} y="70" font-family={font} font-weight="700" font-size="97.6" textLength={W} lengthAdjust="spacingAndGlyphs" fill={fg}>VCACE</text>
+  <text x={TX} y={S} font-family={font} font-weight="700" font-size="53" letter-spacing="4" textLength={W} lengthAdjust="spacing" fill={au}>AUSTRALIA</text>
+  {variant === 'full' && (
+    <text x="0" y={S + 34} font-family={font} font-size="17.5" letter-spacing="0.86" textLength={w} lengthAdjust="spacing" fill={tag}>VIETNAM CENTRE FOR ARTS, CULTURE &amp; EDUCATION</text>
+  )}
+</svg>

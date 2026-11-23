@@ -10,6 +10,7 @@ const dataset = import.meta.env.SANITY_DATASET || 'production';
 
 type Home = typeof homeDefaults;
 type Member = (typeof teamDefaults.members)[number];
+type Partner = (typeof teamDefaults.partners)[number];
 type Project = (typeof projectDefaults.projects)[number];
 export type Story = {
   published: boolean; title: string; person: string; role: string; quote: string;
@@ -54,6 +55,7 @@ const storyShape: Story = {
 export async function getContent() {
   let home: Home = homeDefaults;
   let members: Member[] = teamDefaults.members;
+  let partners: Partner[] = teamDefaults.partners;
   let projects: Project[] = projectDefaults.projects;
   let stories: Story[] = storyDefaults.stories as Story[];
 
@@ -69,17 +71,21 @@ export async function getContent() {
     }`);
     // Each part falls back to JSON only if it has never been created in Sanity.
     if (data.home) home = fill(homeDefaults, normalise(data.home, urlFor));
-    if (data.team) members = fill(teamDefaults.members, normalise(data.team.members ?? [], urlFor));
+    if (data.team) {
+      members = fill(teamDefaults.members, normalise(data.team.members ?? [], urlFor));
+      partners = fill(teamDefaults.partners, normalise(data.team.partners ?? [], urlFor));
+    }
     if (data.projects?.length) projects = fill(projectDefaults.projects, normalise(data.projects, urlFor));
     if (data.stories?.length) stories = fill([storyShape], normalise(data.stories, urlFor));
   }
 
-  const liveProjects = projects.filter((p) => p.published);
+  const people = members.filter((m) => m.published);
   return {
     home,
-    members: members.filter((m) => m.published),
-    featuredProject: liveProjects.find((p) => p.featured),
-    exploring: liveProjects.filter((p) => !p.featured),
+    executive: people.filter((m) => m.group !== 'advisory'),
+    advisory: people.filter((m) => m.group === 'advisory'),
+    partners: partners.filter((p) => p.published),
+    projects: projects.filter((p) => p.published),
     story: stories.find((s) => s.published),
     source: projectId ? ('sanity' as const) : ('json' as const),
   };

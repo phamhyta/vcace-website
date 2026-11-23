@@ -7,8 +7,6 @@ export const project = defineType({
   fields: [
     defineField({name: 'published', title: 'Show on the website', type: 'boolean', initialValue: false,
       description: 'Only switch on when the details shown are approved.'}),
-    defineField({name: 'featured', title: 'Featured (shown as the First Project)', type: 'boolean', initialValue: false,
-      description: 'Only one project should be featured. Others appear under "What we are exploring".'}),
     defineField({name: 'order', title: 'Order', type: 'number', initialValue: 10}),
     defineField({name: 'title', type: 'string', validation: (r) => r.required()}),
     defineField({name: 'shortTitle', title: 'Short title (for links)', type: 'string'}),
@@ -25,7 +23,7 @@ export const project = defineType({
   ],
   orderings: [{title: 'Order', name: 'order', by: [{field: 'order', direction: 'asc'}]}],
   preview: {
-    select: {title: 'title', status: 'status', pub: 'published', feat: 'featured'},
-    prepare: ({title, status, pub, feat}) => ({title, subtitle: [status, feat && 'featured', pub ? 'on site' : 'hidden'].filter(Boolean).join(' · ')}),
+    select: {title: 'title', status: 'status', pub: 'published'},
+    prepare: ({title, status, pub}) => ({title, subtitle: [status, pub ? 'on site' : 'hidden'].filter(Boolean).join(' · ')}),
   },
 })

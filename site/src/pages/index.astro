@@ -3,15 +3,9 @@ import Base from '../layouts/Base.astro';
 import Art from '../components/Art.astro';
 import { getContent } from '../lib/content';
 
-const { home, members, featuredProject: fp, exploring, story } = await getContent();
-const { meta, hero, vision, programs, firstProject, exploring: exploringCopy, people, collaborate, footer } = home;
-
-// Featured strip under the hero: only links to sections that are actually on the page.
-const featured = [
-  fp && { label: fp.shortTitle || fp.title, href: '#first-project' },
-  ...exploring.slice(0, 2).map((p) => ({ label: p.shortTitle || p.title, href: '#exploring' })),
-  story && { label: story.title || home.story.headline, href: '#story' },
-].filter(Boolean) as { label: string; href: string }[];
+const { home, executive, advisory, partners, projects, story } = await getContent();
+const { meta, hero, vision, programs, people, collaborate, footer } = home;
+const projectsCopy = home.projects;
 
 const pad = (n: number) => String(n + 1).padStart(2, '0');
 // Sanity image URLs carry ?w=1800; offer smaller widths so phones download less.
@@ -19,34 +13,30 @@ const srcset = (url: string) =>
   url.includes('cdn.sanity.io') ? [480, 800, 1200, 1800].map((w) => `${url.replace(/w=\d+/, `w=${w}`)} ${w}w`).join(', ') : undefined;
 const half = '(max-width: 900px) 100vw, 50vw';
 const quarter = '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw';
+const when = (p: { status: string; date: string; period: string }) => [p.status, p.date || p.period].filter(Boolean).join(' · ');
+const hasPeople = executive.length + advisory.length + partners.length > 0;
+// Partners marquee: repeat the list until one pass has at least 8 tiles (wider than the page).
+const partnerSet = partners.length ? Array.from({ length: Math.ceil(8 / partners.length) }, () => partners).flat() : [];
 ---
-<Base meta={meta} isHome nav={{ project: !!fp, people: members.length > 0 }} footer={footer}>
+<Base meta={meta} isHome nav={{ projects: projects.length > 0, people: hasPeople }} footer={footer}>
 <div id="top" class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    {hero.image
+      ? <img src={hero.image} srcset={srcset(hero.image)} sizes="100vw" alt="" fetchpriority="high" />
+      : <Art variant="hero" />}
+  </div>
   <div class="wrap">
-    <div class="grid">
-      <div>
-        <span class="accent-bar" aria-hidden="true"></span>
-        <p class="micro">{hero.eyebrow}</p>
-        <h1><span>{hero.headline}</span>{hero.headlineAccent && <span class="gold">{hero.headlineAccent}</span>}</h1>
-        <p class="sub">{hero.subheadline}</p>
-        <p class="intro">{hero.intro}</p>
-        <div class="btns">
-          <a class="btn primary" href="#programs">{hero.primaryButton}</a>
-          <a class="btn" href="#collaborate">{hero.secondaryButton}</a>
-        </div>
-      </div>
-      <div class="hero-art">
-        {hero.image
-          ? <img src={hero.image} srcset={srcset(hero.image)} sizes={half} alt={hero.imageAlt} fetchpriority="high" />
-          : <Art variant="hero" />}
+    <div class="hero-copy">
+      <span class="accent-bar" aria-hidden="true"></span>
+      <p class="micro">{hero.eyebrow}</p>
+      <h1><span>{hero.headline}</span>{hero.headlineAccent && <span class="gold">{hero.headlineAccent}</span>}</h1>
+      <p class="sub">{hero.subheadline}</p>
+      <p class="intro">{hero.intro}</p>
+      <div class="btns">
+        <a class="btn primary" href="#programs">{hero.primaryButton}</a>
+        <a class="btn" href="#collaborate">{hero.secondaryButton}</a>
       </div>
     </div>
-    {featured.length > 0 && (
-      <p class="featured">
-        <span class="k">{hero.featuredLabel}</span>
-        {featured.map((f, i) => <>{i > 0 && <span class="sep" aria-hidden="true">/</span>}<a href={f.href}>{f.label}</a></>)}
-      </p>
-    )}
   </div>
 </div>
 
@@ -82,47 +72,30 @@ const quarter = '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw';
         </a>
       ))}
     </div>
-    {fp && (
-      <p class="strip"><span class="k">{programs.featuredLabel}</span><a href="#first-project">{fp.shortTitle}{fp.summary && `: ${fp.summary}`}</a></p>
-    )}
   </div>
 </section>
 
-{fp && (
-<section id="first-project" class="project">
+{projects.length > 0 && (
+<section id="projects" class="project">
   <div class="wrap">
-    <div class="grid">
-      <div>
-        <span class="tag micro">{[fp.status, fp.date || fp.period].filter(Boolean).join(' · ')}</span>
-        <h2>{fp.title}</h2>
-        <p class="lead">{fp.lead}</p>
-        {fp.description && <p>{fp.description}</p>}
-        {fp.note && <p class="note">{fp.note}</p>}
-        <div class="btns"><a class="btn primary" href="#collaborate">{firstProject.buttonText}</a></div>
-      </div>
-      <div class="art">
-        {fp.image
-          ? <img src={fp.image} srcset={srcset(fp.image)} sizes={half} alt={fp.imageAlt} loading="lazy" />
-          : <Art variant="project" />}
-      </div>
-    </div>
-  </div>
-</section>
-)}
-
-{exploring.length > 0 && (
-<section id="exploring" class="exploring">
-  <div class="wrap">
-    <h2>{exploringCopy.headline}</h2>
-    {exploringCopy.intro && <p class="muted" style="margin-top:16px">{exploringCopy.intro}</p>}
-    <ul>
-      {exploring.map((p) => (
-        <li>
-          <span class="when">{[p.status, p.date || p.period].filter(Boolean).join(', ')}</span>
-          <div><h3>{p.title}</h3><p>{p.lead}</p></div>
-        </li>
-      ))}
-    </ul>
+    <h2 class="section-title">{projectsCopy.headline}</h2>
+    {projects.map((p, i) => (
+      <article class:list={['grid', { flip: i % 2 === 1 }]}>
+        <div>
+          <span class="tag micro">{when(p)}</span>
+          <h3>{p.title}</h3>
+          <p class="lead">{p.lead}</p>
+          {p.description && <p>{p.description}</p>}
+          {p.note && <p class="note">{p.note}</p>}
+          <div class="btns"><a class="btn primary" href="#collaborate">{projectsCopy.buttonText}</a></div>
+        </div>
+        <div class="art">
+          {p.image
+            ? <img src={p.image} srcset={srcset(p.image)} sizes={half} alt={p.imageAlt} loading="lazy" />
+            : <Art variant="project" />}
+        </div>
+      </article>
+    ))}
   </div>
 </section>
 )}
@@ -145,15 +118,61 @@ const quarter = '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw';
 </section>
 )}
 
-{members.length > 0 && (
-<section id="people">
+{hasPeople && (
+<section id="people" class="people">
   <div class="wrap">
     <h2>{people.headline}</h2>
-    <div class="team">
-      {members.map((m) => (
-        <article><h3>{m.name}</h3><p class="role">{m.role}</p><p>{m.bio}</p></article>
-      ))}
-    </div>
+    {executive.length > 0 && (
+      <div class="group">
+        <h3 class="group-title">{people.executiveHeadline}</h3>
+        <div class="team">
+          {executive.map((m) => (
+            <article>
+              {m.photo && <img class="photo" src={m.photo} alt={`Portrait of ${m.name}`} loading="lazy" />}
+              <h4>{m.name}</h4>{m.role && <p class="role">{m.role}</p>}{m.bio && <p>{m.bio}</p>}
+            </article>
+          ))}
+        </div>
+      </div>
+    )}
+    {advisory.length > 0 && (
+      <div class="group">
+        <h3 class="group-title">{people.advisoryHeadline}</h3>
+        <div class="team advisory">
+          {advisory.map((m) => (
+            <article>
+              {m.photo && <img class="photo" src={m.photo} alt={`Portrait of ${m.name}`} loading="lazy" />}
+              <h4>{m.name}</h4>{m.role && <p class="role">{m.role}</p>}{m.bio && <p>{m.bio}</p>}
+            </article>
+          ))}
+        </div>
+      </div>
+    )}
+    {partners.length > 0 && (
+      <div class="group" id="partners">
+        <h3 class="group-title">{people.partnersHeadline}</h3>
+        {people.partnersIntro && <p class="muted">{people.partnersIntro}</p>}
+        {/* A single row that scrolls sideways. The list is repeated so one pass is wider than the
+            screen, then doubled so the loop is seamless; copies are hidden from screen readers. */}
+        <div class="partners-marquee" style={`--marquee-dur:${partnerSet.length * 4}s`}>
+          <div class="partners-track">
+            {[0, 1].map((copy) => (
+              <ul class="partners" aria-hidden={copy ? 'true' : undefined}>
+                {partnerSet.map((p, i) => {
+                  const hidden = copy > 0 || i >= partners.length;
+                  const inner = p.logo
+                    ? (p.showName
+                      ? <span class="logo-name"><img src={p.logo} alt="" loading="lazy" /><span>{p.name}</span></span>
+                      : <img src={p.logo} alt={p.name} loading="lazy" />)
+                    : <span>{p.name}</span>;
+                  return <li aria-hidden={hidden && copy === 0 ? 'true' : undefined}>{p.url ? <a href={p.url} rel="noopener" tabindex={hidden ? -1 : undefined}>{inner}</a> : inner}</li>;
+                })}
+              </ul>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
   </div>
 </section>
 )}
@@ -164,6 +183,9 @@ const quarter = '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw';
       <div class="copy">
         <h2>{collaborate.headline}</h2>
         {collaborate.paragraphs.map((p) => <p>{p}</p>)}
+        {collaborate.groups?.map((g) => (
+          <div class="audience"><h3>{g.title}</h3><p>{g.text}</p></div>
+        ))}
       </div>
       <!-- Netlify Forms: detected at deploy time, submissions in Netlify > Forms > contact.
            If "Form endpoint URL" is set in the CMS, that external service is used instead. -->
@@ -172,6 +194,7 @@ const quarter = '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw';
         <input type="hidden" name="form-name" value="contact" />
         <label>Your name<input name="name" autocomplete="name" required /></label>
         <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+        <label><span>Organisation <span class="opt">(optional)</span></span><input name="organisation" autocomplete="organization" /></label>
         <label>What is your enquiry about?
           <select name="topic" required>
             <option value="">Choose one</option>

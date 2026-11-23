@@ -8,12 +8,44 @@
       "updated": "",
       "intro": "VCACE respects your privacy. This page explains what personal information we collect through this website, why we collect it, and how you can access or correct it. We aim to handle personal information in line with the Australian Privacy Principles.",
       "sections": [
-        { "heading": "Who we are", "paragraphs": ["VCACE (Vietnam Centre for Arts, Culture & Education) is an Australia-based cultural initiative. [Insert the legal entity responsible for this website and its ABN once approved.]"] },
-        { "heading": "What we collect", "paragraphs": ["When you use the enquiry form, we collect your name, email address, the topic of your enquiry and your message. We do not ask for more than we need to reply.", "We do not use advertising or tracking cookies on this website. [If privacy-friendly analytics are added later, describe them here.]"] },
-        { "heading": "How we use it", "paragraphs": ["We use your details only to respond to your enquiry and to continue a conversation you have started with us. We do not sell or rent personal information, and we do not add you to a mailing list unless you ask us to."] },
-        { "heading": "Where it is stored", "paragraphs": ["Enquiries are delivered to the VCACE contact inbox through Netlify Forms. Some of our service providers, including our website host and content system, may store data outside Australia. We choose providers with appropriate security practices."] },
-        { "heading": "How long we keep it", "paragraphs": ["We keep enquiry records only as long as needed to respond and to maintain a record of our working relationships, then delete them."] },
-        { "heading": "Access, correction and complaints", "paragraphs": ["You can ask to see or correct the personal information we hold about you, or ask us to delete it, by contacting [contact email].", "If you have a concern about how we have handled your information, please contact us first. If you are not satisfied with our response, you can contact the Office of the Australian Information Commissioner at oaic.gov.au."] }
+        {
+          "heading": "Who we are",
+          "paragraphs": [
+            "VCACE (Vietnam Centre for Arts, Culture & Education) is an Australia-based cultural initiative. [Insert the legal entity responsible for this website and its ABN once approved.]"
+          ]
+        },
+        {
+          "heading": "What we collect",
+          "paragraphs": [
+            "When you use the enquiry form, we collect your name, email address, the topic of your enquiry and your message. We do not ask for more than we need to reply.",
+            "We do not use advertising or tracking cookies on this website. [If privacy-friendly analytics are added later, describe them here.]"
+          ]
+        },
+        {
+          "heading": "How we use it",
+          "paragraphs": [
+            "We use your details only to respond to your enquiry and to continue a conversation you have started with us. We do not sell or rent personal information, and we do not add you to a mailing list unless you ask us to."
+          ]
+        },
+        {
+          "heading": "Where it is stored",
+          "paragraphs": [
+            "Enquiries are delivered to the VCACE contact inbox through Netlify Forms. Some of our service providers, including our website host and content system, may store data outside Australia. We choose providers with appropriate security practices."
+          ]
+        },
+        {
+          "heading": "How long we keep it",
+          "paragraphs": [
+            "We keep enquiry records only as long as needed to respond and to maintain a record of our working relationships, then delete them."
+          ]
+        },
+        {
+          "heading": "Access, correction and complaints",
+          "paragraphs": [
+            "You can ask to see or correct the personal information we hold about you, or ask us to delete it, by contacting [contact email].",
+            "If you have a concern about how we have handled your information, please contact us first. If you are not satisfied with our response, you can contact the Office of the Australian Information Commissioner at oaic.gov.au."
+          ]
+        }
       ]
     },
     {
@@ -24,13 +56,49 @@
       "updated": "",
       "intro": "By using this website you agree to these terms. They are written to be read, so please get in touch if anything is unclear.",
       "sections": [
-        { "heading": "About this website", "paragraphs": ["This website is operated by [legal entity and ABN]. It shares information about VCACE, its programs and proposed projects."] },
-        { "heading": "Proposed activities", "paragraphs": ["Projects marked as proposed, in development or concept are plans, not confirmed events. Dates, venues, artists, partners and formats may change and are only confirmed when we say so on this website."] },
-        { "heading": "Content and images", "paragraphs": ["Text, design and logos on this website belong to VCACE unless stated otherwise. Photographs and artworks remain the property of the artists and photographers credited, and are used with permission. Please ask before reusing any content.", "Concept artwork is labelled as such and does not show real VCACE events."] },
-        { "heading": "Partners and people", "paragraphs": ["We name partners, advisers and team members only with their agreement. Mention of an organisation does not imply its endorsement unless stated."] },
-        { "heading": "Links to other websites", "paragraphs": ["We may link to other websites, such as ticketing or partner sites. We are not responsible for their content or privacy practices."] },
-        { "heading": "Liability", "paragraphs": ["We work to keep this website accurate and available, but we provide it as is. To the extent permitted by law, we are not liable for loss arising from its use. Nothing in these terms limits rights you have under the Australian Consumer Law."] },
-        { "heading": "Governing law", "paragraphs": ["These terms are governed by the laws of [State], Australia."] }
+        {
+          "heading": "About this website",
+          "paragraphs": [
+            "This website is operated by [legal entity and ABN]. It shares information about VCACE, its programs and proposed projects."
+          ]
+        },
+        {
+          "heading": "Proposed activities",
+          "paragraphs": [
+            "Projects marked as proposed, in development or concept are plans, not confirmed events. Dates, venues, artists, partners and formats may change and are only confirmed when we say so on this website."
+          ]
+        },
+        {
+          "heading": "Content and images",
+          "paragraphs": [
+            "Text, design and logos on this website belong to VCACE unless stated otherwise. Photographs and artworks remain the property of the artists and photographers credited, and are used with permission. Please ask before reusing any content.",
+            "Concept artwork is labelled as such and does not show real VCACE events."
+          ]
+        },
+        {
+          "heading": "Partners and people",
+          "paragraphs": [
+            "We name partners, advisers and team members only with their agreement. Mention of an organisation does not imply its endorsement unless stated."
+          ]
+        },
+        {
+          "heading": "Links to other websites",
+          "paragraphs": [
+            "We may link to other websites, such as ticketing or partner sites. We are not responsible for their content or privacy practices."
+          ]
+        },
+        {
+          "heading": "Liability",
+          "paragraphs": [
+            "We work to keep this website accurate and available, but we provide it as is. To the extent permitted by law, we are not liable for loss arising from its use. Nothing in these terms limits rights you have under the Australian Consumer Law."
+          ]
+        },
+        {
+          "heading": "Governing law",
+          "paragraphs": [
+            "These terms are governed by the laws of Australia."
+          ]
+        }
       ]
     },
     {
@@ -41,9 +109,24 @@
       "updated": "",
       "intro": "We want everyone to be able to use this website, including people who use assistive technology.",
       "sections": [
-        { "heading": "Our standard", "paragraphs": ["This website aims to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. It supports keyboard navigation, visible focus, text alternatives for images, labelled form fields and sufficient colour contrast."] },
-        { "heading": "Known limitations", "paragraphs": ["Some images and documents supplied by partners may not yet have full text descriptions. We add them as we become aware of gaps."] },
-        { "heading": "Tell us about a problem", "paragraphs": ["If something on this website is hard to use, please tell us through the enquiry form or at [contact email]. Let us know the page and what happened, and we will respond and fix it where we can."] }
+        {
+          "heading": "Our standard",
+          "paragraphs": [
+            "This website aims to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. It supports keyboard navigation, visible focus, text alternatives for images, labelled form fields and sufficient colour contrast."
+          ]
+        },
+        {
+          "heading": "Known limitations",
+          "paragraphs": [
+            "Some images and documents supplied by partners may not yet have full text descriptions. We add them as we become aware of gaps."
+          ]
+        },
+        {
+          "heading": "Tell us about a problem",
+          "paragraphs": [
+            "If something on this website is hard to use, please tell us through the enquiry form or at [contact email]. Let us know the page and what happened, and we will respond and fix it where we can."
+          ]
+        }
       ]
     }
   ]

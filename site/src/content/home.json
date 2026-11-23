@@ -1,32 +1,31 @@
 {
   "meta": {
-    "title": "VCACE | Australia–Vietnam Cultural Experiences & Exchange",
-    "description": "VCACE connects Australia and Vietnam through culture, bringing people together through experiences, dialogue, creative learning and bilateral exchange.",
+    "title": "VCACE | Vietnam–Australia Cultural Experiences & Exchange",
+    "description": "VCACE connects Vietnam and Australia through culture, bringing people together through experiences, dialogue, creative learning and bilateral exchange.",
     "shareTitle": "Connecting cultures. Inspiring exchange. | VCACE"
   },
   "hero": {
-    "eyebrow": "Australia · Vietnam · Cultural exchange",
+    "eyebrow": "Vietnam · Australia · Cultural exchange",
     "headline": "Connecting cultures.",
-    "subheadline": "Bringing Australia and Vietnam together through culture.",
-    "intro": "VCACE is an emerging Australia-based bilateral cultural initiative connecting people, ideas and institutions through cultural experiences, dialogue, education and exchange.",
+    "subheadline": "Bringing Vietnam and Australia together through culture.",
+    "intro": "VCACE is an Australia-based bilateral cultural initiative connecting people, ideas and institutions through cultural experiences, dialogue, education and exchange.",
     "primaryButton": "Explore our programs",
     "secondaryButton": "Collaborate with us",
-    "image": "",
-    "imageAlt": "",
-    "imageCredit": "",
-    "headlineAccent": "Inspiring exchange.",
-    "featuredLabel": "Featured:"
+    "image": "https://cdn.sanity.io/images/hd1rue71/production/029a6a4c49828ea2f6a1399ce91a79310dbd92c3-2400x1600.jpg?rect=0,0,1980,1600&w=1800&auto=format",
+    "imageAlt": "Two men hang long hand-printed woodcut scrolls in yellow, black, orange, white and green on the wall of a timber hall.",
+    "imageCredit": "Concept image · Photo: Bernd Dittrich / Unsplash",
+    "headlineAccent": "Inspiring exchange."
   },
   "vision": {
     "headline": "Culture connects people, and creates new possibilities.",
     "paragraphs": [
-      "We envision a stronger Australia–Vietnam relationship enriched by shared cultural understanding, creative collaboration and lasting people-to-people connections. VCACE works across contemporary arts, music, film, performing arts, food, heritage, cultural education and living traditions.",
+      "We envision a stronger Vietnam–Australia relationship enriched by shared cultural understanding, creative collaboration and lasting people-to-people connections. VCACE works across contemporary arts, music, film, performing arts, food, heritage, cultural education and living traditions.",
       "Through partnerships, we create spaces to experience culture, exchange perspectives and develop work that crosses borders. We bring together artists, educators, communities and institutions to curate public experiences, facilitate dialogue, develop learning opportunities and connect collaborators across both countries."
     ],
     "values": [
       {
         "title": "Mutual understanding",
-        "text": "We make room for Australian and Vietnamese perspectives and genuine two-way learning."
+        "text": "We make room for Vietnamese and Australian perspectives and genuine two-way learning."
       },
       {
         "title": "Collaboration",
@@ -39,10 +38,6 @@
       {
         "title": "Inclusion",
         "text": "We welcome diverse communities and make culture accessible across generations."
-      },
-      {
-        "title": "Integrity",
-        "text": "We communicate clearly about our work, partnerships and impact."
       }
     ]
   },
@@ -54,21 +49,21 @@
         "title": "Cultural Experiences",
         "text": "Immersive experiences that bring culture to life.",
         "examples": "Exhibitions, music, dance, film, food, craft, movement and heritage encounters.",
-        "linkText": "See the first project",
-        "link": "#first-project",
-        "image": "",
-        "imageAlt": "",
-        "imageCredit": ""
+        "linkText": "See upcoming projects",
+        "link": "#projects",
+        "image": "https://images.unsplash.com/photo-1591162689269-a3fcdab967e3?w=1800&q=80&auto=format&fit=crop",
+        "imageAlt": "Three dancers in flowing coral dresses leap in unison on a stage lit pink and violet.",
+        "imageCredit": "Concept image · Photo: Rojan Maharjan / Unsplash (unsplash.com/photos/j-7qHj6_GKs)"
       },
       {
         "title": "Cultural Dialogues",
-        "text": "Conversations that deepen understanding between Australia and Vietnam.",
+        "text": "Conversations that deepen understanding between Vietnam and Australia.",
         "examples": "Public talks, artist conversations, panels, and dialogue with academics and cultural institutions.",
         "linkText": "Start a conversation",
         "link": "#collaborate",
-        "image": "",
-        "imageAlt": "",
-        "imageCredit": ""
+        "image": "https://images.unsplash.com/photo-1735679356705-7c06b780c7a4?w=1800&q=80&auto=format&fit=crop",
+        "imageAlt": "A panel of speakers sits on a small stage, seen from behind the audience.",
+        "imageCredit": "Concept image · Photo: Zac Bowling / Unsplash (unsplash.com/photos/Gi-HOiLMx7o)"
       },
       {
         "title": "Cultural Exchange",
@@ -76,9 +71,9 @@
         "examples": "Visiting practitioners, residencies, collaborative productions, studio visits, study and professional exchange.",
         "linkText": "Propose an exchange",
         "link": "#collaborate",
-        "image": "",
-        "imageAlt": "",
-        "imageCredit": ""
+        "image": "https://cdn.sanity.io/images/hd1rue71/production/b5ffa7080fab95d467d83341ba030250d494bb58-2400x1605.jpg?w=1800&auto=format",
+        "imageAlt": "Two street artists in Hội An, one folding palm-leaf flowers and one painting calligraphy scrolls on a mat.",
+        "imageCredit": "Concept image · Photo: Alisa Kreydina / Unsplash"
       },
       {
         "title": "Cultural Education",
@@ -86,45 +81,57 @@
         "examples": "Workshops, masterclasses, cultural literacy, school programs, digital stories and research-informed resources.",
         "linkText": "Talk to us about learning",
         "link": "#collaborate",
-        "image": "",
-        "imageAlt": "",
-        "imageCredit": ""
+        "image": "https://cdn.sanity.io/images/hd1rue71/production/5c22204de2f0dc5691df9d6b8bf3a93e7fb1c72a-2400x1800.jpg?w=1800&auto=format",
+        "imageAlt": "Clay-covered hands shape a bowl on a spinning pottery wheel.",
+        "imageCredit": "Concept image · Photo: Monika Bienert / Unsplash"
       }
-    ],
-    "featuredLabel": "Featured project"
+    ]
   },
   "people": {
-    "headline": "The people behind VCACE"
+    "headline": "People & Partners",
+    "executiveHeadline": "Executive Team",
+    "advisoryHeadline": "Advisory Board",
+    "partnersHeadline": "Partners & Supporters",
+    "partnersIntro": "Organisations we work with to bring cultural programs to life."
   },
   "collaborate": {
     "headline": "Cultural exchange is built together.",
     "paragraphs": [
-      "VCACE welcomes conversations with artists, educators, curators, institutions, community organisations and supporters interested in meaningful Australia–Vietnam collaboration.",
-      "You might co-create a program, host an experience, contribute expertise, facilitate an exchange or support an emerging project."
+      "VCACE welcomes conversations with anyone interested in meaningful Vietnam–Australia cultural collaboration."
     ],
     "topics": [
-      "Propose a collaboration",
       "Artist or practitioner",
-      "Institutional partnership",
+      "Volunteer or event support",
+      "Organisation or institutional partnership",
+      "Sponsorship or donation",
       "Program or event enquiry",
-      "Sponsorship",
       "General contact"
     ],
     "buttonText": "Start a conversation",
-    "formEndpoint": ""
+    "formEndpoint": "",
+    "groups": [
+      {
+        "title": "For individuals",
+        "text": "Artists, practitioners, event supporters and volunteers: tell us about yourself and how you would like to be involved. Send us a message through the form and we will be in touch."
+      },
+      {
+        "title": "For organisations",
+        "text": "Institutions, community organisations, new partners, sponsors and donors: talk to us about co-creating a program, hosting an experience or supporting our activities."
+      }
+    ]
   },
   "footer": {
-    "legalHostLine": "",
-    "credits": ""
-  },
-  "firstProject": {
-    "buttonText": "Discuss this project with us"
-  },
-  "exploring": {
-    "headline": "What we are exploring",
-    "intro": "Ideas in development for future seasons. Formats and timing will be confirmed as partners join."
+    "legalHostLine": "VCACE is a centre of SEA Effect Australia",
+    "credits": "",
+    "legalHostUrl": "https://seaeffect.com/",
+    "acknowledgementHeading": "Acknowledgement of Country",
+    "acknowledgement": "VCACE acknowledges the Traditional Custodians of Country throughout Australia, and their continuing connection to land, waters and community. We pay our respect to all First Nations peoples, to their cultures, and to their Elders, past, present and emerging."
   },
   "story": {
     "headline": "Stories"
+  },
+  "projects": {
+    "headline": "Upcoming Projects",
+    "buttonText": "Discuss this project with us"
   }
 }

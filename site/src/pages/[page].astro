@@ -6,13 +6,13 @@ export function getStaticPaths() {
   return pageIds.map((page) => ({ params: { page } }));
 }
 const page = await getPage(Astro.params.page!);
-const { home, featuredProject, members } = await getContent();
+const { home, projects, executive, advisory, partners } = await getContent();
 const fmt = (d: string) => (d ? new Date(d).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' }) : '');
 ---
 <Base
   meta={{ title: `${page.title} | VCACE`, description: page.description }}
   noindex={page.draft}
-  nav={{ project: !!featuredProject, people: members.length > 0 }}
+  nav={{ projects: projects.length > 0, people: executive.length + advisory.length + partners.length > 0 }}
   footer={home.footer}
 >
   <article class="doc">

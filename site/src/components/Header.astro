@@ -1,22 +1,23 @@
 ---
-const { isHome = false, nav = { project: true, people: true } } = Astro.props;
+import Logo from './Logo.astro';
+const { isHome = false, nav = { projects: true, people: true } } = Astro.props;
 // On sub-pages, section links go back to the home page anchors.
 const h = (id: string) => (isHome ? `#${id}` : `/#${id}`);
 ---
 <header>
   <div class="wrap">
-    <a class="logo" href={isHome ? '#top' : '/'} aria-label="VCACE, Vietnam Centre for Arts, Culture and Education, Australia. Home">
-      <span class="vbox"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 4h6M15.5 4h6M5 4l7 17 7-17" fill="none" stroke="#202020" stroke-width="1.6"/></svg></span>
-      <span class="lockup"><b>VCACE</b><small>Vietnam Centre for Arts, Culture &amp; Education · <span>Australia</span></small></span>
+    <a class="logo" href={isHome ? '#top' : '/'} aria-label="VCACE home">
+      <Logo variant="full" class="logo-full" />
+      <Logo variant="short" class="logo-short" />
     </a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" aria-label="Primary">
       <ul>
         <li><a href={h('vision')}>Our Vision</a></li>
         <li><a href={h('programs')}>Programs</a></li>
-        {nav.project && <li><a href={h('first-project')}>First Project</a></li>}
-        {nav.people && <li><a href={h('people')}>People</a></li>}
-        <li><a href={h('collaborate')}>Collaborate</a></li>
+        {nav.people && <li><a href={h('people')}>People &amp; Partners</a></li>}
+        {nav.projects && <li><a href={h('projects')}>Upcoming Projects</a></li>}
+        <li><a class="nav-cta" href={h('collaborate')}>Collaborate with us</a></li>
       </ul>
     </nav>
   </div>

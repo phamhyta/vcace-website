@@ -7,8 +7,8 @@ interface Props {
   meta: { title: string; description: string; shareTitle?: string };
   noindex?: boolean;
   isHome?: boolean;
-  nav?: { project: boolean; people: boolean };
-  footer?: { legalHostLine?: string; credits?: string };
+  nav?: { projects: boolean; people: boolean };
+  footer?: { legalHostLine?: string; legalHostUrl?: string; credits?: string; acknowledgement?: string; acknowledgementHeading?: string };
 }
 const { meta, noindex = false, isHome = false, nav, footer } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -21,7 +21,7 @@ const org = {
   url: Astro.site?.toString(),
   logo: new URL('/apple-touch-icon.png', Astro.site).toString(),
   slogan: 'Connecting cultures. Inspiring exchange.',
-  areaServed: ['Australia', 'Vietnam'],
+  areaServed: ['Vietnam', 'Australia'],
 };
 ---
 <!doctype html>

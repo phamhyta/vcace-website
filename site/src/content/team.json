@@ -1,8 +1,121 @@
 {
   "members": [
-    { "published": true, "name": "Celine Dang", "role": "Executive Lead", "bio": "Leads VCACE’s strategy, institutional relationships, bilateral partnerships and organisational development." },
-    { "published": true, "name": "Mai Trinh", "role": "Artistic Lead", "bio": "Guides artistic direction, cultural programming and engagement with creative practitioners." },
-    { "published": false, "name": "Lan Anh", "role": "Coordinator", "bio": "Supports program planning, communications and delivery." },
-    { "published": false, "name": "Phuc Chen", "role": "Coordinator", "bio": "Supports coordination and delivery across VCACE activities." }
+    {
+      "published": true,
+      "group": "executive",
+      "name": "Celine Dang",
+      "role": "Executive Lead",
+      "bio": "Leads VCACE’s strategy, institutional relationships, bilateral partnerships and organisational development.",
+      "photo": ""
+    },
+    {
+      "published": true,
+      "group": "executive",
+      "name": "Mai Trinh",
+      "role": "Artistic Lead",
+      "bio": "Guides artistic direction, cultural programming and engagement with creative practitioners.",
+      "photo": ""
+    },
+    {
+      "published": true,
+      "group": "executive",
+      "name": "Lan Anh",
+      "role": "Coordinator",
+      "bio": "Supports program planning, communications and delivery.",
+      "photo": ""
+    },
+    {
+      "published": true,
+      "group": "executive",
+      "name": "Minh Pham",
+      "role": "Coordinator",
+      "bio": "Supports coordination and delivery across VCACE activities.",
+      "photo": ""
+    },
+    {
+      "published": true,
+      "group": "advisory",
+      "name": "Huy Tuan",
+      "role": "Music composer · Vietnam",
+      "bio": "",
+      "photo": ""
+    },
+    {
+      "published": true,
+      "group": "advisory",
+      "name": "Dr Luong Thu Huong",
+      "role": "Hanoi University of Culture · Vietnam",
+      "bio": "",
+      "photo": ""
+    },
+    {
+      "published": true,
+      "group": "advisory",
+      "name": "Kate Ben-Tovim",
+      "role": "Founding Director, Turning World · Australia",
+      "bio": "",
+      "photo": ""
+    },
+    {
+      "published": true,
+      "group": "advisory",
+      "name": "Hieu",
+      "role": "Startup founder · Vietnam",
+      "bio": "",
+      "photo": ""
+    },
+    {
+      "published": true,
+      "group": "advisory",
+      "name": "To be announced",
+      "role": "",
+      "bio": "",
+      "photo": ""
+    },
+    {
+      "published": true,
+      "group": "advisory",
+      "name": "To be announced",
+      "role": "",
+      "bio": "",
+      "photo": ""
+    }
+  ],
+  "partners": [
+    {
+      "published": true,
+      "name": "Mai Galleria",
+      "url": "",
+      "logo": "",
+      "showName": false
+    },
+    {
+      "published": true,
+      "name": "SEA Effect",
+      "url": "https://seaeffect.com/",
+      "logo": "/partners/sea-effect.png",
+      "showName": true
+    },
+    {
+      "published": true,
+      "name": "Global Viet Women",
+      "url": "https://globalvietwomen.com/",
+      "logo": "/partners/global-viet-women.svg",
+      "showName": false
+    },
+    {
+      "published": false,
+      "name": "Tu Tap",
+      "url": "",
+      "logo": "",
+      "showName": false
+    },
+    {
+      "published": true,
+      "name": "AVESQ",
+      "url": "",
+      "logo": "/partners/avesq.png",
+      "showName": false
+    }
   ]
 }
