@@ -26,10 +26,10 @@ p{max-width:62ch}
 
 /* header + logo lock-up */
 header{position:sticky;top:0;z-index:10;background:#FBFAF7;border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:104px}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:88px}
 .logo{display:flex;align-items:center;text-decoration:none}
 .logo svg{display:block;height:auto}
-.logo .logo-full{width:270px}
+.logo .logo-full{width:220px}
 .logo .logo-short{display:none;width:150px}
 nav ul{display:flex;align-items:center;gap:clamp(20px,2.6vw,40px);list-style:none;padding:0}
 nav a{text-decoration:none;font-size:15px;font-weight:400;padding:6px 0;border-bottom:2px solid transparent}
@@ -51,7 +51,9 @@ nav a.nav-cta:hover{background:var(--ink);border-color:var(--ink);color:var(--bg
 .hero-bg img,.hero-bg svg{width:100%;height:100%;object-fit:cover;display:block}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,20,20,.86) 0%,rgba(20,20,20,.7) 38%,rgba(20,20,20,.25) 72%,rgba(20,20,20,.1) 100%)}
 .hero .wrap{position:relative;width:100%;padding-top:clamp(56px,8vw,112px);padding-bottom:clamp(56px,8vw,112px)}
-.hero-copy{max-width:640px}
+.hero-copy{max-width:780px}
+/* keep each headline line whole on wider screens (phones still wrap) */
+@media (min-width:761px){.hero h1 span{white-space:nowrap}}
 .accent-bar{display:block;width:32px;height:5px;background:var(--yellow);margin-bottom:12px}
 .hero h1{font-size:clamp(40px,5.4vw,74px);line-height:1.06;margin:36px 0 30px;font-weight:400}
 .hero h1 span{display:block}
@@ -103,7 +105,8 @@ section{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
 .project article.grid+article.grid{margin-top:clamp(56px,7vw,96px);padding-top:clamp(56px,7vw,96px);border-top:1px solid #3a3a3a}
 .project article.flip>div:first-child{order:2}
 .tag{display:inline-block;background:var(--yellow);color:var(--ink);padding:5px 12px}
-.project h3{font-size:clamp(30px,3.4vw,48px);font-weight:300;margin:24px 0 20px;max-width:18ch}
+.project h3{font-size:clamp(28px,2.9vw,42px);font-weight:300;margin:24px 0 20px}
+@media (min-width:761px){.project h3{white-space:nowrap}}
 .project .lead{font-size:1.15em;margin-bottom:18px}
 .project p{color:#d9d6ce}
 .project .note{margin-top:22px;padding-left:16px;border-left:3px solid var(--yellow);font-size:15px}
