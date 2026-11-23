@@ -1,0 +1,16 @@
+---
+// Shown only when the enquiry form is sent without JavaScript.
+import Base from '../layouts/Base.astro';
+import { ui, home, type Lang } from '../lib/i18n';
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = ui[lang].thanks;
+---
+<Base lang={lang} meta={{ title: `${t.title} | VCACE`, description: t.description }} noindex>
+  <article class="doc">
+    <div class="wrap">
+      <h1>{t.title}</h1>
+      <p class="lead">{t.lead}</p>
+      <div class="btns"><a class="btn primary" href={home(lang)}>{t.back}</a></div>
+    </div>
+  </article>
+</Base>

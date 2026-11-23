@@ -1,0 +1,127 @@
+{
+  "pages": [
+    {
+      "id": "privacy",
+      "title": "Quyền riêng tư",
+      "description": "Cách VCACE thu thập, sử dụng và bảo vệ thông tin cá nhân.",
+      "intro": "VCACE tôn trọng quyền riêng tư của bạn. Trang này cho biết chúng tôi thu thập những thông tin cá nhân nào qua website, vì sao cần thu thập và bạn có thể xem hoặc sửa thông tin của mình ra sao. Chúng tôi xử lý thông tin cá nhân theo Các nguyên tắc về quyền riêng tư của Úc (Australian Privacy Principles). Nếu bản tiếng Việt và bản tiếng Anh có điểm khác nhau, bản tiếng Anh được ưu tiên.",
+      "sections": [
+        {
+          "heading": "Chúng tôi là ai",
+          "paragraphs": [
+            "VCACE (Vietnam Centre for Arts, Culture & Education – Trung tâm Nghệ thuật, Văn hóa & Giáo dục Việt Nam) là một tổ chức văn hóa có trụ sở tại Úc. [Bổ sung pháp nhân chịu trách nhiệm cho website này và số ABN khi được duyệt.]"
+          ]
+        },
+        {
+          "heading": "Chúng tôi thu thập gì",
+          "paragraphs": [
+            "Khi bạn dùng biểu mẫu liên hệ, chúng tôi thu thập họ tên, địa chỉ email, chủ đề và nội dung lời nhắn của bạn. Chúng tôi không yêu cầu nhiều hơn mức cần thiết để trả lời.",
+            "Website này không dùng cookie quảng cáo hay cookie theo dõi. [Nếu sau này có thêm công cụ thống kê tôn trọng quyền riêng tư, hãy mô tả tại đây.]"
+          ]
+        },
+        {
+          "heading": "Chúng tôi sử dụng thông tin thế nào",
+          "paragraphs": [
+            "Chúng tôi chỉ dùng thông tin của bạn để trả lời yêu cầu và tiếp tục cuộc trao đổi bạn đã bắt đầu với chúng tôi. Chúng tôi không bán hay cho thuê thông tin cá nhân, và không thêm bạn vào danh sách nhận thư trừ khi bạn yêu cầu."
+          ]
+        },
+        {
+          "heading": "Thông tin được lưu ở đâu",
+          "paragraphs": [
+            "Lời nhắn được chuyển đến hộp thư liên hệ của VCACE qua Netlify Forms. Một số nhà cung cấp dịch vụ của chúng tôi, bao gồm đơn vị lưu trữ website và hệ thống quản lý nội dung, có thể lưu dữ liệu ngoài nước Úc. Chúng tôi chọn những nhà cung cấp có biện pháp bảo mật phù hợp."
+          ]
+        },
+        {
+          "heading": "Chúng tôi lưu giữ bao lâu",
+          "paragraphs": [
+            "Chúng tôi chỉ lưu thông tin liên hệ trong thời gian cần để trả lời bạn và để lưu lại các mối quan hệ làm việc, sau đó sẽ xóa đi."
+          ]
+        },
+        {
+          "heading": "Xem, chỉnh sửa và khiếu nại",
+          "paragraphs": [
+            "Bạn có thể yêu cầu xem, chỉnh sửa hoặc xóa thông tin cá nhân mà chúng tôi đang lưu về bạn bằng cách liên hệ [email liên hệ].",
+            "Nếu bạn có lo ngại về cách chúng tôi xử lý thông tin của bạn, vui lòng liên hệ với chúng tôi trước. Nếu chưa hài lòng với phản hồi, bạn có thể liên hệ Văn phòng Ủy viên Thông tin Úc (OAIC) tại oaic.gov.au."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "terms",
+      "title": "Điều khoản sử dụng",
+      "description": "Điều khoản sử dụng website VCACE.",
+      "intro": "Khi sử dụng website này, bạn đồng ý với các điều khoản dưới đây. Chúng tôi cố gắng viết ngắn gọn, dễ hiểu; nếu có điều gì chưa rõ, hãy liên hệ với chúng tôi. Nếu bản tiếng Việt và bản tiếng Anh có điểm khác nhau, bản tiếng Anh được ưu tiên.",
+      "sections": [
+        {
+          "heading": "Về website này",
+          "paragraphs": [
+            "Website này được vận hành bởi [pháp nhân và số ABN]. Website chia sẻ thông tin về VCACE, các chương trình và những dự án được đề xuất."
+          ]
+        },
+        {
+          "heading": "Các hoạt động được đề xuất",
+          "paragraphs": [
+            "Những dự án được ghi là đề xuất, đang phát triển hoặc ý tưởng là kế hoạch, chưa phải sự kiện đã xác nhận. Thời gian, địa điểm, nghệ sĩ, đối tác và hình thức có thể thay đổi và chỉ được xác nhận khi chúng tôi thông báo trên website này."
+          ]
+        },
+        {
+          "heading": "Nội dung và hình ảnh",
+          "paragraphs": [
+            "Chữ, thiết kế và logo trên website này thuộc về VCACE trừ khi có ghi chú khác. Ảnh và tác phẩm nghệ thuật vẫn thuộc quyền sở hữu của nghệ sĩ và nhiếp ảnh gia được ghi tên, và được sử dụng khi có sự cho phép. Vui lòng hỏi trước khi sử dụng lại bất kỳ nội dung nào.",
+            "Hình ảnh minh họa ý tưởng được ghi chú rõ và không phải là hình ảnh từ sự kiện thực tế của VCACE."
+          ]
+        },
+        {
+          "heading": "Đối tác và con người",
+          "paragraphs": [
+            "Chúng tôi chỉ nêu tên đối tác, cố vấn và thành viên khi đã được họ đồng ý. Việc nhắc đến một tổ chức không có nghĩa là tổ chức đó bảo trợ cho chúng tôi, trừ khi có ghi rõ."
+          ]
+        },
+        {
+          "heading": "Liên kết đến website khác",
+          "paragraphs": [
+            "Chúng tôi có thể dẫn liên kết đến các website khác, như trang bán vé hoặc trang của đối tác. Chúng tôi không chịu trách nhiệm về nội dung hay cách các website đó xử lý quyền riêng tư."
+          ]
+        },
+        {
+          "heading": "Trách nhiệm",
+          "paragraphs": [
+            "Chúng tôi luôn cố gắng để website chính xác và hoạt động ổn định, nhưng website được cung cấp theo đúng hiện trạng. Trong phạm vi pháp luật cho phép, chúng tôi không chịu trách nhiệm về những tổn thất phát sinh từ việc sử dụng website. Không điều khoản nào ở đây hạn chế các quyền của bạn theo Luật Người tiêu dùng Úc (Australian Consumer Law)."
+          ]
+        },
+        {
+          "heading": "Luật áp dụng",
+          "paragraphs": [
+            "Các điều khoản này chịu sự điều chỉnh của pháp luật Úc."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "accessibility",
+      "title": "Trợ năng",
+      "description": "Cam kết của VCACE về một website dễ tiếp cận.",
+      "intro": "Chúng tôi muốn mọi người đều có thể sử dụng website này, kể cả những người dùng công nghệ hỗ trợ.",
+      "sections": [
+        {
+          "heading": "Tiêu chuẩn của chúng tôi",
+          "paragraphs": [
+            "Website này hướng tới đáp ứng Hướng dẫn về khả năng tiếp cận nội dung web (WCAG) 2.2 ở mức AA: có thể dùng hoàn toàn bằng bàn phím, luôn thấy rõ mình đang ở mục nào, hình ảnh có mô tả bằng chữ, các ô biểu mẫu đều có nhãn và màu sắc đủ tương phản để dễ đọc."
+          ]
+        },
+        {
+          "heading": "Những hạn chế đã biết",
+          "paragraphs": [
+            "Một số hình ảnh và tài liệu do đối tác cung cấp có thể chưa có mô tả đầy đủ bằng chữ. Chúng tôi sẽ bổ sung khi phát hiện."
+          ]
+        },
+        {
+          "heading": "Báo cho chúng tôi khi gặp vấn đề",
+          "paragraphs": [
+            "Nếu có phần nào trên website khó sử dụng, vui lòng báo cho chúng tôi qua biểu mẫu liên hệ hoặc tại [email liên hệ]. Hãy cho chúng tôi biết trang nào và điều gì đã xảy ra, chúng tôi sẽ phản hồi và khắc phục trong khả năng có thể."
+          ]
+        }
+      ]
+    }
+  ]
+}

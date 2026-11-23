@@ -1,19 +1,22 @@
 ---
-import home from '../content/home.json';
+import homeJson from '../content/home.json';
 import Logo from './Logo.astro';
-const { isHome = false, footer = home.footer } = Astro.props;
+import { ui, home, type Lang } from '../lib/i18n';
+const { lang = 'en' as Lang, isHome = false, footer = homeJson.footer } = Astro.props;
+const t = ui[lang as Lang];
+const base = home(lang);
 ---
 <footer>
   <div class="wrap">
     <div class="top">
-      <a class="logo" href={isHome ? '#top' : '/'} aria-label="VCACE home">
+      <a class="logo" href={isHome ? '#top' : base} aria-label={t.homeLabel}>
         <Logo variant="full" tone="light" class="logo-footer" />
       </a>
-      <ul aria-label="Footer">
-        <li><a href={isHome ? '#collaborate' : '/#collaborate'}>Contact</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/terms/">Terms</a></li>
-        <li><a href="/accessibility/">Accessibility</a></li>
+      <ul aria-label={t.footerNav}>
+        <li><a href={isHome ? '#collaborate' : `${base}#collaborate`}>{t.contact}</a></li>
+        <li><a href={`${base}privacy/`}>{t.privacy}</a></li>
+        <li><a href={`${base}terms/`}>{t.terms}</a></li>
+        <li><a href={`${base}accessibility/`}>{t.accessibility}</a></li>
       </ul>
     </div>
     {footer.acknowledgement && (
@@ -23,7 +26,7 @@ const { isHome = false, footer = home.footer } = Astro.props;
       </div>
     )}
     <div class="fine">
-      <span>Connecting cultures. Inspiring exchange.</span>
+      <span>{t.tagline}</span>
       <span>
         {footer.legalHostLine && (
           <>{footer.legalHostUrl ? <a href={footer.legalHostUrl} rel="noopener">{footer.legalHostLine}</a> : footer.legalHostLine} · </>

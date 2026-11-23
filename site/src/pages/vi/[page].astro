@@ -1,0 +1,9 @@
+---
+import PolicyPage from '../../components/PolicyPage.astro';
+import { pageIds } from '../../lib/content';
+
+export function getStaticPaths() {
+  return pageIds.map((page) => ({ params: { page } }));
+}
+---
+<PolicyPage id={Astro.params.page!} lang="vi" />

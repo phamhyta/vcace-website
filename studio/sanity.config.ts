@@ -12,6 +12,13 @@ const pages = [
   {id: 'terms', title: 'Terms of use'},
   {id: 'accessibility', title: 'Accessibility'},
 ]
+// Vietnamese site (/vi/): the home page and policy pages have their own Vietnamese copy.
+// Fill in only the text; anything left empty (and every image) is taken from the English version.
+// People and Projects have their Vietnamese fields inside each entry.
+const vietnamese = [
+  {id: 'home-vi', type: 'home', title: 'Trang chủ (Tiếng Việt)'},
+  ...pages.map((p) => ({id: `${p.id}-vi`, type: 'page', title: `${p.title} (Tiếng Việt)`})),
+]
 
 export default defineConfig({
   name: 'vcace',
@@ -34,6 +41,15 @@ export default defineConfig({
             ...pages.map((p) =>
               S.listItem().title(p.title).id(p.id).child(S.document().schemaType('page').documentId(p.id)),
             ),
+            S.divider(),
+            S.listItem()
+              .title('Tiếng Việt (/vi/)')
+              .id('vietnamese')
+              .child(
+                S.list()
+                  .title('Tiếng Việt')
+                  .items(vietnamese.map((v) => S.listItem().title(v.title).id(v.id).child(S.document().schemaType(v.type).documentId(v.id)))),
+              ),
           ]),
     }),
   ],

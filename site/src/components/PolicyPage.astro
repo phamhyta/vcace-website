@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import { getContent, getPage } from '../lib/content';
+import { ui, type Lang } from '../lib/i18n';
+
+const { id, lang = 'en' } = Astro.props as { id: string; lang?: Lang };
+const t = ui[lang];
+const page = await getPage(id, lang);
+const { home, projects, executive, advisory, strategic, partners } = await getContent(lang);
+const fmt = (d: string) => (d ? new Date(d).toLocaleDateString(t.dateLocale, { day: 'numeric', month: 'long', year: 'numeric' }) : '');
+---
+<Base
+  lang={lang}
+  meta={{ title: `${page.title} | VCACE`, description: page.description }}
+  noindex={page.draft}
+  nav={{ projects: projects.length > 0, people: executive.length + advisory.length + strategic.length + partners.length > 0 }}
+  footer={home.footer}
+>
+  <article class="doc">
+    <div class="wrap">
+      {page.draft && <p class="draft-note" role="note">{t.draft}</p>}
+      <h1>{page.title}</h1>
+      {page.updated && <p class="muted">{t.updated} {fmt(page.updated)}</p>}
+      {page.intro && <p class="lead">{page.intro}</p>}
+      {page.sections.map((s) => (
+        <section>
+          {s.heading && <h2>{s.heading}</h2>}
+          {s.paragraphs.map((p) => <p>{p}</p>)}
+        </section>
+      ))}
+    </div>
+  </article>
+</Base>

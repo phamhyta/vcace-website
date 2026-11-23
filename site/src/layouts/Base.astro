@@ -2,16 +2,20 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { ui, swapPath, type Lang } from '../lib/i18n';
 
 interface Props {
+  lang?: Lang;
   meta: { title: string; description: string; shareTitle?: string };
   noindex?: boolean;
   isHome?: boolean;
   nav?: { projects: boolean; people: boolean };
   footer?: { legalHostLine?: string; legalHostUrl?: string; credits?: string; acknowledgement?: string; acknowledgementHeading?: string };
 }
-const { meta, noindex = false, isHome = false, nav, footer } = Astro.props;
+const { lang = 'en', meta, noindex = false, isHome = false, nav, footer } = Astro.props;
+const t = ui[lang];
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const alt = { en: new URL(swapPath(Astro.url.pathname, 'en'), Astro.site), vi: new URL(swapPath(Astro.url.pathname, 'vi'), Astro.site) };
 const ogImage = new URL('/og-image.png', Astro.site);
 const org = {
   '@context': 'https://schema.org',
@@ -25,7 +29,7 @@ const org = {
 };
 ---
 <!doctype html>
-<html lang="en">
+<html lang={t.htmlLang}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,10 +37,12 @@ const org = {
 <meta name="description" content={meta.description}>
 {noindex && <meta name="robots" content="noindex">}
 <link rel="canonical" href={canonical}>
+{!noindex && <><link rel="alternate" hreflang="en" href={alt.en}><link rel="alternate" hreflang="vi" href={alt.vi}><link rel="alternate" hreflang="x-default" href={alt.en}></>}
 <meta property="og:site_name" content="VCACE">
 <meta property="og:title" content={meta.shareTitle || meta.title}>
 <meta property="og:description" content={meta.description}>
 <meta property="og:type" content="website">
+<meta property="og:locale" content={t.ogLocale}>
 <meta property="og:url" content={canonical}>
 <meta property="og:image" content={ogImage}>
 <meta property="og:image:width" content="1200">
@@ -51,12 +57,12 @@ const org = {
 {isHome && <script type="application/ld+json" set:html={JSON.stringify(org)} />}
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<Header isHome={isHome} nav={nav} />
+<a class="skip" href="#main">{t.skip}</a>
+<Header lang={lang} isHome={isHome} nav={nav} />
 <main id="main">
 <slot />
 </main>
-<Footer isHome={isHome} footer={footer} />
+<Footer lang={lang} isHome={isHome} footer={footer} />
 <script>
   const btn = document.querySelector('.menu-btn');
   const navEl = document.getElementById('nav');

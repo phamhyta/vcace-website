@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "title": "VCACE | Trải nghiệm & Giao lưu văn hóa Việt Nam – Úc",
+    "description": "VCACE kết nối Việt Nam và Úc qua văn hóa, đưa mọi người đến gần nhau qua trải nghiệm, đối thoại, học tập sáng tạo và giao lưu song phương.",
+    "shareTitle": "Kết nối văn hóa. Khơi nguồn giao lưu. | VCACE"
+  },
+  "hero": {
+    "eyebrow": "Việt Nam · Úc · Giao lưu văn hóa",
+    "headline": "Kết nối văn hóa.",
+    "headlineAccent": "Khơi nguồn giao lưu.",
+    "subheadline": "Gắn kết Việt Nam và Úc qua văn hóa.",
+    "intro": "VCACE là trung tâm văn hóa song phương đặt tại Úc, nơi kết nối con người, ý tưởng và các tổ chức thông qua trải nghiệm văn hóa, đối thoại, giáo dục và giao lưu.",
+    "primaryButton": "Khám phá các chương trình",
+    "secondaryButton": "Hợp tác cùng chúng tôi",
+    "imageAlt": "Hai người đàn ông treo những cuộn tranh khắc gỗ in tay màu vàng, đen, cam, trắng và xanh lá lên tường một hội trường gỗ."
+  },
+  "stats": {
+    "items": [
+      {
+        "value": "2",
+        "label": "quốc gia, chung một cuộc trò chuyện"
+      },
+      {
+        "value": "4",
+        "label": "hướng chương trình"
+      },
+      {
+        "value": "2027",
+        "label": "sự kiện đầu tiên ra mắt tại Brisbane"
+      },
+      {
+        "value": "Chung một tương lai",
+        "label": "ngày càng gắn kết"
+      }
+    ]
+  },
+  "vision": {
+    "headline": "Văn hóa kết nối con người, mở ra những khả năng mới.",
+    "paragraphs": [
+      "Chúng tôi mong góp phần làm cho quan hệ Việt Nam – Úc ngày càng bền chặt, qua sự thấu hiểu văn hóa, những hợp tác sáng tạo và tình gắn bó lâu dài giữa người dân hai nước. VCACE hoạt động trong nhiều lĩnh vực: nghệ thuật đương đại, âm nhạc, điện ảnh, nghệ thuật biểu diễn, ẩm thực, di sản, giáo dục văn hóa và những truyền thống vẫn đang sống trong đời sống hôm nay.",
+      "Cùng các đối tác, chúng tôi tạo nên những không gian để mọi người trải nghiệm văn hóa, chia sẻ góc nhìn và cùng làm nên những tác phẩm vượt qua biên giới. Chúng tôi kết nối nghệ sĩ, nhà giáo dục, cộng đồng và các tổ chức để mang đến những trải nghiệm cho công chúng, mở ra đối thoại, tạo cơ hội học tập và gắn kết những người muốn hợp tác ở cả hai nước."
+    ],
+    "values": [
+      {
+        "title": "Thấu hiểu lẫn nhau",
+        "text": "Lắng nghe góc nhìn của cả Việt Nam và Úc, để hai bên thực sự học hỏi lẫn nhau."
+      },
+      {
+        "title": "Cùng sáng tạo",
+        "text": "Chúng tôi sáng tạo cùng nghệ sĩ và đối tác, chứ không chỉ làm ra sản phẩm cho khán giả."
+      },
+      {
+        "title": "Hơi thở đương đại",
+        "text": "Kết nối những truyền thống còn sống động với ý tưởng, bản sắc và cách sáng tạo của hôm nay."
+      },
+      {
+        "title": "Hòa nhập",
+        "text": "Chào đón mọi cộng đồng và đưa văn hóa đến gần hơn với mọi thế hệ."
+      }
+    ]
+  },
+  "programs": {
+    "headline": "Chương trình",
+    "intro": "Bốn hướng hoạt động bổ trợ cho nhau, cùng mở ra cánh cửa đến với văn hóa.",
+    "items": [
+      {
+        "title": "Trải nghiệm văn hóa",
+        "text": "Những trải nghiệm sống động, đưa văn hóa đến gần với mọi người.",
+        "examples": "Triển lãm, âm nhạc, múa, điện ảnh, ẩm thực, thủ công, nghệ thuật chuyển động và các hoạt động khám phá di sản.",
+        "linkText": "Xem các dự án sắp tới",
+        "imageAlt": "Ba vũ công trong những chiếc váy màu san hô bay bổng cùng nhảy lên trên sân khấu ánh hồng tím."
+      },
+      {
+        "title": "Đối thoại văn hóa",
+        "text": "Những cuộc trò chuyện giúp Việt Nam và Úc hiểu nhau sâu sắc hơn.",
+        "examples": "Tọa đàm công chúng, trò chuyện cùng nghệ sĩ, thảo luận chuyên đề và đối thoại với giới học thuật, các thiết chế văn hóa.",
+        "linkText": "Bắt đầu một cuộc trò chuyện",
+        "imageAlt": "Một nhóm diễn giả ngồi trên sân khấu nhỏ, nhìn từ phía sau khán giả."
+      },
+      {
+        "title": "Giao lưu văn hóa",
+        "text": "Kết nối con người và tổ chức hai nước để cùng sáng tạo, cùng học hỏi.",
+        "examples": "Nghệ sĩ sang thăm và làm việc, chương trình lưu trú sáng tác, dự án dàn dựng chung, thăm xưởng nghệ thuật, trao đổi học tập và chuyên môn.",
+        "linkText": "Đề xuất một chương trình giao lưu",
+        "imageAlt": "Hai nghệ nhân đường phố ở Hội An, một người gấp hoa lá cọ, một người viết thư pháp trên tấm chiếu."
+      },
+      {
+        "title": "Giáo dục văn hóa",
+        "text": "Chia sẻ kiến thức, kỹ năng và góc nhìn qua những hình thức học tập sáng tạo.",
+        "examples": "Workshop, lớp học chuyên sâu, bồi dưỡng hiểu biết văn hóa, chương trình cho trường học, kể chuyện bằng nội dung số và tài liệu dựa trên nghiên cứu.",
+        "linkText": "Cùng bàn về hoạt động học tập",
+        "imageAlt": "Đôi bàn tay dính đất sét đang nặn một chiếc bát trên bàn xoay gốm."
+      }
+    ]
+  },
+  "people": {
+    "headline": "Con người & Đối tác",
+    "executiveHeadline": "Ban điều hành",
+    "advisoryHeadline": "Hội đồng cố vấn",
+    "strategicHeadline": "Đối tác chiến lược",
+    "partnersHeadline": "Đối tác & Đơn vị đồng hành",
+    "partnersIntro": "Những tổ chức đồng hành cùng chúng tôi đưa các chương trình văn hóa đến với công chúng."
+  },
+  "collaborate": {
+    "headline": "Giao lưu văn hóa được vun đắp từ sự chung tay.",
+    "paragraphs": [
+      "VCACE luôn sẵn lòng trò chuyện với bất kỳ ai quan tâm đến hợp tác văn hóa Việt Nam – Úc."
+    ],
+    "topics": [
+      "Nghệ sĩ hoặc người hoạt động nghệ thuật",
+      "Tình nguyện viên hoặc hỗ trợ sự kiện",
+      "Hợp tác với tổ chức, thiết chế",
+      "Tài trợ hoặc quyên góp",
+      "Hỏi về chương trình hoặc sự kiện",
+      "Liên hệ chung"
+    ],
+    "buttonText": "Gửi lời nhắn",
+    "groups": [
+      {
+        "title": "Dành cho cá nhân",
+        "text": "Nghệ sĩ, người hoạt động nghệ thuật, người hỗ trợ sự kiện và tình nguyện viên: hãy cho chúng tôi biết đôi chút về bạn và bạn muốn tham gia như thế nào. Chỉ cần gửi lời nhắn qua biểu mẫu, chúng tôi sẽ liên hệ lại."
+      },
+      {
+        "title": "Dành cho tổ chức",
+        "text": "Các thiết chế, tổ chức cộng đồng, đối tác mới, nhà tài trợ và nhà hảo tâm: hãy trao đổi với chúng tôi về việc cùng xây dựng chương trình, đưa một hoạt động văn hóa về đơn vị mình, hoặc hỗ trợ các hoạt động của VCACE."
+      }
+    ]
+  },
+  "footer": {
+    "legalHostLine": "VCACE là trung tâm trực thuộc SEA Effect AUS",
+    "acknowledgementHeading": "Tri ân những người gìn giữ vùng đất này",
+    "acknowledgement": "VCACE xin bày tỏ lòng biết ơn tới các Chủ nhân Truyền thống của những vùng đất trên khắp nước Úc, và trân trọng mối gắn bó bền bỉ của họ với đất đai, sông nước và cộng đồng. Chúng tôi kính trọng tất cả các dân tộc Bản địa (First Nations), nền văn hóa của họ và các bậc Trưởng lão xưa, nay và mai sau."
+  },
+  "story": {
+    "headline": "Câu chuyện"
+  },
+  "projects": {
+    "headline": "Dự án sắp tới",
+    "buttonText": "Hỗ trợ & trao đổi về dự án"
+  }
+}

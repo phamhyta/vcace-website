@@ -29,9 +29,15 @@ export const home = defineType({
       fields: [str('eyebrow'), str('headline', 'Headline, first line'), str('headlineAccent', 'Headline, second line (shown in yellow)'), str('subheadline'), txt('intro', 'Introduction'), str('primaryButton'), str('secondaryButton'), img(), alt(), credit()],
     }),
     defineField({
+      name: 'stats', title: 'Key figures (band under the hero)', type: 'object', group: 'hero',
+      fields: [defineField({name: 'items', title: 'Figures', type: 'array', of: [defineArrayMember({type: 'object', fields: [str('value', 'Figure (e.g. 2027)'), str('label', 'Text underneath')], preview: {select: {title: 'value', subtitle: 'label'}}})]})],
+    }),
+    defineField({
       name: 'vision', type: 'object', group: 'vision',
       fields: [
         str('headline'),
+        defineField({name: 'image', title: 'Background photo (optional, shown darkened behind white text)', type: 'image', options: {hotspot: true}}),
+        credit(),
         textList('paragraphs', 'Paragraphs'),
         defineField({name: 'values', type: 'array', of: [defineArrayMember({type: 'object', fields: [str('title'), txt('text', 'Sentence')], preview: {select: {title: 'title'}}})]}),
       ],
@@ -48,7 +54,7 @@ export const home = defineType({
     }),
     defineField({name: 'projects', title: 'Upcoming Projects section', type: 'object', group: 'project', description: 'Lists every published project, in the order set under Projects.', fields: [str('headline'), str('buttonText', 'Button under the first project')]}),
     defineField({name: 'story', title: 'Story section', type: 'object', group: 'people', description: 'Shows the newest published story.', fields: [str('headline', 'Section label')]}),
-    defineField({name: 'people', title: 'People & Partners', type: 'object', group: 'people', fields: [str('headline'), str('executiveHeadline', 'Executive team heading'), str('advisoryHeadline', 'Advisory board heading'), str('partnersHeadline', 'Partners heading'), txt('partnersIntro', 'Partners introduction')]}),
+    defineField({name: 'people', title: 'People & Partners', type: 'object', group: 'people', fields: [str('headline'), str('executiveHeadline', 'Executive team heading'), str('advisoryHeadline', 'Advisory board heading'), str('strategicHeadline', 'Strategic partner heading'), str('partnersHeadline', 'Partners heading'), txt('partnersIntro', 'Partners introduction')]}),
     defineField({
       name: 'collaborate', type: 'object', group: 'collaborate',
       fields: [

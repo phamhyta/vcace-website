@@ -1,32 +1,9 @@
 ---
-import Base from '../layouts/Base.astro';
-import { getContent, getPage, pageIds } from '../lib/content';
+import PolicyPage from '../components/PolicyPage.astro';
+import { pageIds } from '../lib/content';
 
 export function getStaticPaths() {
   return pageIds.map((page) => ({ params: { page } }));
 }
-const page = await getPage(Astro.params.page!);
-const { home, projects, executive, advisory, partners } = await getContent();
-const fmt = (d: string) => (d ? new Date(d).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' }) : '');
 ---
-<Base
-  meta={{ title: `${page.title} | VCACE`, description: page.description }}
-  noindex={page.draft}
-  nav={{ projects: projects.length > 0, people: executive.length + advisory.length + partners.length > 0 }}
-  footer={home.footer}
->
-  <article class="doc">
-    <div class="wrap">
-      {page.draft && <p class="draft-note" role="note">Draft for review. This wording has not yet been approved.</p>}
-      <h1>{page.title}</h1>
-      {page.updated && <p class="muted">Last updated {fmt(page.updated)}</p>}
-      {page.intro && <p class="lead">{page.intro}</p>}
-      {page.sections.map((s) => (
-        <section>
-          {s.heading && <h2>{s.heading}</h2>}
-          {s.paragraphs.map((p) => <p>{p}</p>)}
-        </section>
-      ))}
-    </div>
-  </article>
-</Base>
+<PolicyPage id={Astro.params.page!} lang="en" />

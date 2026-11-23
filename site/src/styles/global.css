@@ -36,6 +36,11 @@ nav a{text-decoration:none;font-size:15px;font-weight:400;padding:6px 0;border-b
 nav a:hover{border-color:var(--yellow)}
 nav a.nav-cta{padding:9px 18px;border:1.5px solid var(--ink);border-radius:999px;background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
 nav a.nav-cta:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+/* ENG | VIE: the current language is bold, the other is a link */
+.lang-switch{display:flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.08em;font-weight:400;color:var(--grey)}
+.lang-switch a{font-size:13px;color:var(--grey);padding:4px 0}
+.lang-switch a:hover{color:var(--ink)}
+.lang-switch .current{color:var(--ink);font-weight:700}
 .menu-btn{display:none;background:none;border:1.5px solid var(--ink);padding:8px 12px;font:400 13px var(--font);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;color:var(--ink)}
 
 /* buttons */
@@ -54,29 +59,48 @@ nav a.nav-cta:hover{background:var(--ink);border-color:var(--ink);color:var(--bg
 .hero-copy{max-width:780px}
 /* keep each headline line whole on wider screens (phones still wrap) */
 @media (min-width:761px){.hero h1 span{white-space:nowrap}}
+/* Vietnamese subheadline is short enough to sit on one line */
+@media (min-width:761px){:lang(vi) .hero .sub{max-width:none;white-space:nowrap}}
 .accent-bar{display:block;width:32px;height:5px;background:var(--yellow);margin-bottom:12px}
 .hero h1{font-size:clamp(40px,5.4vw,74px);line-height:1.06;margin:36px 0 30px;font-weight:400}
 .hero h1 span{display:block}
 .hero h1 .gold{color:var(--yellow)}
-.hero .sub{font-size:clamp(19px,1.6vw,23px);font-weight:400;margin-bottom:18px;max-width:30ch;line-height:1.5}
-.hero .intro{color:#e4e1da;max-width:48ch}
+.hero .sub{font-size:clamp(19px,1.6vw,23px);font-weight:400;margin-bottom:18px;max-width:30ch;line-height:1.5;text-wrap:balance}
+.hero .intro{color:#e4e1da;max-width:52ch;font-size:16px}
 .hero .btn.primary{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
 .hero .btn.primary:hover{background:#fff;border-color:#fff}
 .hero .btn:not(.primary){border-color:#fff;color:#fff}
 .hero .btn:not(.primary):hover{background:#fff;color:var(--ink)}
 .caption{position:absolute;left:28px;bottom:22px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:400;color:var(--ink);background:rgba(247,246,242,.85);padding:2px 6px}
 
+/* key figures band, straight under the hero */
+.stats{background:var(--sand);padding:clamp(36px,4.5vw,60px) 0;border-top:0}
+.stats dl{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stats dl>div{border-left:3px solid var(--yellow);padding-left:20px}
+.stats dt{font-size:clamp(36px,3.8vw,56px);font-weight:500;line-height:1.05;letter-spacing:-.02em}
+.stats dd{margin:8px 0 0;color:var(--grey);font-weight:400;font-size:16px;max-width:22ch}
+
 /* sections */
 section{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
 /* alternate block colours so each section reads as its own band */
 .vision{background:var(--bg);border-top:0}
+/* optional background photo, darkened so the white text stays easy to read */
+.vision.has-bg{position:relative;overflow:hidden;background:var(--ink);color:#fff}
+.vision-bg{position:absolute;inset:0}
+.vision-bg img{width:100%;height:100%;object-fit:cover;display:block}
+.vision-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,20,20,.94) 0%,rgba(20,20,20,.88) 50%,rgba(20,20,20,.78) 100%)}
+.vision.has-bg .wrap{position:relative}
+.vision.has-bg p{color:#e4e1da}
+.vision.has-bg .values p{color:#cfcac0}
 .programs{background:#fff}
 .people{background:var(--sand)}
 .collab{background:var(--bg)}
 .vision .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,96px)}
 .vision p+p{margin-top:1em}
-.values{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--ink)}
-.values div{padding:22px 20px 0 0}
+.values{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:0 24px}
+.values div{padding:22px 0 0}
+/* a short yellow line above each value, like the section labels further down */
+.values div::before{content:"";display:block;width:32px;height:5px;background:var(--yellow);margin-bottom:18px}
 .values h3{font-size:19px;font-weight:400;letter-spacing:0;margin-bottom:8px}
 .values p{font-size:15px;color:var(--grey)}
 
@@ -142,6 +166,13 @@ section{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
 .team h4{font-size:21px;font-weight:400;letter-spacing:0}
 .team .role{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:6px 0 12px;font-weight:400}
 .team p{font-size:15px;color:var(--grey)}
+/* partners intro runs the full width, so it stays on one line on desktop */
+#partners>.muted{max-width:none}
+/* strategic partner: one larger tile, set apart from the scrolling row */
+.strategic{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:16px}
+.strategic li{width:min(100%,360px);aspect-ratio:2/1;background:#fff;border:1px solid var(--line);border-top:5px solid var(--yellow);display:grid;place-items:center;padding:24px 40px}
+.strategic a{display:grid;place-items:center;width:100%;height:100%}
+.strategic img{width:100%;height:100%;max-height:120px;object-fit:contain}
 /* partners: one row scrolling sideways, pauses on hover */
 .partners-marquee{margin-top:24px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .partners-track{display:flex;width:max-content;animation:marquee var(--marquee-dur,32s) linear infinite}
@@ -196,17 +227,21 @@ footer .fine{padding-top:22px;font-size:13px;color:#bdbab2;display:flex;justify-
   nav ul{flex-direction:column;align-items:stretch;gap:0;padding:8px var(--pad) 16px}
   nav a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
   nav a.nav-cta{display:inline-block;margin-top:12px;padding:10px 20px;border:1.5px solid var(--yellow)}
+  .lang-switch{padding:18px 0 4px;font-size:15px}
+  .lang-switch a{display:inline;border:0;padding:0;font-size:15px}
 }
 @media (max-width:1000px){
   .programs-grid,.team,.team.advisory{grid-template-columns:repeat(2,1fr)}
   .values{grid-template-columns:repeat(2,1fr)}
   .values div{padding-bottom:20px}
+  .stats dl{grid-template-columns:repeat(2,1fr);row-gap:32px}
 }
 @media (max-width:760px){
   header .wrap{height:68px}
   .logo .logo-short{width:120px}
   .hero{min-height:auto}
   .hero-bg::after{background:linear-gradient(180deg,rgba(20,20,20,.6),rgba(20,20,20,.85))}
+  .vision-bg::after{background:rgba(20,20,20,.88)}
   .vision .grid,.project article.grid,.collab .grid,.story .grid{grid-template-columns:1fr}
   .project article.flip>div:first-child{order:0}
   .logo-footer{width:240px}

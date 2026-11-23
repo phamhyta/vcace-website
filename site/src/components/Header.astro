@@ -1,23 +1,39 @@
 ---
 import Logo from './Logo.astro';
-const { isHome = false, nav = { projects: true, people: true } } = Astro.props;
+import { ui, home, swapPath, type Lang } from '../lib/i18n';
+const { lang = 'en' as Lang, isHome = false, nav = { projects: true, people: true } } = Astro.props;
+const t = ui[lang as Lang];
 // On sub-pages, section links go back to the home page anchors.
-const h = (id: string) => (isHome ? `#${id}` : `/#${id}`);
+const h = (id: string) => (isHome ? `#${id}` : `${home(lang)}#${id}`);
+const langs = [
+  { code: 'en' as Lang, label: 'ENG', name: 'English' },
+  { code: 'vi' as Lang, label: 'VIE', name: 'Tiếng Việt' },
+];
 ---
 <header>
   <div class="wrap">
-    <a class="logo" href={isHome ? '#top' : '/'} aria-label="VCACE home">
+    <a class="logo" href={isHome ? '#top' : home(lang)} aria-label={t.homeLabel}>
       <Logo variant="full" class="logo-full" />
       <Logo variant="short" class="logo-short" />
     </a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
-    <nav id="nav" aria-label="Primary">
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">{t.menu}</button>
+    <nav id="nav" aria-label={t.primaryNav}>
       <ul>
-        <li><a href={h('vision')}>Our Vision</a></li>
-        <li><a href={h('programs')}>Programs</a></li>
-        {nav.people && <li><a href={h('people')}>People &amp; Partners</a></li>}
-        {nav.projects && <li><a href={h('projects')}>Upcoming Projects</a></li>}
-        <li><a class="nav-cta" href={h('collaborate')}>Collaborate with us</a></li>
+        <li><a href={h('vision')}>{t.vision}</a></li>
+        <li><a href={h('programs')}>{t.programs}</a></li>
+        {nav.people && <li><a href={h('people')}>{t.people}</a></li>}
+        {nav.projects && <li><a href={h('projects')}>{t.projects}</a></li>}
+        <li><a class="nav-cta" href={h('collaborate')}>{t.collaborate}</a></li>
+        <li class="lang-switch" role="group" aria-label={t.language}>
+          {langs.map((l, i) => (
+            <>
+              {i > 0 && <span aria-hidden="true">|</span>}
+              {l.code === lang
+                ? <span class="current" aria-current="true" title={l.name}>{l.label}</span>
+                : <a href={swapPath(Astro.url.pathname, l.code)} hreflang={l.code} lang={l.code} title={l.name} aria-label={l.name}>{l.label}</a>}
+            </>
+          ))}
+        </li>
       </ul>
     </nav>
   </div>

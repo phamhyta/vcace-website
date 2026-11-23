@@ -4,80 +4,110 @@
       "published": true,
       "group": "executive",
       "name": "Celine Dang",
+      "nameVi": "",
       "role": "Executive Lead",
+      "roleVi": "Trưởng ban điều hành",
       "bio": "Leads VCACE’s strategy, institutional relationships, bilateral partnerships and organisational development.",
+      "bioVi": "Dẫn dắt chiến lược, quan hệ với các thiết chế, hợp tác song phương và phát triển tổ chức của VCACE.",
       "photo": ""
     },
     {
       "published": true,
       "group": "executive",
       "name": "Mai Trinh",
+      "nameVi": "",
       "role": "Artistic Lead",
+      "roleVi": "Trưởng ban nghệ thuật",
       "bio": "Guides artistic direction, cultural programming and engagement with creative practitioners.",
+      "bioVi": "Định hướng nghệ thuật, xây dựng chương trình văn hóa và kết nối với giới sáng tạo.",
       "photo": ""
     },
     {
       "published": true,
       "group": "executive",
       "name": "Lan Anh",
-      "role": "Coordinator",
+      "nameVi": "",
+      "role": "Project Coordinator",
+      "roleVi": "Điều phối dự án",
       "bio": "Supports program planning, communications and delivery.",
+      "bioVi": "Hỗ trợ lên kế hoạch chương trình, truyền thông và tổ chức thực hiện.",
       "photo": ""
     },
     {
       "published": true,
       "group": "executive",
       "name": "Minh Pham",
-      "role": "Coordinator",
+      "nameVi": "",
+      "role": "Project Coordinator",
+      "roleVi": "Điều phối dự án",
       "bio": "Supports coordination and delivery across VCACE activities.",
+      "bioVi": "Hỗ trợ điều phối và tổ chức các hoạt động của VCACE.",
       "photo": ""
     },
     {
       "published": true,
       "group": "advisory",
       "name": "Huy Tuan",
+      "nameVi": "Huy Tuấn",
       "role": "Music composer · Vietnam",
+      "roleVi": "Nhạc sĩ · Việt Nam",
       "bio": "",
+      "bioVi": "",
       "photo": ""
     },
     {
       "published": true,
       "group": "advisory",
-      "name": "Dr Luong Thu Huong",
-      "role": "Hanoi University of Culture · Vietnam",
+      "name": "Dr Luong Thi Thu Huong",
+      "nameVi": "TS. Lương Thị Thu Hường",
+      "role": "Faculty of Media and External Culture, Diplomatic Academy of Vietnam",
+      "roleVi": "Khoa Truyền thông và Văn hóa Đối ngoại, Học viện Ngoại giao Việt Nam",
       "bio": "",
+      "bioVi": "",
       "photo": ""
     },
     {
       "published": true,
       "group": "advisory",
       "name": "Kate Ben-Tovim",
+      "nameVi": "",
       "role": "Founding Director, Turning World · Australia",
+      "roleVi": "Giám đốc sáng lập, Turning World · Úc",
       "bio": "",
+      "bioVi": "",
       "photo": ""
     },
     {
       "published": true,
       "group": "advisory",
-      "name": "Hieu",
-      "role": "Startup founder · Vietnam",
+      "name": "Tran Quang Duc",
+      "nameVi": "Trần Quang Đức",
+      "role": "Scholar and researcher of Vietnamese culture and history · Vietnam",
+      "roleVi": "Học giả, nhà nghiên cứu văn hóa lịch sử Việt Nam",
       "bio": "",
+      "bioVi": "",
       "photo": ""
     },
     {
       "published": true,
       "group": "advisory",
       "name": "To be announced",
+      "nameVi": "Sẽ công bố sau",
       "role": "",
+      "roleVi": "",
       "bio": "",
+      "bioVi": "",
       "photo": ""
     },
     {
       "published": true,
       "group": "advisory",
       "name": "To be announced",
+      "nameVi": "Sẽ công bố sau",
       "role": "",
+      "roleVi": "",
       "bio": "",
+      "bioVi": "",
       "photo": ""
     }
   ],
@@ -85,37 +115,42 @@
     {
       "published": true,
       "name": "Mai Galleria",
-      "url": "",
-      "logo": "",
-      "showName": false
+      "url": "https://maigalleria.com.au/",
+      "logo": "/partners/mai-galleria.png",
+      "showName": false,
+      "strategic": true
     },
     {
       "published": true,
       "name": "SEA Effect",
       "url": "https://seaeffect.com/",
       "logo": "/partners/sea-effect.png",
-      "showName": true
+      "showName": true,
+      "strategic": false
     },
     {
       "published": true,
       "name": "Global Viet Women",
       "url": "https://globalvietwomen.com/",
       "logo": "/partners/global-viet-women.svg",
-      "showName": false
+      "showName": false,
+      "strategic": false
     },
     {
-      "published": false,
-      "name": "Tu Tap",
-      "url": "",
-      "logo": "",
-      "showName": false
+      "published": true,
+      "name": "TapTu",
+      "url": "https://www.facebook.com/taptu.gifttruth",
+      "logo": "/partners/taptu.png",
+      "showName": false,
+      "strategic": false
     },
     {
       "published": true,
       "name": "AVESQ",
       "url": "",
       "logo": "/partners/avesq.png",
-      "showName": false
+      "showName": false,
+      "strategic": false
     }
   ]
 }

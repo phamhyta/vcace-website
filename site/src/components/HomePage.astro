@@ -1,0 +1,283 @@
+---
+import Base from '../layouts/Base.astro';
+import Art from '../components/Art.astro';
+import { getContent } from '../lib/content';
+import { ui, status, home as homeUrl, type Lang } from '../lib/i18n';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = ui[lang];
+const { home, executive, advisory, strategic, partners, projects, story } = await getContent(lang);
+const { meta, hero, stats, vision, programs, people, collaborate, footer } = home;
+const projectsCopy = home.projects;
+
+const pad = (n: number) => String(n + 1).padStart(2, '0');
+// Sanity image URLs carry ?w=1800; offer smaller widths so phones download less.
+const srcset = (url: string) =>
+  url.includes('cdn.sanity.io') ? [480, 800, 1200, 1800].map((w) => `${url.replace(/w=\d+/, `w=${w}`)} ${w}w`).join(', ') : undefined;
+const half = '(max-width: 900px) 100vw, 50vw';
+const quarter = '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw';
+const when = (p: { status: string; date: string; period: string }) => [status(lang, p.status), p.date || p.period].filter(Boolean).join(' · ');
+const hasPeople = executive.length + advisory.length + strategic.length + partners.length > 0;
+const statItems = stats.items.filter((s) => s.value);
+// Partners marquee: repeat the list until one pass has at least 8 tiles (wider than the page).
+const partnerSet = partners.length ? Array.from({ length: Math.ceil(8 / partners.length) }, () => partners).flat() : [];
+---
+<Base lang={lang} meta={meta} isHome nav={{ projects: projects.length > 0, people: hasPeople }} footer={footer}>
+<div id="top" class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    {hero.image
+      ? <img src={hero.image} srcset={srcset(hero.image)} sizes="100vw" alt="" fetchpriority="high" />
+      : <Art variant="hero" />}
+  </div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="accent-bar" aria-hidden="true"></span>
+      <p class="micro">{hero.eyebrow}</p>
+      <h1><span>{hero.headline}</span>{hero.headlineAccent && <span class="gold">{hero.headlineAccent}</span>}</h1>
+      <p class="sub">{hero.subheadline}</p>
+      <p class="intro">{hero.intro}</p>
+      <div class="btns">
+        <a class="btn primary" href="#programs">{hero.primaryButton}</a>
+        <a class="btn" href="#collaborate">{hero.secondaryButton}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{statItems.length > 0 && (
+<section class="stats" aria-label={t.glance}>
+  <div class="wrap">
+    <dl>
+      {statItems.map((s) => <div><dt>{s.value}</dt><dd>{s.label}</dd></div>)}
+    </dl>
+  </div>
+</section>
+)}
+
+<section id="vision" class:list={['vision', { 'has-bg': vision.image }]}>
+  {vision.image && (
+    <div class="vision-bg" aria-hidden="true">
+      <img src={vision.image} srcset={srcset(vision.image)} sizes="100vw" alt="" loading="lazy" />
+    </div>
+  )}
+  <div class="wrap">
+    <div class="grid">
+      <h2>{vision.headline}</h2>
+      <div>{vision.paragraphs.map((p) => <p>{p}</p>)}</div>
+    </div>
+    <div class="values">
+      {vision.values.map((v) => <div><h3>{v.title}</h3><p>{v.text}</p></div>)}
+    </div>
+  </div>
+</section>
+
+<section id="programs" class="programs">
+  <div class="wrap">
+    <h2>{programs.headline}</h2>
+    <p class="intro">{programs.intro}</p>
+    <div class="programs-grid">
+      {programs.items.map((p, i) => (
+        <a class="panel" href={p.link}>
+          <div class="img">
+            {p.image
+              ? <img src={p.image} srcset={srcset(p.image)} sizes={quarter} alt={p.imageAlt} loading="lazy" />
+              : <Art variant={`p${i}`} />}
+          </div>
+          <span class="num" aria-hidden="true">{pad(i)}</span>
+          <h3>{p.title}</h3>
+          <p>{p.text}</p>
+          <p class="eg">{p.examples}</p>
+          <span class="more">{p.linkText}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+{projects.length > 0 && (
+<section id="projects" class="project">
+  <div class="wrap">
+    <h2 class="section-title">{projectsCopy.headline}</h2>
+    {projects.map((p, i) => (
+      <article class:list={['grid', { flip: i % 2 === 1 }]}>
+        <div>
+          <span class="tag micro">{when(p)}</span>
+          <h3>{p.title}</h3>
+          <p class="lead">{p.lead}</p>
+          {p.description && <p>{p.description}</p>}
+          {p.note && <p class="note">{p.note}</p>}
+          <div class="btns"><a class="btn primary" href="#collaborate">{projectsCopy.buttonText}</a></div>
+        </div>
+        <div class="art">
+          {p.image
+            ? <img src={p.image} srcset={srcset(p.image)} sizes={half} alt={p.imageAlt} loading="lazy" />
+            : <Art variant="project" />}
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+)}
+
+{story && (
+<section id="story" class="story">
+  <div class="wrap">
+    <div class="grid">
+      <div class="img">
+        {story.image && <img src={story.image} srcset={srcset(story.image)} sizes={half} alt={story.imageAlt} loading="lazy" />}
+      </div>
+      <div>
+        <p class="micro">{home.story.headline}</p>
+        {story.quote ? <blockquote>{story.quote}</blockquote> : <h2 style="margin:20px 0 24px">{story.title}</h2>}
+        {story.person && <p class="who">{story.person}{story.role && <span class="muted">, {story.role}</span>}</p>}
+        <div class="body" style="margin-top:20px">{story.body.filter(Boolean).map((p) => <p>{p}</p>)}</div>
+      </div>
+    </div>
+  </div>
+</section>
+)}
+
+{hasPeople && (
+<section id="people" class="people">
+  <div class="wrap">
+    <h2>{people.headline}</h2>
+    {executive.length > 0 && (
+      <div class="group">
+        <h3 class="group-title">{people.executiveHeadline}</h3>
+        <div class="team">
+          {executive.map((m) => (
+            <article>
+              {m.photo && <img class="photo" src={m.photo} alt={t.portrait(m.name)} loading="lazy" />}
+              <h4>{m.name}</h4>{m.role && <p class="role">{m.role}</p>}{m.bio && <p>{m.bio}</p>}
+            </article>
+          ))}
+        </div>
+      </div>
+    )}
+    {advisory.length > 0 && (
+      <div class="group">
+        <h3 class="group-title">{people.advisoryHeadline}</h3>
+        <div class="team advisory">
+          {advisory.map((m) => (
+            <article>
+              {m.photo && <img class="photo" src={m.photo} alt={t.portrait(m.name)} loading="lazy" />}
+              <h4>{m.name}</h4>{m.role && <p class="role">{m.role}</p>}{m.bio && <p>{m.bio}</p>}
+            </article>
+          ))}
+        </div>
+      </div>
+    )}
+    {strategic.length > 0 && (
+      <div class="group" id="strategic-partner">
+        <h3 class="group-title">{people.strategicHeadline}</h3>
+        <ul class="strategic">
+          {strategic.map((p) => {
+            const inner = p.logo ? <img src={p.logo} alt={p.name} loading="lazy" /> : <span>{p.name}</span>;
+            return <li>{p.url ? <a href={p.url} rel="noopener">{inner}</a> : inner}</li>;
+          })}
+        </ul>
+      </div>
+    )}
+    {partners.length > 0 && (
+      <div class="group" id="partners">
+        <h3 class="group-title">{people.partnersHeadline}</h3>
+        {people.partnersIntro && <p class="muted">{people.partnersIntro}</p>}
+        {/* A single row that scrolls sideways. The list is repeated so one pass is wider than the
+            screen, then doubled so the loop is seamless; copies are hidden from screen readers. */}
+        <div class="partners-marquee" style={`--marquee-dur:${partnerSet.length * 4}s`}>
+          <div class="partners-track">
+            {[0, 1].map((copy) => (
+              <ul class="partners" aria-hidden={copy ? 'true' : undefined}>
+                {partnerSet.map((p, i) => {
+                  const hidden = copy > 0 || i >= partners.length;
+                  const inner = p.logo
+                    ? (p.showName
+                      ? <span class="logo-name"><img src={p.logo} alt="" loading="lazy" /><span>{p.name}</span></span>
+                      : <img src={p.logo} alt={p.name} loading="lazy" />)
+                    : <span>{p.name}</span>;
+                  return <li aria-hidden={hidden && copy === 0 ? 'true' : undefined}>{p.url ? <a href={p.url} rel="noopener" tabindex={hidden ? -1 : undefined}>{inner}</a> : inner}</li>;
+                })}
+              </ul>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+)}
+
+<section id="collaborate" class="collab">
+  <div class="wrap">
+    <div class="grid">
+      <div class="copy">
+        <h2>{collaborate.headline}</h2>
+        {collaborate.paragraphs.map((p) => <p>{p}</p>)}
+        {collaborate.groups?.map((g) => (
+          <div class="audience"><h3>{g.title}</h3><p>{g.text}</p></div>
+        ))}
+      </div>
+      <!-- Netlify Forms: detected at deploy time, submissions in Netlify > Forms > contact.
+           If "Form endpoint URL" is set in the CMS, that external service is used instead. -->
+      <form id="enquiry" name="contact" method="POST" action={collaborate.formEndpoint || `${homeUrl(lang)}thanks/`}
+        data-netlify="true" netlify-honeypot="website" data-external={collaborate.formEndpoint ? 'true' : 'false'} data-msg={JSON.stringify(t.form)} novalidate>
+        <input type="hidden" name="form-name" value="contact" />
+        <label>{t.form.name}<input name="name" autocomplete="name" required /></label>
+        <label>{t.form.email}<input name="email" type="email" autocomplete="email" required /></label>
+        <label><span>{t.form.organisation} <span class="opt">{t.form.optional}</span></span><input name="organisation" autocomplete="organization" /></label>
+        <label>{t.form.topic}
+          <select name="topic" required>
+            <option value="">{t.form.choose}</option>
+            {collaborate.topics.map((t) => <option>{t}</option>)}
+          </select>
+        </label>
+        <label>{t.form.message}<textarea name="message" required></textarea></label>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <label class="consent"><input type="checkbox" name="consent" value="yes" required /> {t.form.consent}</label>
+        <div><button class="btn primary" type="submit">{collaborate.buttonText}</button></div>
+        <p id="status" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('enquiry') as HTMLFormElement;
+  const status = document.getElementById('status')!;
+  const msg = JSON.parse(form.dataset.msg || '{}');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if ((form.elements.namedItem('website') as HTMLInputElement).value) return;
+    if (!form.checkValidity()) {
+      status.textContent = msg.incomplete;
+      form.reportValidity();
+      return;
+    }
+    const external = form.dataset.external === 'true';
+    if (!external && ['localhost', '127.0.0.1'].includes(location.hostname)) {
+      status.textContent = msg.preview;
+      return;
+    }
+    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    button.disabled = true;
+    status.textContent = msg.sending;
+    try {
+      const data = new FormData(form);
+      const res = external
+        ? await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+        : await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
+          });
+      if (!res.ok) throw new Error(String(res.status));
+      form.reset();
+      status.textContent = msg.sent;
+    } catch {
+      status.textContent = msg.failed;
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>
+</Base>

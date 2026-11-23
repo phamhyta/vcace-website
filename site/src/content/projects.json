@@ -10,10 +10,15 @@
       "date": "",
       "lead": "A proposed gathering weaving contemporary visual arts, live performance and cultural dialogue into one shared experience.",
       "description": "VCACE is developing its first cultural showcase in Brisbane, bringing together Vietnam- and Australia-connected practitioners for a curated exhibition, an artist-led conversation and an intimate performance. The project aims to create new connections and the foundations for future bilateral collaboration.",
-      "note": "Proposed project. Artists, venue, dates, funding and partners are still to be confirmed.",
+      "note": "Artists, venue, dates, funding and partners are still to be confirmed.",
       "image": "https://cdn.sanity.io/images/hd1rue71/production/ff10b74c0d54996be741cd8459403c3239e6e74b-2400x1600.jpg?w=1800&auto=format",
       "imageAlt": "A dimly lit exhibition hall with one long, brightly lit white wall of paintings and wall texts.",
-      "imageCredit": "Concept image · Photo: buian_photos / Unsplash"
+      "imageCredit": "Concept image · Photo: buian_photos / Unsplash",
+      "titleVi": "Gặp gỡ Văn hóa – CHẠM",
+      "periodVi": "Mùa thu 2027 (tại Úc)",
+      "leadVi": "Một sự kiện đang được đề xuất, kết hợp nghệ thuật thị giác đương đại, biểu diễn trực tiếp và đối thoại văn hóa trong cùng một trải nghiệm.",
+      "descriptionVi": "VCACE đang chuẩn bị cho sự kiện văn hóa đầu tiên tại Brisbane, quy tụ những nghệ sĩ có gắn bó với Việt Nam và Úc qua một triển lãm chọn lọc, một buổi trò chuyện cùng nghệ sĩ và một đêm biểu diễn ấm cúng. Dự án mong muốn tạo nên những kết nối mới và đặt nền móng cho các hợp tác song phương sau này.",
+      "noteVi": "Nghệ sĩ, địa điểm, thời gian, kinh phí và đối tác đang trong quá trình xác nhận."
     },
     {
       "published": true,
@@ -23,12 +28,17 @@
       "status": "In development",
       "period": "Spring 2027",
       "date": "",
-      "lead": "Bringing jazz musicians from Vietnam and Australia together to share, create and perform new work.",
-      "description": "",
-      "note": "",
+      "lead": "Bringing musicians from Vietnam and Australia together to share, create and perform.",
+      "description": "Through rehearsals, workshops and open jam sessions, the exchange will bring Vietnamese instruments, melodies and stories into conversation with the Australian jazz scene. Musicians will learn from each other’s traditions, create new pieces side by side and share them with audiences in both countries, building friendships and pathways for future collaboration.",
+      "note": "Musicians, venues, dates, funding and partners are still to be confirmed.",
       "image": "https://images.unsplash.com/photo-1600779547877-be592ef5aad3?w=1800&q=80&auto=format&fit=crop",
       "imageAlt": "Instruments and microphones on an empty stage under blue spotlights and haze.",
-      "imageCredit": "Concept image · Photo: Magnus Lunay / Unsplash (unsplash.com/photos/LHR6tUw8N34)"
+      "imageCredit": "Concept image · Photo: Magnus Lunay / Unsplash (unsplash.com/photos/LHR6tUw8N34)",
+      "titleVi": "Giao lưu Âm nhạc Jazz",
+      "periodVi": "Mùa xuân 2027 (tại Úc)",
+      "leadVi": "Đưa các nghệ sĩ âm nhạc Việt Nam và Úc đến gần nhau để cùng chia sẻ, sáng tác và biểu diễn.",
+      "descriptionVi": "Qua những buổi tập, workshop và jam session, chương trình để nhạc cụ, giai điệu và câu chuyện Việt Nam gặp gỡ nền nhạc jazz Úc. Các nghệ sĩ sẽ học hỏi truyền thống của nhau, cùng viết nên những tác phẩm mới và mang chúng đến với khán giả hai nước, từ đó vun đắp tình bạn và mở đường cho những lần hợp tác tiếp theo.",
+      "noteVi": "Nghệ sĩ, địa điểm, thời gian, kinh phí và đối tác đang trong quá trình xác nhận."
     },
     {
       "published": false,
@@ -43,7 +53,12 @@
       "note": "",
       "image": "",
       "imageAlt": "",
-      "imageCredit": ""
+      "imageCredit": "",
+      "titleVi": "",
+      "periodVi": "",
+      "leadVi": "",
+      "descriptionVi": "",
+      "noteVi": ""
     },
     {
       "published": false,
@@ -58,7 +73,12 @@
       "note": "",
       "image": "",
       "imageAlt": "",
-      "imageCredit": ""
+      "imageCredit": "",
+      "titleVi": "",
+      "periodVi": "",
+      "leadVi": "",
+      "descriptionVi": "",
+      "noteVi": ""
     }
   ]
 }
