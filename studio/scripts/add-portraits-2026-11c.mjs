@@ -7,12 +7,12 @@ import {readFileSync, existsSync} from 'node:fs'
 
 const DRY = process.argv.includes('--dry')
 const client = getCliClient({apiVersion: '2025-01-01'})
-const PHOTOS = {'Mai Trinh': 'mai-trinh.jpg', 'Celine Dang': 'celine-dang.jpg', 'Lan Anh Ngo': 'lan-anh.jpg', 'Minh Pham': 'minh-pham.jpg', 'Ha Nguyen': 'ha-nguyen.jpg'}
+const PHOTOS = {'Mai Trinh': 'mai-trinh.jpg', 'Celine Dang': 'celine-dang.jpg', 'Lan Anh Ngo': 'lan-anh.jpg', 'Minh Pham': 'minh-pham.jpg', 'Ha Nguyen': 'ha-nguyen.jpg', 'Xuan Huong Tran': 'xuan-huong-tran.jpg'}
 
 // Full names agreed later (24 Nov 2026).
 const RENAMES = {'Lan Anh': 'Lan Anh Ngo'}
 // New members, added after the named member with the same fields as site/src/content/team.json.
-const ADD = [{after: 'Minh Pham', name: 'Ha Nguyen'}]
+const ADD = [{after: 'Minh Pham', name: 'Ha Nguyen'}, {after: 'Minh Pham', name: 'Xuan Huong Tran'}]
 const teamJson = JSON.parse(readFileSync(new URL('../../site/src/content/team.json', import.meta.url), 'utf8'))
 
 const team = await client.fetch('*[_id == "team"][0]{members[]{_key, name, photo}}')

@@ -165,6 +165,10 @@ section{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
 .team article{border-top:1.5px solid var(--ink);padding-top:16px}
 .team .photo{width:100%;aspect-ratio:1;object-fit:cover;display:block;margin-bottom:16px}
 .team.portraits .photo{width:clamp(120px,12vw,168px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 30%;margin-bottom:20px}
+.team.side{column-gap:40px;row-gap:40px}
+.team.side article{display:grid;grid-template-columns:clamp(104px,9vw,136px) 1fr;grid-template-rows:auto auto 1fr;column-gap:24px;align-items:start;padding-top:24px}
+.team.side .photo{grid-row:1 / span 3;width:100%;margin:0}
+.team.side h4{margin-top:8px}
 .team .monogram{display:grid;place-items:center;background:#E2DCD1;color:#5A564F;font-size:clamp(30px,3vw,44px);font-weight:300;letter-spacing:.08em;user-select:none}
 .team.portraits .photo{box-shadow:0 0 0 4px var(--sand),0 0 0 5px var(--line)}
 .team h4{font-size:21px;font-weight:400;letter-spacing:0}
@@ -259,7 +263,7 @@ footer .fine{padding-top:22px;font-size:13px;color:#bdbab2;display:flex;justify-
   .exploring li{grid-template-columns:1fr;gap:4px}
 }
 @media (max-width:600px){
-  .team.portraits article{display:grid;grid-template-columns:88px 1fr;column-gap:18px;align-items:start}
+  .team.portraits article{display:grid;grid-template-columns:88px 1fr;grid-template-rows:auto auto 1fr;column-gap:18px;align-items:start}
   .team.portraits .photo{grid-row:1 / span 3;width:88px;margin:4px 0 0;font-size:26px}
   .team.portraits .role{margin-bottom:8px}
 }

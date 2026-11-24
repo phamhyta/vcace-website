@@ -20,6 +20,9 @@ const when = (p: { status: string; date: string; period: string }) => [status(la
 const hasPeople = executive.length + advisory.length + strategic.length + partners.length > 0;
 // Executive portraits (official site): round photos; anyone without one yet gets their initials.
 const execPhotos = executive.some((m) => m.photo);
+// Up to five people sit in one row; six sit as two rows of three with the text beside each portrait.
+const execCols = executive.length === 6 ? 3 : Math.min(Math.max(executive.length, 4), 5);
+const execSide = execPhotos && execCols === 3;
 const initials = (name: string) => name.split(/\s+/).map((w) => w[0]).slice(0, 2).join('').toUpperCase();
 const portrait = (url: string) => (url.includes('cdn.sanity.io') ? url.replace(/w=\d+/, 'w=480') : url);
 const statItems = stats.items.filter((s) => s.value);
@@ -148,7 +151,7 @@ const partnerSet = partners.length ? Array.from({ length: Math.ceil(8 / partners
     {executive.length > 0 && (
       <div class="group">
         <h3 class="group-title">{people.executiveHeadline}</h3>
-        <div class:list={['team', 'exec', { portraits: execPhotos }]} style={`--cols:${Math.min(Math.max(executive.length, 4), 5)}`}>
+        <div class:list={['team', 'exec', { portraits: execPhotos, side: execSide }]} style={`--cols:${execCols}`}>
           {executive.map((m) => (
             <article>
               {m.photo

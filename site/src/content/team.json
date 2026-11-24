@@ -42,7 +42,18 @@
       "roleVi": "Điều phối dự án",
       "bio": "Supports coordination and delivery across VCACE activities.",
       "bioVi": "Hỗ trợ điều phối và tổ chức các hoạt động của VCACE.",
-      "photo": ""
+      "photo": "/team/minh-pham.jpg"
+    },
+    {
+      "published": true,
+      "group": "executive",
+      "name": "Xuan Huong Tran",
+      "nameVi": "",
+      "role": "Project Coordinator",
+      "roleVi": "Điều phối dự án",
+      "bio": "Supports the planning and coordination of VCACE projects.",
+      "bioVi": "Hỗ trợ lên kế hoạch và điều phối các dự án của VCACE.",
+      "photo": "/team/xuan-huong-tran.jpg"
     },
     {
       "published": true,
