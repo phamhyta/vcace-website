@@ -7,10 +7,20 @@ import {readFileSync, existsSync} from 'node:fs'
 
 const DRY = process.argv.includes('--dry')
 const client = getCliClient({apiVersion: '2025-01-01'})
-const PHOTOS = {'Mai Trinh': 'mai-trinh.jpg', 'Celine Dang': 'celine-dang.jpg'}
+const PHOTOS = {'Mai Trinh': 'mai-trinh.jpg', 'Celine Dang': 'celine-dang.jpg', 'Lan Anh Ngo': 'lan-anh.jpg', 'Minh Pham': 'minh-pham.jpg'}
+
+// Full names agreed later (24 Nov 2026).
+const RENAMES = {'Lan Anh': 'Lan Anh Ngo'}
 
 const team = await client.fetch('*[_id == "team"][0]{members[]{_key, name, photo}}')
 const tx = client.transaction()
+for (const m of team.members) {
+  const to = RENAMES[m.name]
+  if (!to) continue
+  console.log(DRY ? 'would rename' : 'rename', m.name, '->', to)
+  if (!DRY) tx.patch('team', (p) => p.set({[`members[_key=="${m._key}"].name`]: to}))
+  m.name = to
+}
 for (const [name, file] of Object.entries(PHOTOS)) {
   const path = new URL(`../../site/public/team/${file}`, import.meta.url)
   const member = team.members.find((m) => m.name === name)
