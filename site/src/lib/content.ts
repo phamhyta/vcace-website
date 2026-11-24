@@ -7,11 +7,11 @@ import storyDefaults from '../content/stories.json';
 import homeVi from '../content/vi/home.json';
 import type { Lang } from './i18n';
 
-// The official site (www.vcace.org, built on Vercel) is a trimmed launch version: no Advisory Board,
-// only the strategic partners (SEA Effect joins Mai Galleria there), and portraits for the executive team.
-// vcace.netlify.app keeps the full version without portraits. Preview locally with VCACE_SITE=official.
+// Both sites show the same content (portraits, SEA Effect beside Mai Galleria as strategic partners).
+// The official site (www.vcace.org, built on Vercel) also hides the Advisory Board and the other
+// partners; vcace.netlify.app shows them. Preview the official version locally with VCACE_SITE=official.
 export const OFFICIAL = process.env.VCACE_SITE === 'official' || (process.env.VERCEL === '1' && process.env.VCACE_SITE !== 'full');
-const OFFICIAL_STRATEGIC = ['SEA Effect'];
+const STRATEGIC = ['SEA Effect'];
 // Vercel has no form handling, so the official site posts the contact form to Netlify Forms on the
 // Netlify copy of the site (same "contact" form, same email notification).
 export const FORMS_HOST = OFFICIAL ? process.env.VCACE_FORMS_HOST || 'https://vcace.netlify.app' : '';
@@ -118,8 +118,8 @@ export async function getContent(lang: Lang = 'en') {
     }));
   }
 
-  const people = members.filter((m) => m.published).map((m) => (OFFICIAL ? m : { ...m, photo: '' }));
-  const isStrategic = (p: Partner) => p.strategic || (OFFICIAL && OFFICIAL_STRATEGIC.includes(p.name));
+  const people = members.filter((m) => m.published);
+  const isStrategic = (p: Partner) => p.strategic || STRATEGIC.includes(p.name);
   return {
     home,
     executive: people.filter((m) => m.group !== 'advisory'),
