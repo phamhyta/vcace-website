@@ -226,9 +226,7 @@ footer ul a{display:inline-block;padding:8px 0}
 footer .fine{padding-top:22px;font-size:13px;color:#bdbab2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 @media (max-width:1180px){
-  .logo .logo-full{display:none}
-  .logo .logo-short{display:block}
-  header .wrap{height:84px}
+  header .wrap{height:88px}
   html{scroll-padding-top:96px}
 }
 @media (max-width:1024px){
@@ -249,8 +247,8 @@ footer .fine{padding-top:22px;font-size:13px;color:#bdbab2;display:flex;justify-
   .stats dl{grid-template-columns:repeat(2,1fr);row-gap:32px}
 }
 @media (max-width:760px){
-  header .wrap{height:68px}
-  .logo .logo-short{width:120px}
+  header .wrap{height:72px}
+  .logo .logo-full{width:min(180px,50vw)}
   .hero{min-height:auto}
   .hero-bg::after{background:linear-gradient(180deg,rgba(20,20,20,.6),rgba(20,20,20,.85))}
   .vision-bg::after{background:rgba(20,20,20,.88)}
