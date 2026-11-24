@@ -16,6 +16,7 @@ for (const [name, file] of Object.entries(PHOTOS)) {
   const member = team.members.find((m) => m.name === name)
   if (!member) throw new Error(`No team member called ${name}`)
   if (!existsSync(path)) { console.log('skip (no file yet):', name); continue }
+  if (member.photo && !process.argv.includes('--replace')) { console.log('skip (already has a photo, add -- --replace to swap):', name); continue }
   if (DRY) { console.log('would set photo for', name, 'from', file); continue }
   const asset = await client.assets.upload('image', readFileSync(path), {filename: `vcace-${file}`})
   tx.patch('team', (p) => p.set({[`members[_key=="${member._key}"].photo`]: {_type: 'image', asset: {_type: 'reference', _ref: asset._id}}}))
