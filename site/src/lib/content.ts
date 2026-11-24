@@ -12,6 +12,9 @@ import type { Lang } from './i18n';
 // vcace.netlify.app keeps the full version without portraits. Preview locally with VCACE_SITE=official.
 export const OFFICIAL = process.env.VCACE_SITE === 'official' || (process.env.VERCEL === '1' && process.env.VCACE_SITE !== 'full');
 const OFFICIAL_STRATEGIC = ['SEA Effect'];
+// Vercel has no form handling, so the official site posts the contact form to Netlify Forms on the
+// Netlify copy of the site (same "contact" form, same email notification).
+export const FORMS_HOST = OFFICIAL ? process.env.VCACE_FORMS_HOST || 'https://vcace.netlify.app' : '';
 
 const projectId = import.meta.env.SANITY_PROJECT_ID;
 const dataset = import.meta.env.SANITY_DATASET || 'production';
