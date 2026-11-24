@@ -2,7 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {schemaTypes} from './schemaTypes'
 
-// Home and team are single documents; projects and stories are lists.
+// Home and team are single documents; news posts, projects and stories are lists.
 const singletons = [
   {id: 'home', title: 'Home page'},
   {id: 'team', title: 'People (team)'},
@@ -35,6 +35,7 @@ export default defineConfig({
               S.listItem().title(s.title).id(s.id).child(S.document().schemaType(s.id).documentId(s.id)),
             ),
             S.divider(),
+            S.documentTypeListItem('post').title('News'),
             S.documentTypeListItem('project').title('Projects'),
             S.documentTypeListItem('story').title('Stories'),
             S.divider(),

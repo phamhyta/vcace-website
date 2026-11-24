@@ -1,10 +1,13 @@
 ---
 import Logo from './Logo.astro';
 import { ui, home, swapPath, type Lang } from '../lib/i18n';
+import { getPosts } from '../lib/posts';
 const { lang = 'en' as Lang, isHome = false, nav = { projects: true, people: true } } = Astro.props;
 const t = ui[lang as Lang];
 // On sub-pages, section links go back to the home page anchors.
 const h = (id: string) => (isHome ? `#${id}` : `${home(lang)}#${id}`);
+const hasNews = (await getPosts(lang as Lang)).length > 0;
+const onNews = /^(\/vi)?\/news\//.test(Astro.url.pathname);
 const langs = [
   { code: 'en' as Lang, label: 'ENG', name: 'English' },
   { code: 'vi' as Lang, label: 'VIE', name: 'Tiếng Việt' },
@@ -23,6 +26,7 @@ const langs = [
         <li><a href={h('programs')}>{t.programs}</a></li>
         {nav.people && <li><a href={h('people')}>{t.people}</a></li>}
         {nav.projects && <li><a href={h('projects')}>{t.projects}</a></li>}
+        {hasNews && <li><a href={`${home(lang)}news/`} aria-current={onNews ? 'page' : undefined}>{t.news}</a></li>}
         <li><a class="nav-cta" href={h('collaborate')}>{t.collaborate}</a></li>
         <li class="lang-switch" role="group" aria-label={t.language}>
           {langs.map((l, i) => (

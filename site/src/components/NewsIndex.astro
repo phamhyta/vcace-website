@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import { getContent } from '../lib/content';
+import { getPosts } from '../lib/posts';
+import { ui, home, type Lang } from '../lib/i18n';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = ui[lang];
+const posts = await getPosts(lang);
+const { home: homeDoc, projects, executive, advisory, strategic, partners } = await getContent(lang);
+const fmt = (d: string) => (d ? new Date(d).toLocaleDateString(t.dateLocale, { day: 'numeric', month: 'long', year: 'numeric' }) : '');
+const url = (slug: string) => `${home(lang)}news/${slug}/`;
+const [featured, ...rest] = posts;
+// Banner background: Hội An old town from the Thu Bồn river (Peter Borter / Unsplash, unsplash.com/photos/ai_mpqLXBTc); the text side is darkened.
+const bg = '/news/banner.jpg';
+const srcset = (u: string) => (u.includes('cdn.sanity.io') ? [800, 1200, 1800].map((w) => `${u.replace(/w=\d+/, `w=${w}`)} ${w}w`).join(', ') : undefined);
+---
+<Base
+  lang={lang}
+  meta={{ title: `${t.news} | VCACE`, description: t.newsIntro }}
+  nav={{ projects: projects.length > 0, people: executive.length + advisory.length + strategic.length + partners.length > 0 }}
+  footer={homeDoc.footer}
+>
+  <section class:list={['news-head', { 'has-bg': bg }]}>
+    {bg && <div class="news-head-bg" aria-hidden="true"><img src={bg} srcset={srcset(bg)} sizes="100vw" alt="" /></div>}
+    <div class="wrap">
+      <h1>{t.news}</h1>
+      <p class="intro">{t.newsIntro}</p>
+    </div>
+  </section>
+  <section class="news-index">
+    <div class="wrap">
+      {featured && (
+        <a class="news-featured" href={url(featured.slug)}>
+          {featured.image && <div class="img"><img src={featured.image} alt="" /></div>}
+          <div class="text">
+            <time datetime={featured.date}>{fmt(featured.date)}</time>
+            <h2>{featured.title}</h2>
+            {featured.dek && <p class="dek">{featured.dek}</p>}
+            {featured.excerpt && <p>{featured.excerpt}</p>}
+            <span class="btn primary">{t.readMore}</span>
+          </div>
+        </a>
+      )}
+      {rest.length > 0 && (
+        <ul class="news-grid">
+          {rest.map((p) => (
+            <li>
+              <a href={url(p.slug)}>
+                {p.image && <div class="img"><img src={p.image} alt="" loading="lazy" /></div>}
+                <time datetime={p.date}>{fmt(p.date)}</time>
+                <h3>{p.title}</h3>
+                {(p.excerpt || p.dek) && <p>{p.excerpt || p.dek}</p>}
+                <span class="more">{t.readMore} <span aria-hidden="true">→</span></span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</Base>

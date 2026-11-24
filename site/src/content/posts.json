@@ -1,0 +1,186 @@
+{
+  "posts": [
+    {
+      "published": true,
+      "title": "A New Cultural Connection Between Australia and Vietnam",
+      "slug": "a-new-cultural-connection-between-australia-and-vietnam",
+      "date": "2026-11-24",
+      "dek": "Introducing VCACE on Vietnam Culture Day — 24 November 2026",
+      "excerpt": "On Vietnam Culture Day, we introduce the Vietnam Centre for Arts, Culture and Education (VCACE): an emerging Australia-based initiative bringing Australia and Vietnam together through culture.",
+      "image": "https://cdn.sanity.io/images/hd1rue71/production/029a6a4c49828ea2f6a1399ce91a79310dbd92c3-2400x1600.jpg?rect=0,0,1980,1600&w=1800&auto=format",
+      "imageAlt": "Two men hang long hand-printed woodcut scrolls in yellow, black, orange, white and green on the wall of a timber hall.",
+      "imageCredit": "Concept image · Photo: Bernd Dittrich / Unsplash",
+      "body": [
+        {
+          "_key": "f4d7f7d8be",
+          "_type": "block",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_key": "056af23676",
+              "_type": "span",
+              "text": "Culture is more than what we inherit. It is what we experience, share, reinterpret and carry forward. It lives in art and music, in food and traditions, in stories, places and everyday encounters.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_key": "5dd129bf1a",
+          "_type": "block",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_key": "102290a1a0",
+              "_type": "span",
+              "text": "On Vietnam Culture Day, we are pleased to introduce the Vietnam Centre for Arts, Culture and Education (VCACE) — an emerging Australia-based initiative with a simple vision:",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_key": "daa767a659",
+          "_type": "block",
+          "style": "blockquote",
+          "markDefs": [],
+          "children": [
+            {
+              "_key": "4da1432751",
+              "_type": "span",
+              "text": "Bringing Australia and Vietnam together through culture.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_key": "6c845681f2",
+          "_type": "block",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_key": "ebc223bab0",
+              "_type": "span",
+              "text": "VCACE begins with a belief that culture can open doors to deeper understanding, meaningful relationships and new opportunities for collaboration between our two countries.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_key": "f985ff5501",
+          "_type": "block",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_key": "0620a3bbc8",
+              "_type": "span",
+              "text": "We hope to bring together artists, musicians, educators, cultural practitioners and organisations to explore culture in its many forms — traditional and contemporary, familiar and unexpected.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_key": "5fde5e9a1b",
+          "_type": "block",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_key": "967ff54c86",
+              "_type": "span",
+              "text": "Our first initiatives are taking shape for 2027, including Cultural Encounters: CHẠM – Through the Five Senses, and an Australia–Vietnam Music Exchange. Both are currently in development, and we look forward to sharing more as these collaborations evolve.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_key": "e1c4e910ca",
+          "_type": "block",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_key": "0c647e2968",
+              "_type": "span",
+              "text": "Led by Celine Dang and Mai Trinh at the incubation stage, VCACE is beginning with an open mind, a shared commitment and an invitation to others who believe in the power of culture to connect people.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_key": "acf3686507",
+          "_type": "block",
+          "style": "blockquote",
+          "markDefs": [],
+          "children": [
+            {
+              "_key": "cd22bdd5ea",
+              "_type": "span",
+              "text": "Connecting cultures. Inspiring exchange.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_key": "e97a893f71",
+          "_type": "block",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_key": "92a990852a",
+              "_type": "span",
+              "text": "We welcome conversations with artists, cultural organisations, educators and anyone interested in contributing to stronger cultural connections between Australia and Vietnam.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_key": "f8f67de040",
+          "_type": "block",
+          "style": "normal",
+          "markDefs": [
+            {
+              "_key": "83f076e58c",
+              "_type": "link",
+              "href": "/#collaborate"
+            }
+          ],
+          "children": [
+            {
+              "_key": "b47f0ce7b0",
+              "_type": "span",
+              "text": "Explore VCACE and ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "_key": "ac673343e6",
+              "_type": "span",
+              "text": "connect with us",
+              "marks": [
+                "em",
+                "83f076e58c"
+              ]
+            },
+            {
+              "_key": "5a4fb68e2d",
+              "_type": "span",
+              "text": " through our website.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "titleVi": "",
+      "dekVi": "",
+      "excerptVi": "",
+      "bodyVi": []
+    }
+  ]
+}
