@@ -7,6 +7,12 @@ import storyDefaults from '../content/stories.json';
 import homeVi from '../content/vi/home.json';
 import type { Lang } from './i18n';
 
+// The official site (www.vcace.org, built on Vercel) is a trimmed launch version: no Advisory Board,
+// only the strategic partners (SEA Effect joins Mai Galleria there), and portraits for the executive team.
+// vcace.netlify.app keeps the full version without portraits. Preview locally with VCACE_SITE=official.
+export const OFFICIAL = process.env.VCACE_SITE === 'official' || (process.env.VERCEL === '1' && process.env.VCACE_SITE !== 'full');
+const OFFICIAL_STRATEGIC = ['SEA Effect'];
+
 const projectId = import.meta.env.SANITY_PROJECT_ID;
 const dataset = import.meta.env.SANITY_DATASET || 'production';
 
@@ -109,13 +115,14 @@ export async function getContent(lang: Lang = 'en') {
     }));
   }
 
-  const people = members.filter((m) => m.published);
+  const people = members.filter((m) => m.published).map((m) => (OFFICIAL ? m : { ...m, photo: '' }));
+  const isStrategic = (p: Partner) => p.strategic || (OFFICIAL && OFFICIAL_STRATEGIC.includes(p.name));
   return {
     home,
     executive: people.filter((m) => m.group !== 'advisory'),
-    advisory: people.filter((m) => m.group === 'advisory'),
-    strategic: partners.filter((p) => p.published && p.strategic),
-    partners: partners.filter((p) => p.published && !p.strategic),
+    advisory: OFFICIAL ? [] : people.filter((m) => m.group === 'advisory'),
+    strategic: partners.filter((p) => p.published && isStrategic(p)),
+    partners: OFFICIAL ? [] : partners.filter((p) => p.published && !isStrategic(p)),
     projects: projects.filter((p) => p.published),
     story: stories.find((s) => s.published),
     source: projectId ? ('sanity' as const) : ('json' as const),

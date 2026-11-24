@@ -163,6 +163,9 @@ section{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
 .team.advisory{grid-template-columns:repeat(3,1fr)}
 .team article{border-top:1.5px solid var(--ink);padding-top:16px}
 .team .photo{width:100%;aspect-ratio:1;object-fit:cover;display:block;margin-bottom:16px}
+.team.portraits .photo{width:clamp(120px,12vw,168px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 30%;margin-bottom:20px}
+.team .monogram{display:grid;place-items:center;background:#E2DCD1;color:#5A564F;font-size:clamp(30px,3vw,44px);font-weight:300;letter-spacing:.08em;user-select:none}
+.team.portraits .photo{box-shadow:0 0 0 4px var(--sand),0 0 0 5px var(--line)}
 .team h4{font-size:21px;font-weight:400;letter-spacing:0}
 .team .role{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:6px 0 12px;font-weight:400}
 .team p{font-size:15px;color:var(--grey)}
@@ -173,6 +176,9 @@ section{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
 .strategic li{width:min(100%,360px);aspect-ratio:2/1;background:#fff;border:1px solid var(--line);border-top:5px solid var(--yellow);display:grid;place-items:center;padding:24px 40px}
 .strategic a{display:grid;place-items:center;width:100%;height:100%}
 .strategic img{width:100%;height:100%;max-height:120px;object-fit:contain}
+.strategic .logo-name{display:flex;align-items:center;gap:20px;font-size:26px;font-weight:500;color:var(--ink);line-height:1.1;text-decoration:none}
+.strategic .logo-name img{width:96px;height:96px;flex:none}
+.strategic a{text-decoration:none}
 /* partners: one row scrolling sideways, pauses on hover */
 .partners-marquee{margin-top:24px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .partners-track{display:flex;width:max-content;animation:marquee var(--marquee-dur,32s) linear infinite}
@@ -249,6 +255,11 @@ footer .fine{padding-top:22px;font-size:13px;color:#bdbab2;display:flex;justify-
   .programs-grid,.team,.team.advisory,.values{grid-template-columns:1fr}
   .panel .num{margin-top:20px}
   .exploring li{grid-template-columns:1fr;gap:4px}
+}
+@media (max-width:600px){
+  .team.portraits article{display:grid;grid-template-columns:88px 1fr;column-gap:18px;align-items:start}
+  .team.portraits .photo{grid-row:1 / span 3;width:88px;margin:4px 0 0;font-size:26px}
+  .team.portraits .role{margin-bottom:8px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.partners-track{animation:none}.partners-marquee{overflow-x:auto}}
 

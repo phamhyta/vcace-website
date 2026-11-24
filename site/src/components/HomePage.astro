@@ -18,6 +18,10 @@ const half = '(max-width: 900px) 100vw, 50vw';
 const quarter = '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw';
 const when = (p: { status: string; date: string; period: string }) => [status(lang, p.status), p.date || p.period].filter(Boolean).join(' · ');
 const hasPeople = executive.length + advisory.length + strategic.length + partners.length > 0;
+// Executive portraits (official site): round photos; anyone without one yet gets their initials.
+const execPhotos = executive.some((m) => m.photo);
+const initials = (name: string) => name.split(/\s+/).map((w) => w[0]).slice(0, 2).join('').toUpperCase();
+const portrait = (url: string) => (url.includes('cdn.sanity.io') ? url.replace(/w=\d+/, 'w=480') : url);
 const statItems = stats.items.filter((s) => s.value);
 // Partners marquee: repeat the list until one pass has at least 8 tiles (wider than the page).
 const partnerSet = partners.length ? Array.from({ length: Math.ceil(8 / partners.length) }, () => partners).flat() : [];
@@ -144,10 +148,12 @@ const partnerSet = partners.length ? Array.from({ length: Math.ceil(8 / partners
     {executive.length > 0 && (
       <div class="group">
         <h3 class="group-title">{people.executiveHeadline}</h3>
-        <div class="team">
+        <div class:list={['team', { portraits: execPhotos }]}>
           {executive.map((m) => (
             <article>
-              {m.photo && <img class="photo" src={m.photo} alt={t.portrait(m.name)} loading="lazy" />}
+              {m.photo
+                ? <img class="photo" src={portrait(m.photo)} alt={t.portrait(m.name)} loading="lazy" />
+                : execPhotos && <span class="photo monogram" aria-hidden="true">{initials(m.name)}</span>}
               <h4>{m.name}</h4>{m.role && <p class="role">{m.role}</p>}{m.bio && <p>{m.bio}</p>}
             </article>
           ))}
@@ -169,10 +175,14 @@ const partnerSet = partners.length ? Array.from({ length: Math.ceil(8 / partners
     )}
     {strategic.length > 0 && (
       <div class="group" id="strategic-partner">
-        <h3 class="group-title">{people.strategicHeadline}</h3>
+        <h3 class="group-title">{people.strategicHeadline}{lang === 'en' && strategic.length > 1 && !people.strategicHeadline.endsWith('s') ? 's' : ''}</h3>
         <ul class="strategic">
           {strategic.map((p) => {
-            const inner = p.logo ? <img src={p.logo} alt={p.name} loading="lazy" /> : <span>{p.name}</span>;
+            const inner = p.logo
+              ? (p.showName
+                ? <span class="logo-name"><img src={p.logo} alt="" loading="lazy" /><span>{p.name}</span></span>
+                : <img src={p.logo} alt={p.name} loading="lazy" />)
+              : <span>{p.name}</span>;
             return <li>{p.url ? <a href={p.url} rel="noopener">{inner}</a> : inner}</li>;
           })}
         </ul>
