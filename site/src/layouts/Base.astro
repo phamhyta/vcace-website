@@ -17,7 +17,8 @@ const t = ui[lang];
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const alt = { en: new URL(swapPath(Astro.url.pathname, 'en'), Astro.site), vi: new URL(swapPath(Astro.url.pathname, 'vi'), Astro.site) };
 // A page can bring its own share image (e.g. a news post); otherwise the site-wide one is used.
-const ogImage = meta.image ? new URL(meta.image, Astro.site) : new URL('/og-image.png', Astro.site);
+// Social crawlers get a plain JPEG: Sanity's auto=format can answer with AVIF, which Facebook does not show.
+const ogImage = meta.image ? new URL(meta.image.replace('auto=format', 'fm=jpg'), Astro.site) : new URL('/og-image.png', Astro.site);
 const org = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
