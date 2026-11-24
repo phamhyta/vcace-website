@@ -11,7 +11,7 @@ const fmt = (d: string) => (d ? new Date(d).toLocaleDateString(t.dateLocale, { d
 ---
 <Base
   lang={lang}
-  meta={{ title: `${post.title} | VCACE`, description: post.excerpt || post.dek }}
+  meta={{ title: `${post.title} | VCACE`, description: post.excerpt || post.dek, image: post.image ? post.image.replace(/w=\d+/, 'w=1200') : undefined, imageAlt: post.imageAlt }}
   nav={{ projects: projects.length > 0, people: executive.length + advisory.length + strategic.length + partners.length > 0 }}
   footer={homeDoc.footer}
 >

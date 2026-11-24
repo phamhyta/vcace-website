@@ -6,7 +6,8 @@ import sitemap from '@astrojs/sitemap';
 const hidden = ['/style-guide/', '/thanks/'];
 
 export default defineConfig({
-  site: 'https://vcace.org.au',
+  // The live address: canonical links, social previews (og:image) and the sitemap are built from it.
+  site: process.env.SITE_URL || 'https://www.vcace.org',
   trailingSlash: 'ignore',
   integrations: [sitemap({ filter: (page) => !hidden.some((p) => page.endsWith(p)) })],
 });

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /style-guide/
 Disallow: /thanks/
 
-Sitemap: https://vcace.org.au/sitemap-index.xml
+Sitemap: https://www.vcace.org/sitemap-index.xml

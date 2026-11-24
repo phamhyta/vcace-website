@@ -6,7 +6,7 @@ import { ui, swapPath, type Lang } from '../lib/i18n';
 
 interface Props {
   lang?: Lang;
-  meta: { title: string; description: string; shareTitle?: string };
+  meta: { title: string; description: string; shareTitle?: string; image?: string; imageAlt?: string };
   noindex?: boolean;
   isHome?: boolean;
   nav?: { projects: boolean; people: boolean };
@@ -16,7 +16,8 @@ const { lang = 'en', meta, noindex = false, isHome = false, nav, footer } = Astr
 const t = ui[lang];
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const alt = { en: new URL(swapPath(Astro.url.pathname, 'en'), Astro.site), vi: new URL(swapPath(Astro.url.pathname, 'vi'), Astro.site) };
-const ogImage = new URL('/og-image.png', Astro.site);
+// A page can bring its own share image (e.g. a news post); otherwise the site-wide one is used.
+const ogImage = meta.image ? new URL(meta.image, Astro.site) : new URL('/og-image.png', Astro.site);
 const org = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -45,9 +46,9 @@ const org = {
 <meta property="og:locale" content={t.ogLocale}>
 <meta property="og:url" content={canonical}>
 <meta property="og:image" content={ogImage}>
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="VCACE. Connecting cultures. Inspiring exchange.">
+{!meta.image && <meta property="og:image:width" content="1200">}
+{!meta.image && <meta property="og:image:height" content="630">}
+<meta property="og:image:alt" content={meta.imageAlt || 'VCACE. Connecting cultures. Inspiring exchange.'}>
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
