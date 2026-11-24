@@ -229,7 +229,7 @@ footer .fine{padding-top:22px;font-size:13px;color:#bdbab2;display:flex;justify-
 .news-head{background:var(--sand);padding:clamp(48px,7vw,96px) 0 clamp(40px,5vw,64px)}
 .news-head.has-bg{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:clamp(72px,10vw,140px) 0 clamp(56px,7vw,96px)}
 .news-head-bg{position:absolute;inset:0}
-.news-head-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;display:block}
+.news-head-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}
 .news-head-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,20,20,.82) 0%,rgba(20,20,20,.62) 30%,rgba(20,20,20,.2) 52%,rgba(20,20,20,0) 68%)}
 @media (max-width:760px){.news-head-bg::after{background:linear-gradient(90deg,rgba(20,20,20,.78) 0%,rgba(20,20,20,.5) 70%,rgba(20,20,20,.3) 100%)}}
 .news-head.has-bg .wrap{position:relative}

@@ -11,7 +11,7 @@ const { home: homeDoc, projects, executive, advisory, strategic, partners } = aw
 const fmt = (d: string) => (d ? new Date(d).toLocaleDateString(t.dateLocale, { day: 'numeric', month: 'long', year: 'numeric' }) : '');
 const url = (slug: string) => `${home(lang)}news/${slug}/`;
 const [featured, ...rest] = posts;
-// Banner background: Hội An old town from the Thu Bồn river (Peter Borter / Unsplash, unsplash.com/photos/ai_mpqLXBTc); the text side is darkened.
+// Banner background: abstract painting (Steve A Johnson / Unsplash, unsplash.com/photos/RKRnPx9e4jQ); the text side is darkened.
 const bg = '/news/banner.jpg';
 const srcset = (u: string) => (u.includes('cdn.sanity.io') ? [800, 1200, 1800].map((w) => `${u.replace(/w=\d+/, `w=${w}`)} ${w}w`).join(', ') : undefined);
 ---
