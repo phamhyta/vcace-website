@@ -148,7 +148,7 @@ const partnerSet = partners.length ? Array.from({ length: Math.ceil(8 / partners
     {executive.length > 0 && (
       <div class="group">
         <h3 class="group-title">{people.executiveHeadline}</h3>
-        <div class:list={['team', { portraits: execPhotos }]}>
+        <div class:list={['team', 'exec', { portraits: execPhotos }]} style={`--cols:${Math.min(Math.max(executive.length, 4), 5)}`}>
           {executive.map((m) => (
             <article>
               {m.photo

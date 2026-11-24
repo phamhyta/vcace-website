@@ -46,6 +46,17 @@
     },
     {
       "published": true,
+      "group": "executive",
+      "name": "Ha Nguyen",
+      "nameVi": "",
+      "role": "Project Assistant",
+      "roleVi": "Trợ lý dự án",
+      "bio": "Supports project administration and the day-to-day delivery of VCACE activities.",
+      "bioVi": "Hỗ trợ công tác hành chính và triển khai hằng ngày các hoạt động của VCACE.",
+      "photo": "/team/ha-nguyen.jpg"
+    },
+    {
+      "published": true,
       "group": "advisory",
       "name": "Huy Tuan",
       "nameVi": "Huy Tuấn",

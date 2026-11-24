@@ -161,6 +161,7 @@ section{padding:clamp(56px,8vw,112px) 0;border-top:1px solid var(--line)}
 .people .group-title::before{content:"";width:24px;height:4px;background:var(--yellow)}
 .team{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .team.advisory{grid-template-columns:repeat(3,1fr)}
+.team.exec{grid-template-columns:repeat(var(--cols,4),1fr)}
 .team article{border-top:1.5px solid var(--ink);padding-top:16px}
 .team .photo{width:100%;aspect-ratio:1;object-fit:cover;display:block;margin-bottom:16px}
 .team.portraits .photo{width:clamp(120px,12vw,168px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 30%;margin-bottom:20px}
@@ -236,8 +237,9 @@ footer .fine{padding-top:22px;font-size:13px;color:#bdbab2;display:flex;justify-
   .lang-switch{padding:18px 0 4px;font-size:15px}
   .lang-switch a{display:inline;border:0;padding:0;font-size:15px}
 }
+@media (max-width:1180px){.team.exec{grid-template-columns:repeat(min(var(--cols,4),3),1fr)}}
 @media (max-width:1000px){
-  .programs-grid,.team,.team.advisory{grid-template-columns:repeat(2,1fr)}
+  .programs-grid,.team,.team.advisory,.team.exec{grid-template-columns:repeat(2,1fr)}
   .values{grid-template-columns:repeat(2,1fr)}
   .values div{padding-bottom:20px}
   .stats dl{grid-template-columns:repeat(2,1fr);row-gap:32px}
@@ -252,7 +254,7 @@ footer .fine{padding-top:22px;font-size:13px;color:#bdbab2;display:flex;justify-
   .project article.flip>div:first-child{order:0}
   .logo-footer{width:240px}
   .hero h1{margin:28px 0 24px}
-  .programs-grid,.team,.team.advisory,.values{grid-template-columns:1fr}
+  .programs-grid,.team,.team.advisory,.team.exec,.values{grid-template-columns:1fr}
   .panel .num{margin-top:20px}
   .exploring li{grid-template-columns:1fr;gap:4px}
 }
